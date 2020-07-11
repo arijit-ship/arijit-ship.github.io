@@ -1,0 +1,1 @@
+The underlying workflow is pretty straight forward. It takes the input as a string and evaluates it.
