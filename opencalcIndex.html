@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="opencalc_web_assets\opencalc_style.css">
+
+
+        <!--CDN For ReactJS-->
+
+         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        <!-- babel is required in order to parse JSX -->
+
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <!-- import react.js -->
+
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script>
+        <!-- import react-dom.js -->
+
+        <!--CDN for Bootstrap-->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+        <!--CDN for math library-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.0.1/math.js"></script>
+
+       <title>OpenCalc by Adas</title>
+       <link rel="shortcut icon" href="opencalc_web_assets\opclc_icon.svg">
+
+    </head>  
+
+    <body>
+        
+
+        <div>
+            <div class="headerbox">
+            
+                <img align="left" src="opencalc_web_assets\opclc_icon.svg" width="100px" height="90%">
+                <p align="left" style="color:white;font-size:40px;margin-left: 1cm;margin-top:0cm;">OpenCalc &nbsp;<i style="font-size:15px">Just an open-source calculator!</i>
+                <b style="font-size: 15px;margin-left: 10%;"><a href="opencalc_web_assets/documentation.html" style="color: white;">Documentation</a></b>
+                <b style="font-size: 15px;margin-left: auto;">&nbsp;<a href = "https://github.com/arijit-ship/OpenCalc" style="color: white;" >Project Repository</a></b>
+                <b style="font-size: 15px;margin-left: auto;"><a href="#feedbackModal" data-toggle="modal" style="color: white;">&nbsp;Feedback</a></b>
+                </p>
+
+            </div>
+
+            <!-- FEEDBACK -->
+
+                          
+                <!-- Modal -->
+                <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">For any feedback</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        E-mail: feedback.adas@gmail.com
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+
+
+
+            <!-- FEEDBACK -->
+
+           
+        </div>
+
+                <div id="calculator">
+                
+                    <div  class="CalcBg" id="CalcBox">
+                        <div align="center" style="margin-top:15px;">
+        
+                            <div class="displayTop" id = "displayTop"></div>
+                            <div class="displayBtm" id = "displayBtm"></div>
+            
+                          </div>
+        
+                          <div align="left" style="margin-left: 20px;">
+        
+        
+                            <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary active" style="width:76px;margin-top:15px;padding: 10px;background-color: orange;">
+                                  <input type="radio" name="options" id="optionDeg" autocomplete="off" checked> Deg
+                                </label>
+                                <label class="btn btn-secondary"style="width:76px;margin-top:15px;padding: 10px;background-color: #dee0e3;">
+                                  <input type="radio" name="options" id="optionRad" autocomplete="off" > Rad
+                                </label>   
+            
+                            </div>   -->
+            
+                            <button type="button" class="btn" id="DegRad" value="degOn" style="width:152px;margin-top:15px;padding: 10px;"><b>Deg&nbsp;&nbsp;&nbsp;&nbsp;</b>|&nbsp;&nbsp;&nbsp;&nbsp;Rad</button>  
+            
+                            <button type="button" class="btn" id="BtFac" style="width:74px;margin-top:15px;padding: 10px;">X!</button>
+            
+            
+                            <button type="button" class="btn" id="BtLPar" style="width:80px;margin-top:15px;margin-left:20px;padding: 10px">(</button>
+            
+                            <button type="button" class="btn" id="BtRPar"style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">)</button>
+                            <button type="button" class="btn" id="BtPer" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px;">%</button>
+                            <button type="button" class="btn" id="BtClr" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">Clear</button>
+                            <br>
+                            <button type="button" class="btn" id="BtShift" value="shift_off"  style="width:74px;margin-top:15px;padding: 10px">Shift</button>
+                            <button type="button" class="btn" id="BtLn" style="width:74px;margin-top:15px;padding: 10px">ln</button>
+                            <button type="button" class="btn" id="BtLog" style="width:74px;margin-top:15px;padding: 10px">log</button>
+            
+                            <button type="button" class="btn" id="BtN7"   style="width:80px;margin-top:15px;margin-left:20px;padding: 10px">7</button>
+                            <button type="button" class="btn" id="BtN8" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">8</button>
+                            <button type="button" class="btn" id="BtN9" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">9</button>
+                            <button type="button" class="btn" id="BtDiv" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">/</button>
+            
+                            <br>
+            
+                            <button type="button" class="btn" id="BtSin" style="width:74px;margin-top:15px;padding: 10px">sin</button>
+                            <button type="button" class="btn" id="BtCos" style="width:74px;margin-top:15px;padding: 10px">cos</button>
+                            <button type="button" class="btn" id="BtTan" style="width:74px;margin-top:15px;padding: 10px">tan</button>
+            
+                            <button type="button" class="btn" id="BtN4" style="width:80px;margin-top:15px;margin-left:20px;padding: 10px">4</button>
+                            <button type="button" class="btn" id="BtN5" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">5</button>
+                            <button type="button" class="btn" id="BtN6" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">6</button>
+                            <button type="button" class="btn" id="BtProd" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">×</button>
+            
+                            <br>
+            
+            
+                            <button type="button" class="btn" id="BtSinh" style="width:74px;margin-top:15px;padding: 10px">sinh</button>
+                            <button type="button" class="btn" id="BtCosh" style="width:74px;margin-top:15px;padding: 10px">cosh</button>
+                            <button type="button" class="btn" id="BtTanh" style="width:74px;margin-top:15px;padding: 10px">tanh</button>
+            
+                            <button type="button" class="btn" id="BtN1" style="width:80px;margin-top:15px;margin-left:20px;padding: 10px">1</button>
+                            <button type="button" class="btn" id="BtN2" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">2</button>
+                            <button type="button" class="btn" id="BtN3" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">3</button>
+                            <button type="button" class="btn" id="BtSub" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">-</button>
+            
+                            <br>
+            
+            
+            
+                            <button type="button" class="btn" id="BtnSqrt" style="width:74px;margin-top:15px;padding: 10px">√</button>
+                            <button type="button" class="btn" id="BtnPow" style="width:74px;margin-top:15px;padding: 10px">X<sup>2</sup></button>
+                            <button type="button" class="btn" id="BtnAns" style="width:74px;margin-top:15px;padding: 10px">Ans</button>
+            
+                            <button type="button" class="btn" id="BtnN0" style="width:80px;margin-top:15px;margin-left:20px;padding: 10px">0</button>
+            
+                            <button type="button" class="btn" id="BtnDot" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">.</button>
+            
+                            <button type="button" class="btn" id="BtnEql" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px;background-color: #007BFF;">=</button>
+            
+                            <button type="button" class="btn" id="BtnSum" style="width:80px;margin-top:15px;margin-left:9px;padding: 10px">+</button>
+                            
+                        
+            
+            
+                        </div>
+                       
+                    </div>
+                </div>
+        
+    
+            
+            <div class="expgHeader">
+                <p align="center">Math Expression page(For developers only). Your math input will appear here.</p> 
+            </div>
+            
+            <div class = "expgText" id = "expgText">
+                Welcome. OpClc v1.0.2020.6. by Adas
+            </div>
+
+            <div class = "footer">
+                Thank you so much for using OpenClac. I am Adas. This is OpenClac v1.0 & the project is still in the development process. So you might face some issues.  This is an open-source project and you can contribute to the project. Please note that I'm neither a professional programmer nor from the computer science field. But I love making & breaking things and playing with computers. I wrote this in my free time. So the code might be written in a silly unprofessional way(lol). - Happy Coding!
+            </div>
+            
+            </div>
+            
+
+
+
+        
+    
+            
+
+
+
+        
+    </body>
+    <script src="opencalc_web_assets/main.js"></script>
+</html>
+
+
