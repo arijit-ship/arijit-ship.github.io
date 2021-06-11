@@ -27,17 +27,17 @@
       </p>
       <p class="has-line-data" data-line-start="26" data-line-end="27"><strong><em>Adding two numbers</em></strong></p>
       <pre><code class="has-line-data" data-line-start="29" data-line-end="35">main = do 
-        let var1 = 2 
-        let var2 = 3 
-        putStrLn &quot;The addition of the two numbers is:&quot; 
-        print(var1 + var2) 
+let var1 = 2 
+let var2 = 3 
+putStrLn &quot;The addition of the two numbers is:&quot; 
+print(var1 + var2) 
         </code></pre>
       <p class="has-line-data" data-line-start="35" data-line-end="36">output &gt;&gt; <code>5</code></p>
       <p class="has-line-data" data-line-start="37" data-line-end="38"><strong><em>Taking user input</em></strong></p>
       <p class="has-line-data" data-line-start="39" data-line-end="40"><strong><em>Greeting you!!</em></strong></p>
       <pre><code class="has-line-data" data-line-start="42" data-line-end="46">main = do
-            name&lt;-getLine
-            putStrLn (&quot;Hello  &quot;++name++&quot;!!Nice to meet you&quot;)
+name&lt;-getLine
+putStrLn (&quot;Hello  &quot;++name++&quot;!!Nice to meet you&quot;)
         </code></pre>
       <p class="has-line-data" data-line-start="46" data-line-end="48">input <code>Roy Mustang</code><br>
          output <code>Hello Roy Mustang !! Nice to meet you</code>
@@ -47,12 +47,12 @@
 
       <p class="has-line-data" data-line-start="49" data-line-end="50"><strong><em>Addition of two user-input numbers</em></strong></p>
       <pre><code class="has-line-data" data-line-start="51" data-line-end="59">main = do
-            putStrLn &quot;Enter two numbers&quot;
-            x&lt;-getLine  --Taking number1 as a string
-            y&lt;-getLine  --Taking number2 as a string
-            let number1 = (read x::Int) --Parsing input numbers as Integer
-            let number2 = (read y::Int)
-            print(number1+number2)
+putStrLn &quot;Enter two numbers&quot;
+x&lt;-getLine  --Taking number1 as a string
+y&lt;-getLine  --Taking number2 as a string
+let number1 = (read x::Int) --Parsing input numbers as Integer
+let number2 = (read y::Int)
+print(number1+number2)
         </code></pre>
       <p class="has-line-data" data-line-start="59" data-line-end="61">input say <code>2</code> <code>8</code><br>
          output <code>10</code>
@@ -61,11 +61,11 @@
          <p class="has-line-data" data-line-start="63" data-line-end="64">Similarly input string can be parsed as float.</p>
       </blockquote>
       <pre><code class="has-line-data" data-line-start="66" data-line-end="73">main = do
-           x&lt;-getLine
-           let floatNumber = (read x ::Float)
-           putStrLn(&quot;String is  &quot;  ++ x)-- x is a string here, so using PutStrLn
-           putStrLn(&quot;Float is  &quot;)
-           print(floatNumber)
+x&lt;-getLine
+let floatNumber = (read x ::Float)
+putStrLn(&quot;String is  &quot;  ++ x)-- x is a string here, so using PutStrLn
+putStrLn(&quot;Float is  &quot;)
+print(floatNumber)
         </code></pre>
       <p class="has-line-data" data-line-start="74" data-line-end="75"><strong><em>Odd or Even check in Haskell</em></strong></p>
       <p class="has-line-data" data-line-start="76" data-line-end="77">Here user will give an input integer and we’ll be checking if its odd or even integer.</p>
@@ -75,32 +75,32 @@
          </p>
       </blockquote>
       <pre><code class="has-line-data" data-line-start="81" data-line-end="88">main = do
-            putStrLn &quot;Enter an Integer:&quot;
-            x&lt;-readLn::IO Integer --The decent way!!
-            if x `rem` 2 == 0 --Checking if the remainder is zero
-                then putStrLn &quot;Even Number&quot;
-            else putStrLn &quot;Odd Number&quot;
+putStrLn &quot;Enter an Integer:&quot;
+x&lt;-readLn::IO Integer --The decent way!!
+if x `rem` 2 == 0 --Checking if the remainder is zero
+      then putStrLn &quot;Even Number&quot;
+else putStrLn &quot;Odd Number&quot;
         </code></pre>
       <h2 class="code-line" data-line-start=90 data-line-end=91><a id="2_Functions_90"></a>2. Functions</h2>
       <p class="has-line-data" data-line-start="92" data-line-end="93"><strong><em>Writing a function in Haskell</em></strong></p>
       <p class="has-line-data" data-line-start="94" data-line-end="95">A function to add two integers</p>
       <pre><code class="has-line-data" data-line-start="96" data-line-end="103">add :: Integer -&gt; Integer -&gt; Integer   --function declaration 
-        add x y =  x + y                       --function definition 
-        
-        main = do 
-           putStrLn &quot;The addition of the two numbers is:&quot;  
-           print(add 2 5)    --calling a function
+add x y =  x + y                       --function definition 
+
+main = do 
+   putStrLn &quot;The addition of the two numbers is:&quot;  
+   print(add 2 5)    --calling a function
         </code></pre>
       <p class="has-line-data" data-line-start="103" data-line-end="104">output <code>7</code></p>
       <p class="has-line-data" data-line-start="105" data-line-end="106">Now adding two user-input integers</p>
       <pre><code class="has-line-data" data-line-start="108" data-line-end="117">add :: Integer -&gt; Integer -&gt; Integer   --function declaration 
-        add x y =  x + y                       --function definition 
-        
-        main = do 
-           x&lt;-readLn::IO Integer
-           y&lt;-readLn::IO Integer
-           putStrLn &quot;Sum is&quot; 
-           print(x+y)    --calling a function
+add x y =  x + y                       --function definition 
+
+main = do 
+   x&lt;-readLn::IO Integer
+   y&lt;-readLn::IO Integer
+   putStrLn &quot;Sum is&quot; 
+   print(x+y)    --calling a function
         </code></pre>
       <p class="has-line-data" data-line-start="117" data-line-end="118">The classic <em>factorial</em> program in Haskell with Pattern Matching</p>
       <blockquote>
@@ -111,23 +111,23 @@
          </p>
       </blockquote>
       <pre><code class="has-line-data" data-line-start="125" data-line-end="133">fact :: Int -&gt; Int 
-        fact 0 = 1 
-        fact n = n * fact ( n - 1 ) 
-        
-        main = do 
-           putStrLn &quot;The factorial of 5 is:&quot; 
-           print (fact 5)
+fact 0 = 1 
+fact n = n * fact ( n - 1 ) 
+
+main = do 
+   putStrLn &quot;The factorial of 5 is:&quot; 
+   print (fact 5)
         </code></pre>
       <p class="has-line-data" data-line-start="133" data-line-end="134">output <code>120</code></p>
       <p class="has-line-data" data-line-start="135" data-line-end="136">With user given input</p>
       <pre><code class="has-line-data" data-line-start="137" data-line-end="146">fact :: Int -&gt; Int 
-        fact 0 = 1 
-        fact n = n * fact ( n - 1 ) 
-        
-        main = do 
-           x&lt;-readLn::IO Int
-           putStrLn &quot;The factorial is:&quot; 
-           print (fact x)
+fact 0 = 1 
+fact n = n * fact ( n - 1 ) 
+
+main = do 
+   x&lt;-readLn::IO Int
+   putStrLn &quot;The factorial is:&quot; 
+   print (fact x)
         </code></pre>
       <p class="has-line-data" data-line-start="146" data-line-end="147"><strong>In Haskell</strong> <code>int</code> <strong>and</strong> <code>Integer</code> <strong>are two different types.</strong></p>
       <h2 class="code-line" data-line-start=148 data-line-end=149><a id="3__Anonymous_functions_in_Haskell_148"></a>3. Anonymous functions in Haskell</h2>
@@ -144,9 +144,9 @@
       <p class="has-line-data" data-line-start="164" data-line-end="165">output <code>25</code></p>
       <p class="has-line-data" data-line-start="166" data-line-end="167">With user-input</p>
       <pre><code class="has-line-data" data-line-start="168" data-line-end="173">main = do
-            num&lt;-readLn::IO Int
-            let z = (\x-&gt;x^2)num
-            print(z)
+num&lt;-readLn::IO Int
+let z = (\x-&gt;x^2)num
+print(z)
         </code></pre>
       <h2 class="code-line" data-line-start=174 data-line-end=175><a id="4_Some_more_syntactic_sugar_in_Haskell_174"></a>4. Some more syntactic sugar in Haskell</h2>
       <table class="table table-striped table-bordered">
