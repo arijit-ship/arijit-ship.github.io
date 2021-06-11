@@ -11,9 +11,9 @@
       <h1 class="code-line" data-line-start=0 data-line-end=1><a id="HASKELL_Notes__Undergrad_sem_VI__Adas_Page_2_0"></a><strong>HASKELL Notes / Undergrad, sem VI / @Adas</strong>, Page 2</h1>
       <h1 class="code-line" data-line-start=4 data-line-end=5><a id="Haskell__Some_real_coding_4"></a><em>Haskell — Some real coding</em></h1>
 
-      <strong> <a href=""> <<<< Previous Page </a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=""> Next Page >>> </a>  </strong></a>
+      <strong> <a href="https://arijit-ship.github.io/HaskellNotesMain.html"> <<<< Previous Page </a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=""> Next Page >>> </a>  </strong></a>
 
-      <h2 class="code-line" data-line-start=11 data-line-end=12><a id="1_BMT_tell__Using_Guard_11"></a>1. BMT tell — Using <em>Guard</em></h2>
+      <h2 class="code-line" data-line-start=11 data-line-end=12><a id="1_BMT_tell__Using_Guard_11"></a>6. BMT tell — Using <em>Guard</em></h2>
       <p class="has-line-data" data-line-start="13" data-line-end="14">Ref : <a href="http://learnyouahaskell.com/syntax-in-functions">http://learnyouahaskell.com/syntax-in-functions</a> [Many things have been taken from here]</p>
       <p class="has-line-data" data-line-start="15" data-line-end="16"><strong>The code</strong></p>
 
@@ -36,7 +36,7 @@ main = do
     y&lt;-readLn:: IO Double -- Height
     print (bmiTell (x,y))
 </code></pre>
-      <p class="has-line-data" data-line-start="33" data-line-end="35">input sya <code>60</code> <code>1.5</code><br>
+      <p class="has-line-data" data-line-start="33" data-line-end="35">input, say <code>60</code> <code>1.5</code><br>
          output <code>Okay</code>
       </p>
       <p class="has-line-data" data-line-start="36" data-line-end="37">Now analyze the code carefully. Here we’ve encountered two new things , <em>Guard</em> and <code>where</code> that are worth checking!</p>
@@ -59,7 +59,7 @@ bmiTell (bmi)
       </blockquote>
       <p class="has-line-data" data-line-start="57" data-line-end="58">If we call this function with <code>24.3</code>, it will first check if that’s smaller than or equal to <code>18.5</code>. Because it isn’t, it falls through to the next <em>guard</em>. The check is carried out with the second <em>guard</em> and because <code>24.3</code> is less than <code>25.0</code>, the second string is returned.</p>
       <p class="has-line-data" data-line-start="59" data-line-end="60">Here the last guard is <code>otherwise</code>. <code>otherwise</code> is defined simply as <code>otherwise = True</code> and catches everything. This is very similar to patterns, only they check if the input satisfies a pattern but guards check for boolean conditions. If all the guards of a function evaluate to <code>False</code> (and we haven’t provided an otherwise catch-all guard), evaluation falls through to the next <em>pattern</em>. That’s how patterns and guards play nicely together. If no suitable guards or patterns are found, an error is thrown.</p>
-      <h2 class="code-line" data-line-start=62 data-line-end=63><a id="2_The_Fibonacci_series__Badass_way_of_doing_it_in_Haskell_62"></a>2. The Fibonacci series — Badass way of doing it in Haskell</h2>
+      <h2 class="code-line" data-line-start=62 data-line-end=63><a id="2_The_Fibonacci_series__Badass_way_of_doing_it_in_Haskell_62"></a>7. The Fibonacci series — Badass way of doing it in Haskell</h2>
       <p class="has-line-data" data-line-start="64" data-line-end="65">Naive way of doing Fibonacci as we all know —</p>
       <pre><code class="has-line-data" data-line-start="66" data-line-end="70">fib 0 = 0
 fib 1 = 1
