@@ -92,11 +92,11 @@ main = do
             </tr>
             <tr>
                <td>3</td>
-               <td><code>sumList = takeWhile (&gt;0.001)[x^n/(fromIntegral $ fact n )|n&lt;-[0..]]</code> <code>sumList</code> is a list whose elements are the each term of the <em>exp</em> series (i.e. each <em>x<sup>n</sup>/n!</em>). Here <code>n</code> runs from <code>0</code> to an integral value as long as each fraction (<em><em>x<sup>n</sup>/n!</em>)</em>) is greater than <code>&gt;0.001</code> which is achieved by using <code>takeWhile(&gt;0.001)</code> before defining the list.</td>
+               <td><code>sumList = takeWhile (&gt;0.001)[x^n/(fromIntegral $ fact n )|n&lt;-[0..]]</code> <code>sumList</code> is a list whose elements are the each term of the <em>exp</em> series (i.e. each <em>x<sup>n</sup>/n!</em>). Here <code>n</code> runs from <code>0</code> to an integral value as long as each fraction (<em><em>x<sup>n</sup>/n!</em>)</em> is greater than <code>&gt;0.001</code> which is achieved by using <code>takeWhile(&gt;0.001)</code> before defining the list.</td>
             </tr>
             <tr>
                <td>4</td>
-               <td>You might be wondering to calculate each term of series (<em><em>x<sup>n</sup>/n!</em>)</em>) only <code>[x^n/(fact n )|n&lt;-[0..]]</code> this piece of code should do the job. <strong>However it will throw some <em>type errors</em> unless you use <code>fromIntegral</code></strong> as the <strong>numerator</strong> and <strong>denominator</strong> are of different types and are incompatible for any mathematical operation.</td>
+               <td>You might be wondering to calculate each term of series (<em><em>x<sup>n</sup>/n!</em>)</em> only <code>[x^n/(fact n )|n&lt;-[0..]]</code> this piece of code should do the job. <strong>However it will throw some <em>type errors</em> unless you use <code>fromIntegral</code></strong> as the <strong>numerator</strong> and <strong>denominator</strong> are of different types and are incompatible for any mathematical operation.</td>
             </tr>
             <tr>
                <td>5</td>
