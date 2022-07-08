@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafing - About & FAQ</title>
+    <link rel="stylesheet" href="main components/index.css">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <div style="background:black; width: 100%; height: 3rem;">
+          <div>
+            <b style="color: azure; font-size: 24pt; margin-left: 10px;">Grafing</b>
+            <b style="color: azure; font-size: 12pt; float: right; margin-right: 15rem; margin-top: 12px;">Repository</b>
+            <b style="color: azure; font-size: 12pt; float: right; margin-right: 1rem; margin-top: 12px;"><a href="grafing_src/main components/grafing_about&faq.html">About & FAQ</a></b>
+            <b style="color: azure; font-size: 12pt; float: right; margin-right: 1rem; margin-top: 12px;"><a href="grafing_src/main components/grafing_about&faq.html">Help</a></b>
+            <!-- 
+              <div class="form-check" style=" float: right ;margin-right: 1rem; margin-top: 1rem;">
+              <input class="form-check-input" type="checkbox" value="" id="gridCheck" checked>
+              <label class="form-check-label" for="flexCheckDefault" style="color:whitesmoke;">
+                Show Grids
+              </label>
+              </div>
+            -->
+          </div>
+        </div>
+    </div> 
+    <div style="padding: 10rem;">
+      <h1>What is Grafing?</h1>
+      <p style="font-size: 16pt;">A graphing calculator... The best way you can explain. You can use it to plot points and functions. Plus inbuilt <i>Linear Regression</i> and <i>Polygonal Regression</i> algorithms are icing on the top. My initial plan was to build a mathematical engine that can perform different types of mathematical operations which does not require much of a lower level implementation. But I somehow ended up with a graphing tools.   </p>
+    
+      <h4 style="margin-top: 3rem;">Languages & libraries used to build this?</h4>
+      <p style="font-size: 16pt;">This web version uses HTML, CSS and JavaScript. Special thanks to these libraries - JSX Graph, Tabulator JS, MathJS, BootStrap, jQuery EasyUI. Everything is executed on the client side, on your browser.</p>
+
+      <h4 style="margin-top: 3rem;">Any caveat?</h4>
+      <p style="font-size: 16pt;">The equations plot does not come with WYSIWYG editor. It lacks a slider option for a coefficient of variable. But I'm working on a desktop app version where I will try my best to make it look more organic. </p>
+   
+
+      <h4 style="margin-top: 3rem;">Can I fork this project?</h4>
+      <p style="font-size: 16pt;">You're welcome. Go to the repo, download the source files and start your own project.</p>
+
+      <h4 style="margin-top: 3rem;">Having problem to plot a function?</h4>
+      <p style="font-size: 16pt;">An error log appears whenever an exception is catched.
+      <br> Here's a few things to check - 
+      <ul>
+        <li>Symbolic coefficient can not be used. Like for <code>y= m*x + c</code> you must replce coefficients, <code>m</code> and  <code>c</code> with some numerical values.</li>
+        <li>Use <code>math.</code> prefix whenevr using any square-root or trigionometric or logarrithemic functions. Example: Use <code>math.sin(1/x)</code> instead of <code>sin(x)</code>. Instead of <code>root(x)</code> use <code>math.sqrt(x)</code>. </li>
+        <li>Check if your parenthesis are closed properly.</li>
+      </ul>
+      
+      </p>
+    </div>
+
+    <div style="width: 100%;height: 7rem; background: black;">
+     <br><br> © Arijit Das / Project Grafing / 2021
+     <span style="float: right;">
+                  
+                  <!-- hitwebcounter Code START -->
+                  <a href="https://www.hitwebcounter.com" target="_blank">
+                  <img src="https://hitwebcounter.com/counter/counter.php?page=7916039&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                                             
+    </span>
+    </p>
+    </div>
+</body>
+</html>
