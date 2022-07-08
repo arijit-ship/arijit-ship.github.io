@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title> Haskell Notes by Arijit </title>
+      <link rel="icon" href="Haskell-notes-webpage-assets\haskell-logo.svg" type="image/icon type">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="Haskell-notes-webpage-assets\haskell.style.main.css">
+   </head>
+   <body id="preview" style="background-image:url(Haskell-notes-webpage-assets/levi.png);background-repeat:no-repeat;background-attachment:fixed;
+   overflow:scroll;background-position-x: 80%;background-position-y: 8%;">
+    
+      <h1 class="code-line" data-line-start=0 data-line-end=1><a id="HASKELL_Notes__Undergrad_sem_VI__Adas_0"></a><strong><u></u>HASKELL Notes / Undergrad, sem VI / @Adas</strong></h1>
+      <hr style="height:5px;border-width:0;margin-right: 22rem;color:gray;background-color:gray;background-image: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);">
+
+       <!-- UPDATED ON****************************************************************** -->
+       <u class="code-line">[updated on Jul 14, 2021 | Minor]</u>
+       <!-- ****************************************************************** -->
+       <div style="float: right; margin-right: 45%;padding-top: 4%;">
+         <script type="text/javascript" src="https://free-hit-counters.net/count/8x42"></script><br>
+    <a href='https://www.versicherungen.at/unfallversicherung-rechner/'>Unfallversicherung Deckung</a> <script type='text/javascript' src='https://www.whomania.com/ctr?id=99a31e5e306ea4d3c59861b33ab0c066d93c77f0'></script>
+   </div>
+       
+
+      <h1 class="code-line" data-line-start=3 data-line-end=4><a id="Haskell_101The_basic_3"></a><em>Haskell 101–The basic</em>🔖</h1>
+      
+   
+      <strong>🏠   <u style="color: #35D7BB">Home Page</u></a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="Haskell-notes-webpage-assets/HaskellNotes.Page2.html"> Next Page >>> </a>  </strong></a>
+
+      <h2 class="code-line" data-line-start=10 data-line-end=11><a id="1_Hello_world_10"></a>1. Hello world</h2>
+      <p class="has-line-data" data-line-start="14" data-line-end="16"><code>ghci&gt; putStr &quot;Hello World&quot;--This will print Hello World</code><br>
+         output &gt;&gt; <code>Hello World</code>
+      </p>
+      <p class="has-line-data" data-line-start="17" data-line-end="19">or we can use <code>putStrLn</code> like this <code>ghci&gt; putStrLn &quot;hello&quot;</code><br>
+         <code>putStr</code> or <code>putStrLn</code> is used to print a string.
+      </p>
+      <p class="has-line-data" data-line-start="20" data-line-end="21">String Concatenation: <code>++</code> is used for it.</p>
+      <p class="has-line-data" data-line-start="22" data-line-end="24">input <code>ghci&gt; &quot;Captain Levi is cool.&quot;++&quot; But he is a bit overrated tho!&quot;</code><br>
+         output <code>&quot;Captain Levi is cool. But he is a bit overrated tho!&quot;</code>
+      </p>
+      <p class="has-line-data" data-line-start="26" data-line-end="27"><strong><em>Adding two numbers</em></strong></p>
+      <pre><code class="has-line-data" data-line-start="29" data-line-end="35">main = do 
+let var1 = 2 
+let var2 = 3 
+putStrLn &quot;The addition of the two numbers is:&quot; 
+print(var1 + var2) 
+        </code></pre>
+      <p class="has-line-data" data-line-start="35" data-line-end="36">output &gt;&gt; <code>5</code></p>
+      <p class="has-line-data" data-line-start="37" data-line-end="38"><strong><em>Taking user input</em></strong></p>
+      <p class="has-line-data" data-line-start="39" data-line-end="40"><strong><em>Greeting you!!</em></strong></p>
+      <pre><code class="has-line-data" data-line-start="42" data-line-end="46">main = do
+name&lt;-getLine
+putStrLn (&quot;Hello  &quot;++name++&quot;!!Nice to meet you&quot;)
+        </code></pre>
+      <p class="has-line-data" data-line-start="46" data-line-end="48">input <code>Roy Mustang</code><br>
+         output <code>Hello Roy Mustang !! Nice to meet you</code>
+      </p>
+
+      <div style="background-image: url(Haskell-notes-webpage-assets/aot-bg-transparent.png); background-repeat: no-repeat; background-attachment: fixed; background-position-x: 80%; background-position-y: bottom; background-color: rgba(255,255,255,0.8); background-blend-mode: lighten"">
+
+      <p class="has-line-data" data-line-start="49" data-line-end="50"><strong><em>Addition of two user-input numbers</em></strong></p>
+      <pre><code class="has-line-data" data-line-start="51" data-line-end="59">main = do
+putStrLn &quot;Enter two numbers&quot;
+x&lt;-getLine  --Taking number1 as a string
+y&lt;-getLine  --Taking number2 as a string
+let number1 = (read x::Int) --Parsing input numbers as Integer
+let number2 = (read y::Int)
+print(number1+number2)
+        </code></pre>
+      <p class="has-line-data" data-line-start="59" data-line-end="61">input say <code>2</code> <code>8</code><br>
+         output <code>10</code>
+      </p>
+      <blockquote>
+         <p class="has-line-data" data-line-start="63" data-line-end="64">Similarly input string can be parsed as float.</p>
+      </blockquote>
+      <pre><code class="has-line-data" data-line-start="66" data-line-end="73">main = do
+x&lt;-getLine
+let floatNumber = (read x ::Float)
+putStrLn(&quot;String is  &quot;  ++ x)-- x is a string here, so using PutStrLn
+putStrLn(&quot;Float is  &quot;)
+print(floatNumber)
+        </code></pre>
+      <p class="has-line-data" data-line-start="74" data-line-end="75"><strong><em>Odd or Even check in Haskell</em></strong></p>
+      <p class="has-line-data" data-line-start="76" data-line-end="77">Here user will give an input integer and we’ll be checking if its odd or even integer.</p>
+      <blockquote>
+         <p class="has-line-data" data-line-start="78" data-line-end="80">Now here I’ll be taking user input and converting it to an integer in<br>
+            a more decent way!
+         </p>
+      </blockquote>
+      <pre><code class="has-line-data" data-line-start="81" data-line-end="88">main = do
+putStrLn &quot;Enter an Integer:&quot;
+x&lt;-readLn::IO Integer --The decent way!!
+if x `rem` 2 == 0 --Checking if the remainder is zero
+      then putStrLn &quot;Even Number&quot;
+else putStrLn &quot;Odd Number&quot;
+        </code></pre>
+      <h2 class="code-line" data-line-start=90 data-line-end=91><a id="2_Functions_90"></a>2. Functions</h2>
+      <p class="has-line-data" data-line-start="92" data-line-end="93"><strong><em>Writing a function in Haskell</em></strong></p>
+      <p class="has-line-data" data-line-start="94" data-line-end="95">A function to add two integers</p>
+      <pre><code class="has-line-data" data-line-start="96" data-line-end="103">add :: Integer -&gt; Integer -&gt; Integer   --function declaration 
+add x y =  x + y                       --function definition 
+
+main = do 
+   putStrLn &quot;The addition of the two numbers is:&quot;  
+   print(add 2 5)    --calling a function
+        </code></pre>
+      <p class="has-line-data" data-line-start="103" data-line-end="104">output <code>7</code></p>
+      <p class="has-line-data" data-line-start="105" data-line-end="106">Now adding two user-input integers</p>
+      <pre><code class="has-line-data" data-line-start="108" data-line-end="117">add :: Integer -&gt; Integer -&gt; Integer   --function declaration 
+add x y =  x + y                       --function definition 
+
+main = do 
+   x&lt;-readLn::IO Integer
+   y&lt;-readLn::IO Integer
+   putStrLn &quot;Sum is&quot; 
+   print(add x y)    --calling the function and printing the output
+        </code></pre>
+      <p class="has-line-data" data-line-start="117" data-line-end="118">The classic <em>factorial</em> program in Haskell with Pattern Matching</p>
+      <blockquote>
+         <p class="has-line-data" data-line-start="119" data-line-end="123">Pattern Matching is process of matching specific type of expressions.<br>
+            It is nothing but a technique to simplify your code. This technique<br>
+            can be implemented into any type of Type class. If-Else can be used as<br>
+            an alternate option of pattern matching.
+         </p>
+      </blockquote>
+      <pre><code class="has-line-data" data-line-start="125" data-line-end="133">fact :: Int -&gt; Int 
+fact 0 = 1 
+fact n = n * fact ( n - 1 ) 
+
+main = do 
+   putStrLn &quot;The factorial of 5 is:&quot; 
+   print (fact 5)
+        </code></pre>
+      <p class="has-line-data" data-line-start="133" data-line-end="134">output <code>120</code></p>
+      <p class="has-line-data" data-line-start="135" data-line-end="136">With user given input</p>
+      <pre><code class="has-line-data" data-line-start="137" data-line-end="146">fact :: Int -&gt; Int 
+fact 0 = 1 
+fact n = n * fact ( n - 1 ) 
+
+main = do 
+   x&lt;-readLn::IO Int
+   putStrLn &quot;The factorial is:&quot; 
+   print (fact x)
+        </code></pre>
+      <p class="has-line-data" data-line-start="146" data-line-end="147"><strong>In Haskell</strong> <code>int</code> <strong>and</strong> <code>Integer</code> <strong>are two different types:</strong> <code>Integer</code> can represent arbitrarily large integers, up to using all of the storage on your machine.
+
+        <code>Int</code>can only represent integers in a finite range. </p>
+      <h2 class="code-line" data-line-start=148 data-line-end=149><a id="3__Anonymous_functions_in_Haskell_148"></a>3. Anonymous functions in Haskell</h2>
+      <p class="has-line-data" data-line-start="150" data-line-end="151"><strong><em>Lambda function and map</em></strong></p>
+      <p class="has-line-data" data-line-start="152" data-line-end="153">Lambda function is an anonymous function which can have multiple arguments but only one expression.</p>
+      <p class="has-line-data" data-line-start="154" data-line-end="156">Adding two integers using a lambda function<br>
+         <code>ghci&gt; (\x y -&gt;x+y)5 10</code>
+      </p>
+      <p class="has-line-data" data-line-start="157" data-line-end="158">output <code>15</code></p>
+      <p class="has-line-data" data-line-start="159" data-line-end="160"><em>See, here we have two arguments <code>x</code> and <code>y</code> but only one expression <code>x+y</code> which is to be returned.</em></p>
+      <p class="has-line-data" data-line-start="161" data-line-end="163">Squaring an integer using a lambda function<br>
+         <code>ghci&gt; (\x-&gt;x^2)5</code>
+      </p>
+      <p class="has-line-data" data-line-start="164" data-line-end="165">output <code>25</code></p>
+      <p class="has-line-data" data-line-start="166" data-line-end="167">With user-input</p>
+      <pre><code class="has-line-data" data-line-start="168" data-line-end="173">main = do
+num&lt;-readLn::IO Int
+let z = (\x-&gt;x^2)num
+print(z)
+        </code></pre>
+      <h2 class="code-line" data-line-start=174 data-line-end=175><a id="4_Some_more_syntactic_sugar_in_Haskell_174"></a>4. Some more syntactic sugar in Haskell</h2>
+      <table class="table table-striped table-bordered">
+         <thead>
+            <tr>
+               <th>Input</th>
+               <th>Output</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>ghci&gt; map(\x-&gt;x+1)[1,2,3,4,5]</code></td>
+               <td><code>[2,3,4,5,6]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; zip[1,2,3,4][&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;]</code></td>
+               <td><code>[(1,&quot;a&quot;),(2,&quot;b&quot;),(3,&quot;c&quot;),(4,&quot;d&quot;)]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; zip3 [1,2][&quot;a&quot;,&quot;b&quot;][&quot;A&quot;,&quot;B&quot;]</code></td>
+               <td><code>[(1,&quot;a&quot;,&quot;A&quot;),(2,&quot;b&quot;,&quot;B&quot;)]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; zipWith(\x y-&gt;x+y)[1,2,3][10,16,20]</code></td>
+               <td><code>[11,18,23]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; succ 8</code></td>
+               <td><code>9</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; succ 8.3</code></td>
+               <td><code>9.3</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt;[succ x|x&lt;-[1,2,3]]</code></td>
+               <td><code>[2,3,4]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; head[5,9,8,7,5.3]</code></td>
+               <td><code>5.0</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; last[5,9,8,7,5.3]</code></td>
+               <td><code>5.3</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; init [1,2,3]</code> it accepts a list and returns the list without its last item</td>
+               <td><code>[1,2]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; tail[1,2,3]</code> it accepts a list and returns the list without its first item</td>
+               <td><code>[2,3]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; length[1,2,3,4,5]</code></td>
+               <td><code>5</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; reverse[1,2,3,4,5]</code></td>
+               <td><code>[5,4,3,2,1]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; take 10(cycle [1,2,3])</code>it creates a circular list from a finite one</td>
+               <td><code>[1,2,3,1,2,3,1,2,3,1]</code> length is <code>10</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; take 4 (repeat 4)</code> or <code>ghci&gt; take 4 $repeat 4</code></td>
+               <td><code>[4,4,4,4]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; replicate 3 &quot;haskell&quot;</code></td>
+               <td><code>[&quot;haskell&quot;,&quot;haskell&quot;,&quot;haskell&quot;]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; replicate 5 10</code></td>
+               <td><code>[10,10,10,10,10]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; [1,2,3]++[9,10]</code></td>
+               <td><code>[1,2,3,9,10]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; &quot;Captain Levi is cool.&quot;++&quot; But he is a bit overrated tho!&quot;</code></td>
+               <td><code>&quot;Captain Levi is cool. But he is a bit overrated tho!&quot;</code> String concatenation</td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; 5:[1,2,3]</code></td>
+               <td><code>[5,1,2,3]</code> Adds <code>5</code> as first element to the list</td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; filter (&gt;5) [1,2,4,5,6,7]</code></td>
+               <td><code>[6,7]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; filter odd [3,6,7,9,12,14]</code></td>
+               <td><code>[3,7,9]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; filter even [3,6,7,9,12,14]</code></td>
+               <td><code>[6,12,14]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; takeWhile (&lt;3) [1,2,3,4,5]</code></td>
+               <td><code>[1,2]</code> creates a list from another one, it inspects the original list and takes from it its elements to the moment when the condition fails, then it stops processing</td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; takeWhile (&gt;3) [1,2,3,4,5]</code></td>
+               <td><code>[]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; takeWhile (&gt;3) [15,1,2,3,4,5]</code></td>
+               <td><code>[15]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; takeWhile odd [1,3,5,7,9,10,11,13,15,17]</code></td>
+               <td><code>[1,3,5,7,9]</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci> foldl(\x y->x+y) 10 [1,2,3]</code></td>
+               <td>Output>><code>16</code>. Takes a binary function(here<code>\x y->x+y</code>), an element (<code>10</code>) and a list (<code>[1,2,3]</code>) and then applies the  function between the element (<code>10</code>) and the first element of the list (<code>1</code>) and repleces the element with result.<br> <code>&nbsp 10+1=11<br>-->11+2=13<br>-->13+3=16</code>.</td>
+            </tr>
+
+            <tr>
+               <td><code>ghci> foldr(\x y->x+y) 10 [1,2,3]</code></td>
+               <td>Output>><code>-8</code>. Same as before but executes the operation from the right.<br> <code>&nbsp 3-10=-7<br>-->2-(-7)=9<br>-->1-9=-8</code>.</td>
+            </tr>
+            
+            <tr>
+               <td><code>ghci> foldr(\x y->x-y) 0 [1,2,3]</code></td>
+               <td>Output>><code>2</code>.<br> <code>&nbsp 3-0=3<br>-->2-3=-1<br>-->1-(-1)=2</code>.</td>
+            </tr>
+           
+         </tbody>
+      </table>
+      <h2 class="code-line" data-line-start=208 data-line-end=209><a id="5_List_comprehension_in_Haskell_208"></a>5. List comprehension in Haskell</h2>
+      <p class="has-line-data" data-line-start="210" data-line-end="211"><em>List comprehension in Haskell is really a piece of cake! Even a caveman(like you my boy) can easily understand it.</em></p>
+      <p class="has-line-data" data-line-start="212" data-line-end="213">Here is a few examples:</p>
+      <table class="table table-striped table-bordered">
+         <thead>
+            <tr>
+               <th>Input</th>
+               <th>Output</th>
+               <th>Comment</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><code>ghci&gt; [x|x&lt;-[1..10]]</code></td>
+               <td><code>[1,2,3,4,5,6,7,8,9,10]</code></td>
+               <td>Making a list of integers from 1 to 10</td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; [x^2|x&lt;-[1..10]]</code></td>
+               <td><code>[1,4,9,16,25,36,49,64,81,100]</code></td>
+               <td>Squaring each element</td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; [x|x&lt;-[1..20],2*x&lt;15]</code></td>
+               <td><code>[1,2,3,4,5,6,7]</code></td>
+               <td>Making a list of <code>x</code> where x is from <code>1</code> to <code>20</code> and <code>2*x&lt;15</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; [x|x&lt;-[50..100],x `mod` 7==3]</code></td>
+               <td><code>[52,59,66,73,80,87,94]</code></td>
+               <td>All numbers from <code>50</code> to <code>100</code> whose remainder is <code>3</code> when devided by <code>7</code></td>
+            </tr>
+            <tr>
+               <td><code>ghci&gt; [x|x&lt;-[1..5],x/=3,x/=2]</code></td>
+               <td><code>[1,4,5]</code></td>
+               <td>All numbers from <code>1</code> to <code>5</code> except <code>3</code>, <code>2</code></td>
+            </tr>
+         </tbody>
+      </table>
+      <hr>
+      <div style="background-color: rgba(250, 250, 250, 0.585); width:100%; height: 100px; padding: 3%; ">
+         <p align="center">
+             <a href=#> <strong style="float: left;" >  <<<< The Last Page  </strong> </a>
+             <strong>You're at Home Page</strong>
+             <a href="Haskell-notes-webpage-assets/HaskellNotes.Page2.html"><strong style="float: right;">  Next Page >>>  </strong>  </a>
+         </p>
+      </div>
+
+      <div style="background-color:black; width:100%; height: 3rem;border-radius: 12px;">
+            <p  align="center">
+                <a href="https://arijit-ship.github.io/HaskellNotesMain.html"> <strong><u>Home</u> </strong> </a>
+                &nbsp; &nbsp; &nbsp;
+                <a href="Haskell-notes-webpage-assets/HaskellNotes.Page2.html"> <strong>  <u>2</u>  </strong> </a>
+                &nbsp; &nbsp; &nbsp;
+                <a href="Haskell-notes-webpage-assets/HaskellNotes.Page3.html"> <strong>  <u>3</u> </strong> </a>
+                &nbsp; &nbsp; &nbsp;
+                <a href="Haskell-notes-webpage-assets/HaskellNotes.Page4.html"> <strong>  <u>4</u>  </strong> </a>
+                &nbsp; &nbsp; &nbsp;
+                <a href=#> <strong>  <u>5</u>  </strong> </a>
+                
+            </p>
+        </div>
+   </body>
+</html>
