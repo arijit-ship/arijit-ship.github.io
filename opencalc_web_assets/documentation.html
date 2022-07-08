@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="opencalc_style.css">
+        <title>OpenCalc by Adas</title>
+        <link rel="shortcut icon" href="opclc_icon.svg">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+        <style>
+            body {font-family: Arial, Helvetica, sans-serif;}
+            * {box-sizing: border-box;}
+
+        </style>
+        <div>
+            <div class="headerbox" style="padding-top: 10px;">
+            
+                <a href="..\opencalcIndex.html"><img align="left" src="opclc_icon.svg" width="100px" height="90%"></a>
+                <p align="left" style="color:white;font-size:40px;margin-left: 1cm;margin-top:0cm;">OpenCalc &nbsp;<i style="font-size:15px">Just an open-source calculator!</i>
+                <b style="font-size: 15px;margin-left: 10%;"><a href = "..\opencalcIndex.html" style="color: white;">Home</a></b>
+                <b style="font-size: 15px;margin-left: auto;"><a href = "" style="color: white;">&nbsp; Project Repository</a></b>
+                <b style="font-size: 15px;margin-left: auto;"><a href="#feedbackModal" data-toggle="modal" style="color: white;">&nbsp;Feedback</a></b>
+                </p>
+    
+            </div>
+
+             <!-- FEEDBACK -->
+
+                          
+                <!-- Modal -->
+                <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">For any feedback</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                      </div>
+                      <div class="modal-body">
+                      E-mail: feedback.adas@gmail.com
+                      </div>
+                      <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+
+
+
+
+
+          <!-- FEEDBACK -->
+
+
+
+
+            <div style="background-color: white; width: auto;height: 50cm; color: black;padding-top: 1cm;">
+                 <b align = "left" style="padding: 1cm;font-size: 20pt;" >  Project Documentation </b>
+                 <p align = "left" style="padding-top: 1cm;padding-left: 2cm; margin-right:5cm;font-size: 15pt;text-align: justify; text-justify: inter-word;" >
+                  Everything started when I got a long vacation from the university during the 2020 COVID-19 pandemic. I thought this might be a great time to learn some new languages. I was planning to teach myself JavaScript for a while. So I just started with that. And probably the best way of learning a new programming language is to build something out of what you're teaching yourself! This project is still in the development process. So you might face some issues. This is an open-source project and you can contribute to the project. Please note that I'm neither a professional programmer nor from the computer science field. But I love making & breaking things and playing with computers. I wrote this in my free time. So the code might be written in a silly unprofessional way. - Happy Coding!
+                </p>
+
+                <div style="margin-top: 1cm;">
+                  <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <a class="navbar-brand" href="#"></a>
+                      </div>
+                      <ul class="nav navbar-nav">
+                        <li style="background-color: #e7e7e7;" id = "NavL1"><a onclick="VersionInfo()">About Current Version</a></li>
+                        <li id = "NavL2"><a href = "#" onclick = "loadHowWorks()">How it works?</a></li>
+                        <li id = "NavL3"><a href = "#" onclick = "loadIssue()">Issues</a></li>
+                        <li id = "NavL4"><a href = "#"onclick = "loadHistoryDtls()">History & Fixes</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+                    
+                  <div class="container" id="informationText" style="font-size:15px;font-family: 'Nanum Gothic Coding', monospace;">
+                    <h3>Version:	v1.0.2020.6</h3>
+                    <p><i>You might face a lot of issues in this version. Currently under development.</i></p>
+                  </div>
+                  
+                </div>
+
+                
+
+            </div>
+
+        </div>
+
+       
+    </body>
+    <script src="documentation.script.js"></script>
+</html>
+
+</html>
+
+

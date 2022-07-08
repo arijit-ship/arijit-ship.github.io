@@ -1,0 +1,168 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+body, html {
+  height: 100%;
+  margin: 0;
+
+    background: #eeeeee; /* Old browsers */
+  background: -moz-linear-gradient(top,  #eeeeee 19%, #ffffff 49%, #cccccc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #eeeeee 19%,#ffffff 49%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #eeeeee 19%,#ffffff 49%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+
+  
+}
+
+a:hover {
+  color: #337ab7;
+}
+a:link {
+  color: white;
+  text-decoration: none;
+}
+div.headerbox{
+  background: black;
+  border: 0 solid  (255, 255, 255, 0.149);
+  margin-top: 0;
+  height: 2cm;
+  width: relative;
+  
+  
+}
+
+div.displayTop{
+
+  width: 618.77px;
+  height: 25px;
+  background-color: #ffffff;
+  border: 1pt solid rgb(200, 200, 200);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  font-size: 10pt;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* margin-left: 5px; */
+  padding-left: 10px;
+  padding-top: 2.5px;
+  color: rgb(177, 177, 177);
+}
+
+
+div.displayBtm{
+
+  width: 618.77px;
+  height: 47px;
+  background-color: #ffffff;
+  border: 1pt solid rgb(200, 200, 200);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  font-size: 15pt;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 1px;
+
+  /* word-wrap    : break-word;
+  overflow-wrap: break-word; */
+
+  
+ 
+
+}
+
+div.CalcBg{
+  position: relative;
+  width:654px;
+  height:400px;
+  border-radius: 15px;
+  border:1pt solid rgb(200, 200, 200);
+  margin:auto;
+  margin-top:1.5cm;
+  background-color: rgb(255, 255, 255);
+  box-shadow: #ffffff;
+
+  
+}
+
+/*
+div.calculator{
+    position: relative;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+  }
+*/
+
+div.expressionPg{
+  
+  float: center; 
+  width:100%;
+  height: 5cm;
+  margin-top: 1cm;
+  resize: horizontal;resize: horizontal;
+  border-top:1pt solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  overflow: auto;
+  
+  
+}
+
+div.expgHeader{
+
+    width:100%;
+    height: 1cm;
+    margin-top: 1cm;
+    padding-top: 5pt;
+    
+
+    /* Generated online*/
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+    border-bottom: 1pt rgb(177, 177, 177);
+    border-top: 1pt solid black;
+    
+
+
+}
+
+div.expgText{
+
+    padding-top: 0.5cm;
+    padding-left: 1cm;
+    height: 6cm;
+    background-color: white;
+    font-family: 'Source Code Pro', monospace;
+    overflow-y: scroll;
+    border-bottom: 1pt solid black;
+    
+}
+div.footer{
+    width:100%;
+    height: 5cm;
+    margin-top: 1px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 1cm;
+    font-size: 12pt;
+}
+
+
+
+@font-face {
+  font-family: 'Nunito Sans', sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+  
+}
+
+
