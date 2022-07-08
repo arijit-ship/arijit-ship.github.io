@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title> Haskell Notes by Arijit </title>
+      <link rel="icon" href="haskell-logo.svg" type="image/icon type">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="haskell.style.main.css">  
+      
+
+      <body id="preview" style="background-image:url(migi.png);background-repeat:no-repeat;background-attachment:fixed;
+   overflow:scroll;background-position-x: 80%;background-position-y: 8%;">
+   
+   
+      <h1 class="code-line" data-line-start=0 data-line-end=1><a id="HASKELL_Notes__Undergrad_sem_VI__Adas_Page_3_0"></a><strong>HASKELL Notes / Undergrad, sem VI / @Adas</strong>, Page 3</h1>
+
+      <hr style="height:5px;border-width:0;margin-right: 22rem;color:gray;background-color:gray;background-image: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);">
+
+      <!-- UPDATED ON****************************************************************** -->
+      <u class="code-line">[updated on Jul 14, 2021 | Minor]</u>
+      <!-- ****************************************************************** -->
+
+      <div style="float: right; margin-right: 30%;">
+         <script type="text/javascript" src="https://free-hit-counters.net/count/8x42"></script><br>
+         <a href='https://www.versicherungen.at/unfallversicherung-rechner/'>Unfallversicherung Deckung</a> <script type='text/javascript' src='https://www.whomania.com/ctr?id=99a31e5e306ea4d3c59861b33ab0c066d93c77f0'></script>
+   </div>
+
+      <h1 class="code-line" data-line-start=3 data-line-end=4><a id="Haskell__Some_basic_coding__3"></a><em>Haskell — Some more basic coding</em> ✌✌</h1>
+
+      <strong> <a href="HaskellNotes.Page2.html"> <<< Previous Page </a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="HaskellNotes.Page4.html"> Next Page >>> </a>  </strong></a>
+
+
+      <h2 class="code-line" data-line-start=6 data-line-end=7><a id="8_Rational_Number_6"></a>8. Rational Number</h2>
+      <p class="has-line-data" data-line-start="8" data-line-end="9">Lets start with a piece of code. We’ll be adding two rational numbers and printing the sum, like <code>5/7 + 8/9 = 101/63</code>.</p>
+      <p class="has-line-data" data-line-start="10" data-line-end="11">The code</p>
+
+      <div style="background-image: url(parasyte.png); background-repeat: no-repeat; background-attachment: fixed; background-position-y: bottom; background-color: rgba(255,255,255,0.9); background-blend-mode: lighten"">
+
+
+      <pre><code class="has-line-data" data-line-start="13" data-line-end="24">import System.IO
+
+main = do
+    putStrLn(&quot;Give two rational numbers, each as a touple:&quot;)
+    x &lt;- readLn
+    y &lt;- readLn
+    let z = (toRational (fst x))/(toRational (snd x))
+    let w = (toRational (fst y))/(toRational (snd y))
+    putStr &quot;The sum is: &quot;
+    print (z+w)  
+</code></pre>
+      <p class="has-line-data" data-line-start="25" data-line-end="27">input <code>(5,7)</code>for 5/7 and <code>(8,9)</code> for 8/9<br>
+         output <code>101 % 63</code>
+      </p>
+      <blockquote>
+         <p class="has-line-data" data-line-start="29" data-line-end="34">Haskell provides a <code>Rational</code> type, which is really an alias for<br>
+            <code>Ratio Integer</code> (<code>Ratio</code> being a polymorphic type implementing<br>
+            rational numbers for any <code>Integral</code> type of numerators and<br>
+            denominators). The fraction is constructed using the % operator.<br>
+            Values of type <code>Rational</code> represent rational numbers exactly as the ratio of two <code>Integer</code>s. Applying <code>toRational</code> to an <code>Integral</code> number <code>n</code> will produce the rational number <code>n % 1</code>; applying <code>toRational</code> to a <code>Real</code> number will produce its rational value (or its closest approximation).
+         </p>
+      </blockquote>
+      <p class="has-line-data" data-line-start="35" data-line-end="36">One can also construct <code>Rational</code> values explicitly using the <code>(%)</code> operator. For example, the fraction <code>2/3</code> is constructed using  <code>2 % 3</code>.</p>
+      <h2 class="code-line" data-line-start=39 data-line-end=40><a id="9_Exponential_Series__myExpinteger_39"></a>9. Exponential Series — myExp(integer)</h2>
+      <p class="has-line-data" data-line-start="41" data-line-end="42">We will be calculating <em>exp</em> of a given number by defining the exponential series.</p>
+      <p class="has-line-data" data-line-start="43" data-line-end="44"><strong>The code</strong></p>
+      <pre><code class="has-line-data" data-line-start="45" data-line-end="61">import System.IO
+
+fact::Integer-&gt;Integer
+fact 0 = 1
+fact x = x * fact (x-1)
+
+myExp::Double-&gt;(Double, Int)
+myExp x = (sum sumList, num_terms)
+    where
+    sumList = takeWhile (&gt;0.001)[x^n/(fromIntegral $ fact n )|n&lt;-[0..]]
+    num_terms = length sumList
+    
+main = do
+    n &lt;- readLn :: IO Double
+    print(myExp n)
+</code></pre>
+      <p class="has-line-data" data-line-start="62" data-line-end="64">input say <code>5</code><br>
+         output <code>(148.41235524670316,18)</code> and <em>exp(5)</em> is indeed <em>148.413159103</em> .
+      </p>
+      <blockquote>
+         <p class="has-line-data" data-line-start="65" data-line-end="67">The exponential series is something like this:<br>
+            <em>exp(x) = x<sup>0</sup>/0! + x<sup>1</sup>/1! + x<sup>2</sup>/2! + x<sup>3</sup>/3! …</em>
+         </p>
+      </blockquote>
+      <p class="has-line-data" data-line-start="71" data-line-end="72">Now lets break the code into some pieces to demystify it.</p>
+      <table class="table table-striped table-bordered">
+         <thead>
+            <tr>
+               <th>#</th>
+               <th>Comments</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>1</td>
+               <td>First we are defining a function <code>fact</code> which will be used to calculate factorial of an Integer. <code>fact</code> takes an <code>Integer</code> and returns another <code>Integer</code>.</td>
+            </tr>
+            <tr>
+               <td>2</td>
+               <td>Next we are defining <code>myExp</code> which returns a touple <code>(Double, Int)</code>. The first element of this touple is the exponential value (<em>which is sum of the elements of a list</em> <code>sumList</code>) and the second element is the number of terms used to maintain the accuracy.</td>
+            </tr>
+            <tr>
+               <td>3</td>
+               <td><code>sumList = takeWhile (&gt;0.001)[x^n/(fromIntegral $ fact n )|n&lt;-[0..]]</code> <code>sumList</code> is a list whose elements are the each term of the <em>exp</em> series (i.e. each <em>x<sup>n</sup>/n!</em>). Here <code>n</code> runs from <code>0</code> to an integral value as long as each fraction (<em><em>x<sup>n</sup>/n!</em>)</em> is greater than <code>&gt;0.001</code> which is achieved by using <code>takeWhile(&gt;0.001)</code> before defining the list.</td>
+            </tr>
+            <tr>
+               <td>4</td>
+               <td>You might be wondering to calculate each term of series (<em><em>x<sup>n</sup>/n!</em>)</em> only <code>[x^n/(fact n )|n&lt;-[0..]]</code> this piece of code should do the job. <strong>However it will throw some <em>type errors</em> unless you use <code>fromIntegral</code></strong> as the <strong>numerator</strong> and <strong>denominator</strong> are of different types and are incompatible for any mathematical operation.</td>
+            </tr>
+            <tr>
+               <td>5</td>
+               <td>So what magic the <code>fromIntegral</code> does? <code>fromIntegral</code> converts from any <code>Integral</code> type into any <code>Num</code>eric type (which includes <code>Int</code>, <code>Integer</code>, <code>Rational</code>, and <code>Double</code> .</td>
+            </tr>
+            <tr>
+               <td>6</td>
+               <td>Therefore <code>fromIntegral</code> will produce a number (compatible with <strong>numerator</strong>) now we are good to go.</td>
+            </tr>
+         </tbody>
+      </table>
+    <div style="background-color: rgba(250, 250, 250, 0.585); width:100%; height: 100px; padding: 3%; ">
+        <p align="center">
+            <a href="HaskellNotes.Page2.html"> <strong style="float: left;" >  <<< Previous Page  </strong> </a>
+            <strong>You're at Page #3</strong>
+            <a href="HaskellNotes.Page4.html"><strong style="float: right;">  Next Page >>>  </strong>  </a>
+        </p>
+    </div>
+    <div style="background-color:black; width:100%; height: 3rem;border-radius: 12px;">
+            <p  align="center">
+                <a href="https://arijit-ship.github.io/HaskellNotesMain.html"> <strong><u>Home</u> </strong> </a>
+                &nbsp; &nbsp; &nbsp;
+                <a href="HaskellNotes.Page2.html"> <strong>  <u>2</u>  </strong> </a>
+                &nbsp; &nbsp; &nbsp;
+                <a href="HaskellNotes.Page3.html"> <strong>  <u>3</u> </strong> </a>
+                &nbsp; &nbsp; &nbsp;
+                <a href="HaskellNotes.Page4.html"> <strong>  <u>4</u>  </strong> </a>
+                &nbsp; &nbsp; &nbsp;
+                <a href=#> <strong>  <u>5</u>  </strong> </a>
+                
+            </p>
+        </div>
+   </body>
+</html>
