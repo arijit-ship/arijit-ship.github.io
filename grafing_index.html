@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grafing - The Ninja Graph Plotter</title>
+  <link rel="shortcut icon" href="grafing_src/graphy-png-logo.png">
+  <link rel="stylesheet" href="grafing_src/main components/index.css">
+  <link rel="stylesheet" href="grafing_src/lib/bootstrap.min.css">
+  <link rel="stylesheet" type="text/CSS" href="grafing_src/lib/jsxgraph.css">
+  <link rel="stylesheet" type="text/CSS" href="grafing_src/lib/tabulator.min.css">
+  <link rel="stylesheet" type="text/CSS" href="grafing_src/lib/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="grafing_src/lib/easyui.css">
+  <script src="grafing_src/lib/jsxgraphcore.js"></script>
+  <script src="grafing_src/main components/validator.js"></script>
+  <script src="grafing_src/lib/tabulator.min.js"></script>
+  <script type="text/javascript" src="grafing_src/lib/jquery.min.js"></script>
+  <script type="text/javascript" src="grafing_src/lib/jquery.easyui.min.js"></script>
+  <script type="text/javascript" src="grafing_src/lib/bootstrap.min.js"></script>
+  <script type="text/javascript" src="grafing_src/lib/math.js"></script>
+</head>
+
+<body>
+  <!-- TOP NAV BAR -->
+  <div>
+    <div style="background:black; width: 100%; height: 3rem;">
+      <div>
+        <b style="color: azure; font-size: 24pt; margin-left: 10px;">Grafing</b>
+        <b style="color: azure; font-size: 12pt; float: right; margin-right: 15rem; margin-top: 12px;">Repository</b>
+        <b style="color: azure; font-size: 12pt; float: right; margin-right: 1rem; margin-top: 12px;"><a href="grafing_src/main components/grafing_about&faq.html">About & Help</a></b>
+        <!-- 
+          <div class="form-check" style=" float: right ;margin-right: 1rem; margin-top: 1rem;">
+          <input class="form-check-input" type="checkbox" value="" id="gridCheck" checked>
+          <label class="form-check-label" for="flexCheckDefault" style="color:whitesmoke;">
+            Show Grids
+          </label>
+          </div>
+        -->
+      </div>
+    </div>
+  </div>
+  <!-- RESIZABLE LAYOUT -->
+  <div class="easyui-layout" style="width:100%; height:93%;">
+     <!-- WEST PANEL -- TOOLBAR, TABLE etc    -->
+    <div data-options="region:'west',split:true" style="width:40%; border: rgb(14, 14, 14); height: 100%;">
+          
+              <!-- MAIN TOOLBAR -->
+              <div>
+                <div style="height: 1.5cm; width:100%;background: rgb(241, 241, 241);display: flex;">
+                  <div>
+                    <span style="float: left; margin-left: 1rem;margin-top: 0.4cm; text-align: center;">Plot type</span>
+                    <div class="form-group" style="float: left; margin-left: 1rem;margin-top: 0.5rem;">
+                      <select class="form-control" id="plotType" onchange="toggleEquationEdit(); optionDivChange()">
+                        <option value="scatter2d">Scatter 2D</option>
+                        <option value="linearReg">Linear Regression</option>
+                        <option value="poly" >Polynomial Regression</option>
+                        <option value="functionPlot" data-toggle="modal" data-target="#myModal">Function Plot</option>
+                        <option value="bez" data-toggle="modal" data-target="#myModal" disabled>Bézier Curve</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <div id="option-div"  style="float: left ;margin-left: 1rem; margin-top: 0.3rem;">
+                      <div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="showAxes" onclick="showAxesGrid()" checked disabled>
+                          <label class="form-check-label" for="flexCheckDefault" style="color:rgb(0, 0, 0);">
+                            Show Axes & Grids
+                          </label>
+                      </div>
+                    </div> 
+                    <div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="polyChain" checked>
+                        <label class="form-check-label" for="flexCheckDefault" style="color:rgb(0, 0, 0);">
+                          Polygonal Chain
+                        </label>
+                      </div>
+                   </div> 
+                  </div>
+
+                    <div id="poly-div" style="float: left; display: none;">
+                       <span style="float: left; margin-left: 1.5rem;margin-top: 0.4cm; text-align: center;">Polynomial Order</span>
+                       <div class="form-group" id="1" style="float: left; margin-left: 1rem; margin-top: 0.7rem;">
+                       <input type="number" id="poly-Oder" name="points" step="1" value="2" min="2" max="20" style="height: 30px; width: 5rem;">
+                       </label>
+                      </div> 
+                    </div>
+                  </div>
+                  <div id="best-slope-intercept" style="float: left; display: none;">
+                    <div style="display: grid;">
+                      <span id="best-slop" style="margin-left: 1rem; margin-top: 5px;">Best slop: </span>
+                      <span id="y-intercept" style="margin-left: 1rem; margin-top: 5px;">Y-intercept:  </span>
+                    </div> 
+                  </div>
+                </div>
+             
+                <!-- TABLE TOOLBAR -->
+                <div id="table-toolbar" style="height: 30px; display:flex ;">
+                  <button class="button is-small" id="getData" onclick="clearBoard(), isFunctionPlot()" style="background:palegreen; border-color: black; float: left; margin-left: 0;"><b>PLOT</b></button>
+                  <button class="button is-small" id="getData" onclick="replot()" style="background: cornflowerblue; border-color: black">Replot</button>
+                  <button class="button is-small" id="exportButton" onclick="resetClear()" style="background: azure; border-color:black;">Reset & Clear</button>
+                  <button class="button is-small" id="addRows" style="margin-left: 5px"><b>+Row</b></button>
+                  <button class="button is-small" id="addEqn" style="margin-left: 0;" disabled><b>+Equation</b></button>
+                  <button class="button is-small" id="randomPoint" onclick="randomPoints()">Generate Random Data</button>
+                  <div class="form-check" style="margin-left: 0.5rem;margin-top: 5px">
+                    <input class="form-check-input" type="checkbox" id="show-poly-term" checked disabled>
+                    <label class="form-check-label" for="flexCheckDefault" style="color:rgb(0, 0, 0);">
+                    <small>Terms</small>  
+                    </label>
+                </div> 
+                </div>
+              </div>
+
+              <!-- INPUT AREA -->
+              <div style="display: contents;">
+                <!-- DATA TABLE AREA -->
+              <div id="data-table" style="width: auto;">  <!-- HERE IS THE DATA TABLE -->   </div>
+                <!-- EQUATION INPUT DIV -->
+              <div id="equation-div" style="width: auto; display: none;">   <!-- HERE IS EQUATION INPUT -->  </div>
+              </div>  
+
+    </div>
+    <!-- EAST PANEL -- GRAPHING AREA -->
+    <div data-options="region:'center' " style="width: 60%; height: 100%;">
+        <div id="jxgbox3a" style="height: 100%;;background:whitesmoke; width: 100%;"></div>
+    </div>
+  </div>
+  <div style="width: 100%;height: 10rem; background: black;">
+    <p style="padding: 1rem; color: white; text-align: justify;">Hello there. Thanks for using Grafing, the ninja graph plotting tool. This is the web version and some features are disabled(not implemented yet tbh😅). You may want to install the desktop app version(which I'm working on right now) to use those features, like <i>random sample points generator, Bézier curve, WYSIWYG equation editor, etc</i>. You're welcome to fork this project, go to the repository, and download the source codes. Happy coding!
+   <br><br> © Arijit Das / Project Grafing / 2021
+   <span style="float: right;">
+                
+                <!-- hitwebcounter Code START -->
+                <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=7916039&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                                             
+  </span>
+  </p>
+  </div>
+
+
+</body>
+<script src="grafing_src/main components/fendProcess.js"></script>
+<script src="grafing_src/math components/scatter_plot.js"></script>
+<script src="grafing_src/math components/linear_regression.js"></script>
+<script src="grafing_src/math components/polynomial_regression.js"></script>
+<script src="grafing_src/math components/function_plot.js"></script>
+</html>
