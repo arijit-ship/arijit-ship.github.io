@@ -1,0 +1,1498 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>C++ Ninja Notes</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">⚡Introduction</li><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> An Awkward Introduction</a></li><li class="chapter-item expanded "><a href="basics_of_any_language.html"><strong aria-hidden="true">2.</strong> Programming 101 - The basics of any language</a></li><li class="chapter-item expanded affix "><li class="part-title">📚Learning C++</li><li class="chapter-item expanded "><a href="c++_getting_started.html"><strong aria-hidden="true">3.</strong> C++ - Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hello_world.html"><strong aria-hidden="true">3.1.</strong> Hello world</a></li><li class="chapter-item expanded "><a href="user_input_data_types.html"><strong aria-hidden="true">3.2.</strong> User input, data types</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">3.3.</strong> Conditional statements: If-else & switch-case</a></li><li class="chapter-item expanded "><a href="loops.html"><strong aria-hidden="true">3.4.</strong> Loops</a></li><li class="chapter-item expanded "><a href="array.html"><strong aria-hidden="true">3.5.</strong> Array</a></li><li class="chapter-item expanded "><a href="function.html"><strong aria-hidden="true">3.6.</strong> Function</a></li></ol></li><li class="chapter-item expanded "><a href="c++_advanced_stuff.html"><strong aria-hidden="true">4.</strong> Advanced stuff</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="pointer.html"><strong aria-hidden="true">4.1.</strong> Pointer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference_memoryAddress.html"><strong aria-hidden="true">4.1.1.</strong> Reference & memory address</a></li><li class="chapter-item expanded "><a href="pointer_working.html"><strong aria-hidden="true">4.1.2.</strong> Pointer: Working with pointer</a></li><li class="chapter-item expanded "><a href="pointer_with_array.html"><strong aria-hidden="true">4.1.3.</strong> Pointer with array</a></li></ol></li><li class="chapter-item expanded "><a href="file_handling.html"><strong aria-hidden="true">4.2.</strong> File handling</a></li><li class="chapter-item expanded "><a href="vector.html"><strong aria-hidden="true">4.3.</strong> Vector</a></li><li class="chapter-item expanded "><a href="structure_union_enum.html"><strong aria-hidden="true">4.4.</strong> Structure, union & enum</a></li><li class="chapter-item expanded "><a href="oops.html"><strong aria-hidden="true">4.5.</strong> OOPs</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">💖Syntactic sugar</li><li class="chapter-item expanded "><a href="syntactic_sugar.html"><strong aria-hidden="true">5.</strong> Syntactic sugar in C++</a></li><li class="chapter-item expanded affix "><li class="part-title">🐱‍🏍Examples</li><li class="chapter-item expanded "><a href="practical_class.html"><strong aria-hidden="true">6.</strong> C++ code on practical classes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sorting.html"><strong aria-hidden="true">6.1.</strong> Sorting(Bubble sort)</a></li><li class="chapter-item expanded "><a href="mat_add.html"><strong aria-hidden="true">6.2.</strong> Matrix addition</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">C++ Ninja Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div style="break-before: page; page-break-before: always;"></div><h1 id="introductionkinda-awkward"><a class="header" href="#introductionkinda-awkward">Introduction(kinda awkward...!)</a></h1>
+<p>Before getting started, I must tell you guys that, this is not any kind of C++ tutorial, per se; neither I'm any expert C++ programmer. This is a well-arranged notes(which I love to call 'C++ Ninja Notes') that I'm making while teaching myself C++. Any kind of correction is welcomed😄</p>
+<p>Also, I'm assuming you have some basic knowledge on computer programming like what is a text editor, what is a compiler and interpreter, how to get one installed on your machine and now you're ready to write some high quality code😎.</p>
+<p>Having a bit of knowledge in any programming language will be surely nice, since  <em>syntax does not matter, problem solving patterns matter most!</em></p>
+<h2 id="references"><a class="header" href="#references">References]</a></h2>
+<ul>
+<li><a href="https://www.w3schools.com/CPP/default.asp">W3 School</a></li>
+</ul>
+<p><em>✔ Also I'd not recommend any book since I really don't read any book for programming. If you're one of those kind who can't get along without a book, please feel free to keep one with you. Our approach of learning new languages should be more pragmatic. In real world software development, you often work with multiple languages and constantly learning new things and improving your problem solving pattern. Programming is not about memorizing syntaxes since you'll keep on forgetting them.</em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="programming-101---the-basics-of-any-language"><a class="header" href="#programming-101---the-basics-of-any-language">PROGRAMMING 101 - THE BASICS OF ANY LANGUAGE</a></h1>
+<hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
+<h2 id="what-is-computer-programming"><a class="header" href="#what-is-computer-programming">🤔What is computer programming?</a></h2>
+<p>Computer programming(aka coding) means writing a set of instructions to your computer for solving any computation.</p>
+<h2 id="what-is-a-programming-language"><a class="header" href="#what-is-a-programming-language">💻What is a programming language?</a></h2>
+<p>Language is the  <em>way</em>  we communicate with each other. A programming language is the exact same thing to communicate with your computer. Like any human language(Bengali, English etc.), a programming language also has some syntactical and grammatical rules.</p>
+<p>In more formal definition, programming language is a set of rules to perform any kind of computation. Programming languages are  <strong>Turing-complete</strong>  meaning it can be used to simulate any  <strong>Turing machine</strong>  which can solve virtually any mathematical problem.</p>
+<h2 id="some-terminologies"><a class="header" href="#some-terminologies">📢Some terminologies:</a></h2>
+<table><thead><tr><th>#</th><th>Terms</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>1</td><td>Variable</td><td>Container to store data.</td></tr>
+<tr><td>2</td><td>Character</td><td>Unit of in information equivalent to one alphabatic letter or symbol.</td></tr>
+<tr><td>3</td><td>String</td><td>Sequence of characters.</td></tr>
+<tr><td>4</td><td>Compiler</td><td>A translator for converting human readable language to machine language. It converts the entire source code in a single run.</td></tr>
+<tr><td>5</td><td>Interpreter</td><td>A translator which translate each line of your code at a time.</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="c"><a class="header" href="#c">C++</a></h1>
+<hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
+<p><strong>C++ is a statically-typed compiled programming language.</strong> It was created in 1979 by Bjarne Stroustrup. He was inspired by the object-oriented nature of Simula and but needed a language with high performance like C. And thats how C++, a language basically C with classes, was born. C++ is a superset of C, so virtually any C program is also a valid program in C++.</p>
+<blockquote>
+<p>C++ or C-plus-plus or Cpp is an extremely popular object-oriented programming language. Created in 1979, today it powers game engines, databases, compilers, embedded systems, desktop software, and much of our software infrastructure.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hello-world"><a class="header" href="#hello-world">HELLO WORLD</a></h1>
+<hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
+<h2 id="boilerplate"><a class="header" href="#boilerplate">⚡Boilerplate:</a></h2>
+<b>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+
+int main()
+{
+    /*
+    *Everything inside
+    *here will be executed
+    */
+    return 0;
+}
+</code></pre>
+</b>
+<br><br>
+Open your favorite code editor and type the following lines of code:
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+
+int main(){
+    std::cout&lt;&lt;&quot;Hello World!&quot;;
+    return 0;
+}
+</code></pre>
+</b>
+<p>👉After compiling and running it successfully, you should get <code>Hello World!</code> in the output.</p>
+<p>Now let's break down the code---</p>
+<table><thead><tr><th>Snippet</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>#include&lt;iostram&gt;</code></td><td>We are adding basic input-output functionalities to our code by including a library(aka a <em>header file</em>) called iostream. You need iostream for every C++ coding.</td></tr>
+<tr><td><code>int main()</code></td><td>This is our main function. Everything inside this function will be executed. Here, the prefix <code>int</code> specifies return type of the main function.</td></tr>
+<tr><td><code>std::cout&lt;&lt;&quot;Hello World!&quot;;</code></td><td>To print <em>Hello World!</em> write standard character output(<code>std::</code>) followed by <code>cout</code> followed by <code>&lt;&lt;</code> and a string literal. You can get rid of <code>std::</code> by adding <code>using namespace std;</code> on the top of <code>main()</code> function.</td></tr>
+<tr><td><code>return 0</code></td><td>After executing everything, <code>main()</code> function returns an integer like 0 or 1: <code>0</code> means a normal exit and any non-zero integer means an abnormal exit. You don't need to dig into details at this point. Just remember it like some kind of <em>grammartical rule</em>. However, I'm putting a link for reference 👉<a href="https://stackoverflow.com/questions/204476/what-should-main-return-in-c-and-c">Stackoverflow</a>.</td></tr>
+</tbody></table>
+<blockquote>
+<p><strong>🚧In C++,  <code>main()</code>  strictly needs to be  <code>int</code>!</strong></p>
+</blockquote>
+<p>💡 Now to get rid of that <code>std::</code> we'll be using <code>using namespace std</code> from now on:
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    //Printing 'Hello world!'
+    cout&lt;&lt;&quot;Hello world!&quot;;
+    return 0;
+}
+</code></pre>
+</b><div style="break-before: page; page-break-before: always;"></div><h1 id="user-input-data-types"><a class="header" href="#user-input-data-types">USER INPUT, DATA TYPES</a></h1>
+<hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
+<h2 id="taking-user-input"><a class="header" href="#taking-user-input">Taking user input</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>Now will be seeing how to get an input from the user. Here we'll be using <code>cin &gt;&gt;</code> to assign the user input to a variable. The following code asks for your name(which is out input) and then greets you in the output.
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+
+using namespace std;
+
+int main() {
+    string x;
+    cout &lt;&lt; &quot;Enter your name: \n&quot;;
+    cin &gt;&gt; x; 
+    cout &lt;&lt; &quot;Hello &quot; + x + &quot;. Nice to meet you!&quot;;
+    return 0;
+}
+</code></pre>
+</b>
+<p>👉When you run this code, it asks your name by displaying <code>Enter your name</code>. Then you type your name (say <code>Roy Mustang</code> for example) and hit the enter. Now you will see <code>Hello Roy Mustang! Nice to meet you.</code> Here you name was an input that you entered.
+<strong>A few things you may already have noticed</strong></p>
+<p>✍ We're including another header  <code>&lt;string&gt;</code>  in our code. That's because, your name is a string i.e. sequence of characters. Unlike some other high level languages like python; C++ is statically typed and we need to tell the compiler beforehad that hey we are going to use string in this code.</p>
+<blockquote>
+<p><strong>✌</strong>: Another thing worth mentioning is that the above code might still work even without using  <code>#include&lt;string&gt;</code>. The implementation of  <code>iostream</code>  header file indirectly adds the string to your code. But this trick does not always work(depending on what you're doing), so its better to add string explicitly.</p>
+</blockquote>
+<p>✍ Also from now on, we'll be dropping  <code>std::</code>  by adding  <code>using namespace std</code>  before starting  <code>main()</code>.</p>
+<blockquote>
+<p><strong>🚧 String Concatenation</strong>: <code>+</code> is used for appending strings one by one.</p>
+</blockquote>
+<h2 id="data-types"><a class="header" href="#data-types">Data types</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>📌Basic data-types in C++</p>
+<table><thead><tr><th>Data type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>int</code></td><td>Stores integer</td></tr>
+<tr><td><code>float</code></td><td>Srotes decimal number</td></tr>
+<tr><td><code>char</code></td><td>Stores a single character</td></tr>
+<tr><td><code>string</code></td><td>Stores sequence of characters</td></tr>
+<tr><td><code>bool</code></td><td>Stores true or false type</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="conditional-statements"><a class="header" href="#conditional-statements">CONDITIONAL STATEMENTS</a></h1>
+<hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
+<blockquote>
+<p>In any programming language, the code needs to make decisions and carry out actions accordingly depending on different inputs. For example, in a game, if the player's number of lives is 0, then it's game over - <a href="https://developer.mozilla.org/">MDN</a></p>
+</blockquote>
+<p>⚡C++ has the following conditional statements:</p>
+<ul>
+<li>Use  <code>if</code>  to specify a block of code to be executed, if a specified condition is true</li>
+<li>Use  <code>else</code>  to specify a block of code to be executed, if the same condition is false</li>
+<li>Use  <code>else if</code>  to specify a new condition to test, if the first condition is false</li>
+<li>Use  <code>switch</code>  to specify many alternative blocks of code to be executed</li>
+</ul>
+<h2 id="if-else-statement-in-c"><a class="header" href="#if-else-statement-in-c">If-else statement in C++</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>👉Boilerplate:</p>
+<b>
+<pre><code class="language-c++">if (condition) {
+  /* code to run if condition is true */
+} else {
+  /* run some other code instead */
+}
+</code></pre>
+</b>
+<p>👉Let's begin with an example. Here we'll be using if-else statement for making decisions. Here user will enter an input interger and we will be checking wheather it is an odd number or an even number.</p>
+<b>
+<pre><code class="language-c++">/*
+* Written by Arijit Das, 2022
+* C++ code to check if an integer is odd or even using if-else statements
+*/
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    //First declare variable of type interger for storing the input
+    int x;
+    
+    //Ask to enter an integer
+    cout &lt;&lt; &quot;Enter an interger\n&quot;;
+    
+    //Assign the input integer to the variable
+    cin &gt;&gt; x;
+    
+    //Checking if it's odd or even using if-else statements
+    if(x%2 == 0){
+        cout &lt;&lt; &quot;Even number&quot;;
+    }
+    else{
+        cout &lt;&lt; &quot;Odd number&quot;;
+    }
+    return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+<p>⚡In the above code we're using comments for better understanding. Comments are ignored during compilation. Having comments on your code is a good practice, it help you and other understand the code. For single line coment use <code>/</code>(forward slash) for multiline comments use <code>/*Multiline comments*/</code></p>
+</blockquote>
+<blockquote>
+<p><strong>✍Note</strong>  <code>%</code> is called <em>modulo operator</em>. <code>x%2</code> returns the value of remainder after dividing x by 2. <code>==</code> is another operator which comapres two values. If value matches it returns <code>true</code> otherwise <code>false</code>. So with <code>x%2 == 0</code>, we are comparing the value of remainder to zero, if it is zero, then x is an even number otherwise is an odd number.</p>
+</blockquote>
+<h2 id="switch-case"><a class="header" href="#switch-case">Switch-case</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>Switch-case is used for selecting one of many code-blocks to be executed.</p>
+<p>✍Boilerplate:
+<b></p>
+<pre><code class="language-c++">switch(_expression_) {  
+case  x:  
+_// code block_  
+break;  
+case y:  
+_// code block_  
+break;  
+default:  
+_// code block_  
+}
+</code></pre>
+</b>
+<p><br><br>
+👌Example: A nice example from W3 School
+<br>
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  int day = 4;
+  switch (day) {
+  case 1:
+    cout &lt;&lt; &quot;Monday&quot;;
+    break;
+  case 2:
+    cout &lt;&lt; &quot;Tuesday&quot;;
+    break;
+  case 3:
+    cout &lt;&lt; &quot;Wednesday&quot;;
+    break;
+  case 4:
+    cout &lt;&lt; &quot;Thursday&quot;;
+    break;
+  case 5:
+    cout &lt;&lt; &quot;Friday&quot;;
+    break;
+  case 6:
+    cout &lt;&lt; &quot;Saturday&quot;;
+    break;
+  case 7:
+    cout &lt;&lt; &quot;Sunday&quot;;
+    break;
+  }
+  return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+<p>👀 beak keyword stops further execution of a code block. By using it properly, a lot of execution time can be saved.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="loops"><a class="header" href="#loops">LOOPS</a></h1>
+<hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
+In C++, we have `for`, `while`, `do-while` loops. A _loop_ is used for executing a block of code repeatedly.
+<h2 id="1for-loop"><a class="header" href="#1for-loop">1️⃣For loop</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>✍Boilerplate
+<b></p>
+<pre><code class="language-c++">for  (_statement 1_; _statement 2_; _statement 3_) {  
+    // code block to be executed_  
+}
+</code></pre>
+</b>
+<p>🐱‍👤Like you're a huge fan of Naruto and you want to print his name 1000 time. You can do this by writing 1000 time <code>cout&lt;&lt; &quot;Naruto!&quot;</code> but that's so boring and you probably start hating Naruto. So to pritnt Naruto 1000 time, we will be using for loop:</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+
+using namespace std;
+int main() {
+    
+    for(int i=0; i&lt;1000; i++){
+    
+        cout &lt;&lt; &quot;Naruto!\n&quot;;
+    }
+    return 0;
+}
+</code></pre>
+</b>
+<p>🎉Congrats! You just printed Naruto 1000 time, a loyal fan!!!
+<br><br></p>
+<p>🔢 Similarly you can print 0 to 1000 all nubers just by modifing the above code a little bit:
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+
+using namespace std;
+
+int main() {
+    
+    for(int i=0; i&lt;=1000; i++){
+    
+        //Converting an integer i to a string to concatinate with '\n'
+        cout &lt;&lt; to_string(i)+&quot;\n&quot;;
+    }
+    return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+<p>😎 To make things a little bit overkilling, here we're converting an integer to a string using <code>to_string()</code> function(need to include <code>&lt;string&gt;</code>)</p>
+</blockquote>
+<h2 id="2while-loop"><a class="header" href="#2while-loop">2️⃣While loop</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>✍Boilerplate:
+<b></p>
+<pre><code class="language-c++">while(condition) {
+   statement(s);
+}
+</code></pre>
+</b>
+<p>So untill the condition satisfies, the statement(s) will be executed.</p>
+<p>👉Suppose you want to print all the integers less than 100. Now you can do this by combining a <em>for-loop</em> &amp; an <em>if statement</em> and congrats if you already figured this out. But alterbatively we can use a <code>while</code> loop to do the same thing:</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+
+using namespace std;
+
+int main() {
+
+   //Setting initial value of integer i to zero
+   int i =0;
+   
+   while(i &lt;=100){
+   
+        //Converting an integer i to a string to concatinate with '\n'
+        cout &lt;&lt; to_string(i)+&quot;\n&quot;;
+        
+        //Incrementing i by 1
+        i++;
+    }
+    return 0;
+}
+</code></pre>
+</b>
+<h2 id="3do-while-loop"><a class="header" href="#3do-while-loop">3️⃣Do-while loop</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>👉Bpilerplate:
+<b></p>
+<pre><code class="language-c++">do {
+   statement(s);
+}
+while( condition );
+</code></pre>
+</b>
+<p>So after executing the statements inside  <code>do{}</code>  , conditions are checked. Unlike a  <em>while loop</em>, Since the conditions are being checked at the bootm, the stamements must run at least once.</p>
+<p>The same code to pring all the integers less than 100 in do-while loop is:</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+
+using namespace std;
+
+int main() {
+    //Setting initial value of integer i to zero
+   int i =0;
+   do{
+       cout &lt;&lt; to_string(i) + &quot;\n&quot;;
+       i++;
+   }
+   while(i&lt;100);
+   return 0;
+}
+</code></pre>
+</b>
+<p>👌<strong>While vs do-while loop:</strong></p>
+<p><img src="https://preview.redd.it/6wksqjmmyw321.jpg?auto=webp&amp;s=aceebdeb23af98598c2508b42f77debbcd36cf4b" alt="👌While vs do-while loop:" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="array"><a class="header" href="#array">ARRAY</a></h1>
+<hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
+<p>Arrays are fixed-size sequence containers: they hold a specific number of elements ordered in a strict linear sequence. Arrays are used for storing multiple values in a single object(kinda like variable). Each value is called an element of the array and the total number of elements in the array is called array length. Each element has an index. In C++ all the elements in an array have to be of the same type and indexing starts from zero.</p>
+<p>For example <code>[1, 2, 3, 4, 5]</code> is an array of integers or <code>[1.0, 2.0, 3.0]</code> is an array of floating numbers.</p>
+<h2 id="creating-an-array-in-c"><a class="header" href="#creating-an-array-in-c">Creating an array in C++</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>To declare an array, define the variable type, specify the name of the array followed by  <strong>square brackets</strong>  and specify the number of elements it should store:</p>
+<p>👉 Declare an array to store any of 5 anime characters' name:</p>
+<b>
+<pre><code class="language-c++">string name[5] = {&quot;Inuyasha&quot;, &quot;Ichigo&quot;, &quot;Elrick&quot;, &quot;Shibazaki&quot;, &quot;Natsu&quot;}
+</code></pre>
+</b>
+<p><strong>👌Accessing array element: Now write a code to print &quot;Elrick&quot;</strong></p>
+<p>The index of Inuyasha is 0, Ichigo is 1, Elrick is 2 and so on. We need this indices to access the array elements.</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+
+using namespace std;
+
+int main() {
+    
+   string name[5] = {&quot;Inuyasha&quot;, &quot;Ichigo&quot;, &quot;Elrick&quot;, &quot;Shibazaki&quot;, &quot;Natsu&quot;};
+   cout &lt;&lt; name[2];
+   
+   return 0;
+}
+</code></pre>
+</b>
+<p><strong>✌C'mon! Lets print other characters too.</strong></p>
+<p>Again you can do this manually by writing <code>cout&lt;&lt;</code> for each element. This method is not pragmatic when you have an array of larger size. So we will be using for loop to print each element of <code>name</code>.
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+
+using namespace std;
+
+int main() {
+    
+   string name[5] = {&quot;Inuyasha&quot;, &quot;Ichigo&quot;, &quot;Elrick&quot;, &quot;Shibazaki&quot;, &quot;Natsu&quot;};
+   
+   for(int i=0; i&lt;=4; i++){
+   
+       cout &lt;&lt; name[i]+&quot;\n&quot;;
+       
+   }
+   
+   return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+</blockquote>
+<p>⚡Here we are running the loop from <code>i=0</code> to <code>i=4</code> i.e. total 5 values of <code>i</code> since we know that the array length is 5. <strong>But what if we had an array and we didn't know its length?!</strong></p>
+<h2 id="populating-an-array-with-user-inputs"><a class="header" href="#populating-an-array-with-user-inputs">Populating an array with user inputs</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>⚡ Here we'll populate an array with some user-inputs.</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+
+int main() {
+    //Declare an array
+    string name[5];
+    cout&lt;&lt;&quot;Enter your all time fovorite 5 anime:\n&quot;;
+    
+    //Storing user inputs in the array cells
+    for(int i = 0; i&lt;4; i++){
+        cout&lt;&lt;&quot;No #&quot;&lt;&lt;(i+1)&lt;&lt;&quot;: &quot;;
+        cin&gt;&gt;name[i];
+    }
+    
+    //Printing stored values 
+    for(int i = 0; i&lt;4; i++){
+        cout&lt;&lt;&quot;Anime no.&quot;&lt;&lt;(i+1)&lt;&lt;&quot; &quot;&lt;&lt;name[i]&lt;&lt;&quot;\n&quot;;
+    }
+    
+    return 0;
+}
+</code></pre>
+</b>
+<h2 id="finding-length-of-an-array"><a class="header" href="#finding-length-of-an-array">🚧Finding length of an array:</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>Finding array length is bit tricky in C++. Here we'll use  <code>sizeof()</code>  function to  <em>calculate</em>  an array length:  <code>sizeof()</code>  returns the total size of an array(or any data type). Now, dividing the total size by the size of any array-element's data-type, we'll get the length of the array.</p>
+<p>👍For example,  <code>integer_array = [10 ,25, 37, 56,63, 100]</code>  So here length of the array is  <code>(Total size of the array/Size of an integer)</code>.</p>
+<p>🤔Now you may ask,  <em>how do I know the size of an integer?!</em>  Well you can remember it!! But that will be so painstaking task to remember size of every data-type. So again we can use  <code>sizeof()</code>  function to get the size of an integer(or any other data type).</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // declaring the array of integer type
+    int integer_array[]= {10 ,25, 37, 56,63, 100};
+    
+    //calculating length. You can divide by size of any array element since all elements are of integer type
+    int length = sizeof(integer_array)/sizeof integer_array[0];
+    
+    cout &lt;&lt; length;
+
+    return 0;
+}
+</code></pre>
+</b>
+<br><br>
+<p><strong>🦥 Now programmers are lazy creatures! So there should be a better way of finding array length. Because in real world software development, you don't want to write that much just to get an array length.</strong></p>
+<p>👌Well there is a dedicated <em>class</em>(we'll discuss about class later) called <code>array</code> which does all array-related stuff for you. The following code, find the array in more delicate way:
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;array&gt;
+using namespace std;
+
+int main() {
+    
+    // Declaring an array by uing 'array' keyword followed by type and length inside angular brackets
+    array&lt;int, 6&gt; integer_array{10, 25, 37, 56,63, 100};
+    
+    //arrayname.size() returns the length of the array
+    cout &lt;&lt; integer_array.size();
+
+    return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+<p>😅<strong>Note</strong>: In the above code you probably have noticed that we're declaring array in different way: first we use <code>array</code> keyword followd by array elements' data-type, length of the arrray inside <code>&lt;&gt;</code>. <code>arrayname.size()</code> returns the 'size' (here size refers to length) of an array. Now its a bit stupid for find an array length which we have already specified in <code>array&lt;int, 6&gt;</code>!!</p>
+</blockquote>
+<p>🚀 <em>Related topic:</em>  <a href="vector.html">Vector</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="function"><a class="header" href="#function">FUNCTION</a></h1>
+<hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
+<p>👍A function takes one or many input(s) and spits out some output. The input(s) you pass to a function is/are called <em>parameter(s)</em>. Functions are reusable, you write once and call them many times whever you need them. To create (often referred to as <em>declare</em>) a function, specify the name of the function, followed by parentheses <code>( )</code></p>
+<p>✍Boilerplate:</p>
+<b>
+<pre><code class="language-c++">void  functionName() {  
+    // code to be executed  
+}
+</code></pre>
+</b>
+<blockquote>
+<p><strong>⚡  <code>void</code>  means that the function does not have a return value.</strong></p>
+</blockquote>
+<h2 id="calling-a--function"><a class="header" href="#calling-a--function">Calling a  function</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>When you define a function, it is not executed immediately. They are &quot;saved for later use&quot;, and will be executed later, when they are called. To call a function, write the function's name followed by two parentheses <code>()</code> and a semicolon <code>;</code></p>
+<p><strong>👉Examples</strong></p>
+<p><strong>1. Printing &quot;Hello World!&quot; using function</strong></p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+//Defining out function
+void printHelloWorld(){
+   cout &lt;&lt; &quot;Hello World!&quot;;
+}
+
+int main() {
+   
+   //Calling the function
+   printHelloWorld();
+   return 0;
+}
+</code></pre>
+</b>
+<p><strong>2. Adding two numbers (user-input) using a function.</strong></p>
+<b>
+<pre><code class="language-c++">/*
+*Write a function to add two numbers. Pass the user-inputs to this function
+*as parameter and call it.
+*/
+#include &lt;iostream&gt;
+using namespace std;
+
+float addTwoNum(float a, float b){
+    return a+b;
+}
+
+int main() {
+    
+    cout&lt;&lt; &quot;Enter two numbers: \n&quot;;
+    float x, y;
+    cin &gt;&gt; x;
+    cin &gt;&gt; y;
+    float result = addTwoNum(x, y);
+    cout &lt;&lt; result;
+
+    return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+<p>✍Function <code>addTwoNum()</code> returns a floating point number. That's why instead of <code>void</code>, we are using <code>float addTwoNum()</code> .</p>
+</blockquote>
+<h2 id="function-prototype"><a class="header" href="#function-prototype">Function prototype</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>In the above examples if you define, <code>addTwoNum()</code> after <code>main()</code> function, it'd throw an error. However, you can declare a function before <code>main()</code> and then define it separately after <code>main()</code>.</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+//Function prototype
+float addTwoNum(float num1, float num2);
+
+int main() {
+    
+    cout&lt;&lt; &quot;Enter two numbers: \n&quot;;
+    float x, y;
+    cin &gt;&gt; x;
+    cin &gt;&gt; y;
+    float result = addTwoNum(x, y);
+    cout &lt;&lt; result;
+
+    return 0;
+}
+
+//Defining
+float addTwoNum(float a, float b){
+    return a+b;
+}
+</code></pre>
+</b>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-stuff"><a class="header" href="#advanced-stuff">ADVANCED STUFF</a></h1>
+<hr style="height: 5px; border: none; background: rgb(255,55,55);background: linear-gradient(90deg, rgba(255,55,55,1) 0%, rgba(152,27,228,1) 48%, rgba(251,251,251,1) 100%);">
+<p>So you've already learned how to greet the world, print your favorite anime character's name 1000 times uisng a loop, how to use an array &amp; add two numbers with a function in the previous 101 chapters. </p>
+<p>Congrulations🎉The basics are done and now you're ready for some advanced coding🚀</p>
+<h2 id="heres-well-be-learning"><a class="header" href="#heres-well-be-learning">⚡Here's we'll be learning:</a></h2>
+<ul>
+<li>Pointer</li>
+<li>Vector</li>
+<li>Structure, union &amp; enum</li>
+<li>Object oriented programming in C++</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pointer"><a class="header" href="#pointer">POINTER</a></h1>
+<hr style="height: 5px; border: none; background: rgb(255,55,55);background: linear-gradient(90deg, rgba(255,55,55,1) 0%, rgba(152,27,228,1) 48%, rgba(251,251,251,1) 100%);">
+<p>Pointer is a special kind variable that stores memory address. Up until now, we accessed variables by their identifiers(names). This way, you don't have to worry about the actual physical memory address of the variable, you can use the variable just by using its name. However, pointer allows you to access the actual memory address.</p>
+<p>🐱‍You can read the documentation on pointer here: <a href="https://cplusplus.com/doc/tutorial/pointers/">cplusplus.com</a></p>
+<p><br><br>
+👉Outline of this topic:</p>
+<ul>
+<li>Reference &amp; memory address</li>
+<li>Pointer 101</li>
+<li>Pointer with array</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reference--memory-address"><a class="header" href="#reference--memory-address">REFERENCE &amp; MEMORY ADDRESS</a></h1>
+<hr style="height: 5px; border: none; background: rgb(255,55,55);background: linear-gradient(90deg, rgba(255,55,55,1) 0%, rgba(152,27,228,1) 48%, rgba(251,251,251,1) 100%);">
+<h2 id="reference"><a class="header" href="#reference">📌Reference</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>A reference is a variable which 'refers' to another existing variable. A reference is created using the ampersand operator(<code>&amp;</code>):</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+
+   string food = &quot;rice&quot;; //food variable
+   string &amp;meal = food; //reference to food
+   
+   return 0;
+}
+</code></pre>
+</b>
+<p>Now, we can use either the variable name <code>food</code> or the reference name <code>meal</code> to refer to the <code>food</code> variable:</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+
+    string food = &quot;rice&quot;; //food variable
+    string &amp;meal = food; //reference to food
+    
+    cout&lt;&lt;&quot;Variable food: &quot;&lt;&lt; food &lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Reference to food: &quot;&lt;&lt;meal&lt;&lt;&quot;\n&quot;;
+    
+    return 0;
+}
+</code></pre>
+</b>
+<h2 id="memory-address"><a class="header" href="#memory-address">⚡Memory address</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>Earlier, we've used the  <code>&amp;</code>  operator to create a reference to a variable. But it can also be used to get a variable's memory address, the location where the variable is stored on the computer.</p>
+<p>When you declare a variable is C++, a memory address is assigned to that variable. And when we assign a value to the variable, it is stored in this memory address.</p>
+<p>To access it, use the  <code>&amp;</code>  operator, and the result will represent where the variable is stored:
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+
+    string food = &quot;rice&quot;; //food variable
+ 
+    cout &lt;&lt; &quot;Memory address of variable 'food' : &quot;&lt;&lt; &amp;food &lt;&lt;&quot;\n&quot;;
+    
+    return 0;
+}
+</code></pre>
+</b>
+<p>🤔Output: <code>Memory address of variable 'food' : 0x7ffeb2511150</code></p>
+<blockquote>
+<p>The memory address is in hexadecimal. Here, <code>0x</code> at the beginning represents the address is in the hexadecimal form. Also, it's most likely that you wont not get the exact same value in the output, since you don't have any control which memory cells were to be allocated.</p>
+</blockquote>
+<h2 id="dereference-operator-"><a class="header" href="#dereference-operator-">Dereference operator (*)</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>I already mentioned, pointer is a special kind of variable that stores momory address of another variable.</p>
+<p>An interesting property of pointers is that they can be used to access the variable they point to directly. This is done by preceding the pointer name with the dereference operator (*). The operator itself can be read as &quot;value pointed to by&quot;. We'll see how to use it in the next chapter.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pointer-working-with-pointer"><a class="header" href="#pointer-working-with-pointer">POINTER: WORKING WITH POINTER</a></h1>
+<hr style="height: 5px; border: none; background: rgb(255,55,55);background: linear-gradient(90deg, rgba(255,55,55,1) 0%, rgba(152,27,228,1) 48%, rgba(251,251,251,1) 100%);">
+<p>Here we'll be exploring some very beginners stuff in pointer.</p>
+<p>I already mentioned, a point is a special kind of variable that stores memory address of another variable. Pointers are said to &quot;point to&quot; the variable whose address they store.</p>
+<h2 id="creating-a-pointer"><a class="header" href="#creating-a-pointer">Creating a pointer</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>To create a pointer specify the <code>data type</code> followed by dereference operator (<code>*</code>) and an identifier or name of your pointer variable:</p>
+<p>👉A pointer variable with the name 'foo' point to another string variable.</p>
+<b>
+<pre><code class="language-c++">int bar; //an int variable
+int* foo; // a pointer variable to store memory address
+</code></pre>
+</b>
+<blockquote>
+<p>📢Note that the type of the pointer has to match the type of the variable your pointer is pointing to.</p>
+</blockquote>
+<p><strong>📌Example</strong></p>
+<p>(Ref : W3 School)</p>
+<b>
+<pre><code class="language-c++">string food = &quot;Pizza&quot;;  // A food variable of type string
+string* ptr = &amp;food;    // A pointer variable, with the name ptr, that stores the address of food
+
+// Output the value of food (Pizza)
+cout &lt;&lt; food &lt;&lt; &quot;\n&quot;;
+
+// Output the memory address of food (0x6dfed4)
+cout &lt;&lt; &amp;food &lt;&lt; &quot;\n&quot;;
+
+// Output the memory address of food with the pointer (0x6dfed4)
+cout &lt;&lt; ptr &lt;&lt; &quot;\n&quot;;
+</code></pre>
+</b>
+<h2 id="get-memory-address-and-value-using-pointer"><a class="header" href="#get-memory-address-and-value-using-pointer">Get memory address and value using pointer:</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>In pointer you store memory address of another variable; however you can also get the value of that variable with pointer:</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    
+    int bar = 5;
+    int*  foo = &amp;bar;
+    
+    //Value of bar
+    cout&lt;&lt;&quot;bar = &quot;&lt;&lt;bar&lt;&lt;&quot;\n&quot;;
+    
+    //Value of bar using pointer
+    cout&lt;&lt;&quot;bar(using pointer) = &quot;&lt;&lt;*foo&lt;&lt;&quot;\n&quot;;
+    
+    //Memory address of bar using pointer
+    cout&lt;&lt;&quot;Memory address of bar: &quot;&lt;&lt;foo&lt;&lt;&quot;\n&quot;;
+
+    return 0;
+}
+</code></pre>
+</b>
+<h2 id="updating-value-using-pointer"><a class="header" href="#updating-value-using-pointer">Updating value using pointer:</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>A variable's value can be updated/modified using pointer:
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    
+    int bar = 5;
+    int*  foo = &amp;bar;
+    
+    //Value of bar
+    cout&lt;&lt;&quot;Old value: bar = &quot;&lt;&lt;bar&lt;&lt;&quot;\n&quot;;
+    
+    //Updating value of bar using the pointer
+    *foo = 10;
+    
+    //New value of bar
+    cout&lt;&lt;&quot;New value: bar = &quot;&lt;&lt;bar&lt;&lt;&quot;\n&quot;;
+    
+    //Printing new value of bar with pointer
+    cout&lt;&lt;&quot;This new value is printed using pointer: bar = &quot;&lt;&lt;*foo&lt;&lt;&quot;\n&quot;;
+    
+    //Memory address of bar using pointer
+    cout&lt;&lt;&quot;Memory address of bar: &quot;&lt;&lt;foo&lt;&lt;&quot;\n&quot;;
+
+    return 0;
+}
+</code></pre>
+</b><div style="break-before: page; page-break-before: always;"></div><h1 id="pointer-with-array"><a class="header" href="#pointer-with-array">POINTER WITH ARRAY</a></h1>
+<hr style="height: 5px; border: none; background: rgb(255,55,55);background: linear-gradient(90deg, rgba(255,55,55,1) 0%, rgba(152,27,228,1) 48%, rgba(251,251,251,1) 100%);">
+<p>🚧As discussed earlier, pointer is a special kind of variable that stores memory address of another variable which it is pointing to. In addition to this, pointer can also store the address of array cells and thus array cells(thereby elements) can be accessed.</p>
+<p><em>Reference</em>: <a href="https://www.programiz.com/cpp-programming/pointers-arrays">Programiz</a></p>
+<h2 id="pointer-with-array-thru-some-examples"><a class="header" href="#pointer-with-array-thru-some-examples">👌Pointer with array thru some examples:</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p><br><br></p>
+<p><strong>1️⃣ Storing the address of the first element of an array</strong>
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+
+    //Array of type integer
+    int bar[5];
+    
+    //Pointer to store memory address of first element of bar
+    int* foo = bar;
+    int* spam = &amp;bar[0];
+    
+    cout&lt;&lt;&quot;foo = &quot;&lt;&lt;foo&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;spam = &quot;&lt;&lt;spam;
+    return 0;
+}
+</code></pre>
+</b>
+<p>👉 In the output, both <code>foo</code> and <code>bar</code> have the same value(a memory address). <code>int* foo = bar</code> and <code>int* spam = &amp;bar[0]</code> both the equivalent code.</p>
+<p><br><br></p>
+<p><strong>2️⃣ Pointing to every array element</strong></p>
+<p>In the above code  <code>int* foo = bar</code>.</p>
+<p><code>foo</code>  is the memory address of  <code>bar[0]</code><br />
+<code>foo + 1</code>  is the memory address of  <code>bar[1]</code>  (i.e.  <code>&amp;bar[1]</code>)<br />
+<code>foo + 2</code>  is the memory address of  <code>bar[2]</code>  (i.e.  <code>&amp;bar[2]</code>)<br />
+<code>foo + 3</code>  is the memory address of  <code>bar[3]</code>  (i.e.  <code>&amp;bar[3]</code>)<br />
+<code>foo + 4</code>  is the memory address of  <code>bar[4]</code>  (i.e.  <code>&amp;bar[4]</code>)</p>
+<p><br><br></p>
+<p><strong>3️⃣ Printing memory address with and without pointers</strong></p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int foo[5] = {11, 23, 31, 42, 51};
+    int* pointer_foo = foo;
+    
+    //Printing address using array
+    cout&lt;&lt;&quot;Printing array memory addresses without pointer \n\n&quot;;
+    for(int i=0; i&lt;5; i++){
+        cout&lt;&lt;&quot;Address of foo[&quot;&lt;&lt;i&lt;&lt;&quot;] is: &quot;&lt;&lt; &amp;foo[i]&lt;&lt;&quot;\n&quot;;
+    }
+    
+    //Printing address with array
+    cout&lt;&lt;&quot;\nPrinting array memory addresses with pointer\n\n&quot;;
+    for(int i=0; i&lt;5; i++){
+        cout&lt;&lt;&quot;Pointer 'pointer_foo&quot;&lt;&lt;i&lt;&lt;&quot;' is: &quot;&lt;&lt;pointer_foo+i&lt;&lt;&quot;\n&quot;;
+    }
+    return 0;
+}
+</code></pre>
+</b>
+<p><br><br></p>
+<p><strong>4️⃣ Populating an array with user inputs using pointer</strong>
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    float arr[5];
+    
+   // Insert data using pointer notation
+    cout &lt;&lt; &quot;Enter 5 numbers: &quot;;
+    for (int i = 0; i &lt; 5; ++i) {
+
+        // store input number in arr[i]
+        cin &gt;&gt; *(arr + i) ;
+
+    }
+
+    // Display data using pointer notation
+    cout &lt;&lt; &quot;Displaying data: &quot; &lt;&lt; endl;
+    for (int i = 0; i &lt; 5; ++i) {
+
+        // display value of arr[i]
+        cout &lt;&lt; *(arr + i) &lt;&lt; endl ;
+
+    }
+
+    return 0;
+}
+</code></pre>
+</b><div style="break-before: page; page-break-before: always;"></div><h1 id="file-handling"><a class="header" href="#file-handling">FILE HANDLING</a></h1>
+<hr style="height: 5px; border: none; background: rgb(255,55,55);background: linear-gradient(90deg, rgba(255,55,55,1) 0%, rgba(152,27,228,1) 48%, rgba(251,251,251,1) 100%);">
+<p>Like many other languages, C++ provides file handling meaning you can create or write a file. You need to include  <code>fstream</code>  library for file handling.</p>
+<p>🚀 There're three classes in the  <code>fstream</code>  library:</p>
+<table><thead><tr><th>Class</th><th>Decsription</th></tr></thead><tbody>
+<tr><td><code>ofstream</code></td><td>Creates and writes files</td></tr>
+<tr><td><code>ifstream</code></td><td>Reads file</td></tr>
+<tr><td><code>fstream</code></td><td>A combination of ofstream and ifstream: creates, reads, and writes to files</td></tr>
+</tbody></table>
+<h2 id="creating-a-file-and-write-something-in-it"><a class="header" href="#creating-a-file-and-write-something-in-it">📁Creating a file and write something in it</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>👉Here we'll be creating a file and writing some text in it. To create a file, use either the  <code>ofstream</code>  or  <code>fstream</code>  class, and specify the name of the file.</p>
+<p>To write to the file, use the insertion operator (<code>&lt;&lt;</code>).
+<b></p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;fstream&gt;
+using namespace std;
+
+int main(){
+    
+    //We will write this piece of string in a file
+    string text = &quot;A quick bworn fox jumps over the lazy dog!&quot;;
+
+    //Creating and open a text file called 'test_file.txt' 
+    ofstream myFile(&quot;test_file.txt&quot;);
+
+    //Writing and then saving the file
+    myFile&lt;&lt;text;
+
+    //Closing the file
+    myFile.close();
+
+    return 0;
+}
+</code></pre>
+</b>
+<h2 id="reading-a-file"><a class="header" href="#reading-a-file">📖Reading a file</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>Now we'll be reading a text file and printing the contents on terminal. First create a text file named <code>lazyDog.txt</code> and write something in it. Now the following code reads from this file and print the content on terminal:</p>
+<b>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;fstream&gt;
+using namespace std;
+
+int main(){
+
+    string text;
+
+    //Read from the file 'laztDog.txt'
+    ifstream myFile(&quot;lazyDog.txt&quot;);
+
+    //Use while loop and getline() to read the file content
+    while(getline(myFile, text)){
+        cout&lt;&lt;text;
+    }
+
+    //Closing the file
+    myFile.close();
+    
+    return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+<p><strong>💡It's a good practice to close the file, it cleans up unnecessary memory space.</strong></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vector"><a class="header" href="#vector">VECTOR</a></h1>
+<hr style="height: 5px; border: none; background: rgb(255,55,55);background: linear-gradient(90deg, rgba(255,55,55,1) 0%, rgba(152,27,228,1) 48%, rgba(251,251,251,1) 100%);">
+<p><strong><em>Vectors are sequence containers representing arrays that can change in size.</em></strong></p>
+<p>🔥In C++, arrays are fixed-size data containers which means you have to know the array length beforehand. But often cases you may not know the exact number of elements that are going to be stored in an array! Well you can declare an array of arbitrarily large size(again here size refers to the length) and expect it to hold all the elements. But we have a more decent way of doing it by using another type of data containter called vector.</p>
+<p>Just like arrays, vectors use contiguous storage locations for their elements, which means that their elements can also be accessed using offsets on regular pointers to its elements, and just as efficiently as in arrays. But unlike arrays, their size can change dynamically, with their storage being handled automatically by the container.</p>
+<p>🚀  <em>Read more:</em>  <a href="https://m.cplusplus.com/reference/vector/vector/">https://m.cplusplus.com/reference/vector/vector/</a></p>
+<h2 id="creating-a-vector"><a class="header" href="#creating-a-vector">Creating a vector</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>First thing's first. Add  <code>&lt;vector&gt;</code>  library along with the usual  <code>&lt;iostream&gt;</code>.</p>
+<p>✍Syntax to create a vector:  <code>std::vector&lt;data_type&gt; name (items);</code></p>
+<ul>
+<li>Write  <code>std::vector</code>  keyword. You may ignore  <code>std::</code>  if you have included  <code>using namespace std;</code></li>
+<li><code>&lt;data_type&gt;</code>  specifies the type of data that the vector will store, and is surrounded by opening and closing angle brackets,  <code>&lt;&gt;</code>. Some examples of data types that can be stored are:  <code>&lt;string&gt;</code>s,  <code>&lt;int&gt;</code>s,  <code>double</code>s, and  <code>char</code>s. Note that the type of the vector cannot be changed once it has been declared.</li>
+<li>Now you need to give an identifier or a name to the vector. Defining the data type and giving the vector a name are mandatory steps.</li>
+<li>Optionally, you can specify the number of elements the vector will hold. This will define the size of the vector. It comes in handy when you don't know the specific values of the items that the vector will hold from the beginning, but you do know the size.</li>
+<li>Lastly, don't forget to end the statement with a semicolon,<code>;</code>.</li>
+</ul>
+<p><strong>Example</strong>
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main() {
+
+    //without specifying the number of elements
+    //defines a vector named prices that stores floating point numbers
+
+    vector&lt;double&gt; prices;
+
+}
+</code></pre>
+</b>
+<h2 id="populating-a-vector"><a class="header" href="#populating-a-vector">Populating a vector</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p><strong>👉Create a vector for storing names of some programming languages:</strong></p>
+<p>To add items one at a time to the  <strong>end</strong>  of a vector, you use the  <code>.push_back()</code>  method.</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main() {
+
+    vector&lt;string&gt; programming_lan;
+    
+    programming_lan.push_back(&quot;PHP&quot;);
+    programming_lan.push_back(&quot;C#&quot;);
+    programming_lan.push_back(&quot;C++&quot;);
+    programming_lan.push_back(&quot;Python&quot;);
+    programming_lan.push_back(&quot;Ruby on Rails&quot;);
+    
+}
+</code></pre>
+</b>
+<p><strong>👉Now print all these stored items:</strong></p>
+<p>To print <em>all</em> the items, first we need to know the size of the vector(  <em>size</em>  means how many item(s) is/are stored).</p>
+<p>⚡We can use  <code>vector_name.size()</code>  to get the size! It takes item(like string in this particular case) as the argument.
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main() {
+
+    vector&lt;string&gt; programming_lan;
+    
+    programming_lan.push_back(&quot;PHP&quot;);
+    programming_lan.push_back(&quot;C#&quot;);
+    programming_lan.push_back(&quot;C++&quot;);
+    programming_lan.push_back(&quot;Python&quot;);
+    programming_lan.push_back(&quot;Ruby on Rails&quot;);
+    
+    int size = programming_lan.size();
+    cout&lt;&lt;size;
+    
+    return 0;
+
+}
+</code></pre>
+</b>
+<p>Now can print all items...</p>
+<blockquote>
+<p>📢Indexing in vectors starts from 0 – the first item in a vector has an index of 0, the second item has an index of 1, and so on.</p>
+</blockquote>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main() {
+
+    vector&lt;string&gt; programming_lan;
+    
+    programming_lan.push_back(&quot;PHP&quot;);
+    programming_lan.push_back(&quot;C#&quot;);
+    programming_lan.push_back(&quot;C++&quot;);
+    programming_lan.push_back(&quot;Python&quot;);
+    programming_lan.push_back(&quot;Ruby on Rails&quot;);
+    
+    int size = programming_lan.size();
+    
+    for(int i=0; i&lt;size; i++){
+        cout&lt;&lt;programming_lan[i]&lt;&lt;&quot;\n&quot;;
+    }
+    
+    return 0;
+
+}
+</code></pre>
+</b>
+<h2 id="deleting-intems-form-a-vector"><a class="header" href="#deleting-intems-form-a-vector">Deleting intems form a vector</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>Uing  <code>vector_name.pop_back()</code>, you can delete the  <strong>last</strong>  item in a vector. Unlike  <code>vector_name.push_back()</code>  method which is used for adding elements, the  <code>.pop_back()</code>  function doesn't take any arguments.</p>
+<p>For example if we want to remove  <code>Ruby on Rails</code>(which is indeed the last item) from the vector  <code>programming_lan</code>, simply use  <code>programming_lan.pop_back();</code>. You can compare sizes before and after using  <code>.pop_back()</code>  method:
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main() {
+
+    vector&lt;string&gt; programming_lan;
+    
+    programming_lan.push_back(&quot;PHP&quot;);
+    programming_lan.push_back(&quot;C#&quot;);
+    programming_lan.push_back(&quot;C++&quot;);
+    programming_lan.push_back(&quot;Python&quot;);
+    programming_lan.push_back(&quot;Ruby on Rails&quot;);
+    
+    //Prinitng size before deleting
+    cout&lt;&lt;&quot;Size before deleting: &quot;&lt;&lt;programming_lan.size()&lt;&lt;&quot;\n&quot;;
+    
+    //Deleting the last item which is Ruby on Rails
+    programming_lan.pop_back();
+    
+    cout&lt;&lt;&quot;Size after deleting the last item: &quot;&lt;&lt;programming_lan.size();
+    
+    return 0;
+
+}
+</code></pre>
+</b><div style="break-before: page; page-break-before: always;"></div><h1 id="structure-union--enum"><a class="header" href="#structure-union--enum">STRUCTURE, UNION &amp; ENUM</a></h1>
+<hr style="height: 5px; border: none; background: rgb(255,55,55);background: linear-gradient(90deg, rgba(255,55,55,1) 0%, rgba(152,27,228,1) 48%, rgba(251,251,251,1) 100%);">
+<blockquote>
+<p>😢It's catastrophic when your teacher introduces structures by asking you to calculate vector dot product(Physics) or some math stuff with complex number! You should start with some basic simple cases which can be implemented with structure and  <strong>vectors(Physics) or complex numbers</strong>  are definitely not good choices here.</p>
+</blockquote>
+<h2 id="1structure"><a class="header" href="#1structure">1️⃣Structure</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>The popular definition of structure is that &quot;Structure is a user defined data type&quot;. Now at the beginning of this chapter, it may seem totally nonsensical when you write a structure, but bear with me, we'll get to this &quot;user defined data type&quot; after covering some basics. For now, it'd be better if we define Structures like this: Structures provide a way to put several variables into on place. These variables can be of different data types.</p>
+<p>Each variable in the structure is known as a member of the structure.</p>
+<h3 id="creating-a-structure"><a class="header" href="#creating-a-structure">👨‍👩‍👦‍👦Creating a structure:</a></h3>
+<p>Use <code>struct</code> keyword and declare each of its members inside curly braces and then specify the name of the structure variable(s). For example:</p>
+<b>
+<pre><code class="language-c++">struct{ // Structure declaration
+
+ string name; //Member(type string)
+ float age;	//Member(type float)
+ string sex;	//Member(type string)
+ 
+} person  //Name of the structure variable
+</code></pre>
+</b>
+<h3 id="accessing-structure-members"><a class="header" href="#accessing-structure-members">✍Accessing structure members:</a></h3>
+<p>To access a member of a structure, use  <code>structure_name.member</code>. For example:</p>
+<p>👉 To access  <code>name</code>(a member) of the structure variable  <code>person</code>  use  <code>person.name</code>  .<br />
+👉 To access  <code>age</code>, use  <code>person.age</code>.</p>
+<h3 id="example-assign-data-to-members-of-a-structure-and-print-it"><a class="header" href="#example-assign-data-to-members-of-a-structure-and-print-it">⚡Example: Assign data to members of a structure and print it:</a></h3>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    
+    //Creating a structure named 'person'
+    struct{
+        string name;
+        float age;
+        string sex;
+    }person;
+
+    //Accessing members
+    person.name = &quot;Barack Obama&quot;;
+    person.age = 60;
+    person.sex = &quot;male&quot;;
+    
+    cout&lt;&lt;&quot;Name: &quot;&lt;&lt;person.name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Age: &quot;&lt;&lt;person.age&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sex: &quot;&lt;&lt;person.sex&lt;&lt;&quot;\n&quot;;
+    return 0;
+}
+</code></pre>
+</b>
+<h3 id="one-structure-in-multiple-variables"><a class="header" href="#one-structure-in-multiple-variables">🚀One structure in multiple variables:</a></h3>
+<p>Here we have multiple persons(persion1, person2 and person3) and this how to do this:</p>
+<b>
+<pre><code class="language-c++">struct{ // Structure declaration
+
+ string name; //Member(type string)
+ float age;	//Member(type float)
+ string sex;	//Member(type string)
+ 
+} person1, person2, person3  //Name of the structure variables
+</code></pre>
+</b>
+<p>📌Example</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    
+    //Creating a structure named 'person'
+    struct{
+        string name;
+        float age;
+        string sex;
+    }person1, person2, person3;
+
+    //Accessing members
+    person1.name = &quot;Tanjiro kamado&quot;;
+    person1.age = 15;
+    person1.sex = &quot;male&quot;;
+    
+    person2.name = &quot;Lucy Heartfilia&quot;;
+    person2.age = 17;
+    person2.sex = &quot;female&quot;;
+    
+    person3.name = &quot;Izaya Orihara&quot;;
+    person3.age = 25;
+    person3.sex = &quot;male&quot;;
+    
+    //Printing
+    cout&lt;&lt;&quot;Person 1: &quot;&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Name: &quot;&lt;&lt;person1.name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Age: &quot;&lt;&lt;person1.age&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sex: &quot;&lt;&lt;person1.sex&lt;&lt;&quot;\n\n&quot;;
+    
+    cout&lt;&lt;&quot;Person 2:&quot;&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Name: &quot;&lt;&lt;person2.name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Age: &quot;&lt;&lt;person2.age&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sex: &quot;&lt;&lt;person2.sex&lt;&lt;&quot;\n\n&quot;;
+    
+    cout&lt;&lt;&quot;Person 3: &quot;&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Name: &quot;&lt;&lt;person3.name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Age: &quot;&lt;&lt;person3.age&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sex: &quot;&lt;&lt;person3.sex&lt;&lt;&quot;\n\n&quot;;
+    
+    return 0;
+}
+</code></pre>
+</b>
+<h3 id="named-structure-and-user-defined-data-type"><a class="header" href="#named-structure-and-user-defined-data-type">⚡Named structure and &quot;user defined data type&quot;:</a></h3>
+<p><br><br></p>
+<p>      💡<strong>By giving a name to the structure, you can treat it as a data type.</strong>  This means that you can create variables with this structure anywhere in the program at any time.</p>
+<p>To create a named structure, put the name of the structure right after the  <code>struct</code>  keyword:</p>
+<p>🔨 Let's create a structure called  <code>person</code>  and then use it as a data-type:</p>
+<b>
+<pre><code class="language-c++">struct person{
+    
+    string name;
+    float age;
+    string sex;
+}
+</code></pre>
+</b>
+🔥Now lets use it as the user-defined data type:
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    
+    //Creating a structure named 'person'
+    struct person{
+        string name;
+        float age;
+        string sex;
+    };
+    
+    //So now we have a user defined data type caleed 'person'
+    person tanjiro; //Variable 'tanjiro' with 'person' data type
+    person lucy;    //Variable 'lucy' with 'person' data type
+    person izaya;   //Variable 'izaya' with 'person' data type
+    
+    tanjiro.name = &quot;Tanjiro kamado&quot;;
+    tanjiro.age = 15;
+    tanjiro.sex = &quot;male&quot;;
+    
+    lucy.name = &quot;Lucy Heartfilia&quot;;
+    lucy.age = 17;
+    lucy.sex = &quot;female&quot;;
+    
+    izaya.name = &quot;Izaya Orihara&quot;;
+    izaya.age = 25;
+    izaya.sex = &quot;male&quot;;
+
+    //Printing
+    cout&lt;&lt;&quot;Person 1: &quot;&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Name: &quot;&lt;&lt;tanjiro.name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Age: &quot;&lt;&lt;tanjiro.age&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sex: &quot;&lt;&lt;tanjiro.sex&lt;&lt;&quot;\n\n&quot;;
+    
+    cout&lt;&lt;&quot;Person 2:&quot;&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Name: &quot;&lt;&lt;lucy.name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Age: &quot;&lt;&lt;lucy.age&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sex: &quot;&lt;&lt;lucy.sex&lt;&lt;&quot;\n\n&quot;;
+    
+    cout&lt;&lt;&quot;Person 3: &quot;&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Name: &quot;&lt;&lt;izaya.name&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Age: &quot;&lt;&lt;izaya.age&lt;&lt;&quot;\n&quot;;
+    cout&lt;&lt;&quot;Sex: &quot;&lt;&lt;izaya.sex&lt;&lt;&quot;\n\n&quot;;
+    
+    return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+<p><strong>🚧The following two topics were not introduced in our class!</strong></p>
+</blockquote>
+<h2 id="2union"><a class="header" href="#2union">2️⃣Union</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>👉 Just like structure,  <strong>union</strong>  is also a user-defined data type and groups multiple variables of different data types. However, unlike  <strong>structure</strong>, all members of a union has the same memory location meaning it's provides memory optimization.</p>
+<p>🤔 Earlier, we have created a structure named  <code>person</code>  with three members--  <code>name</code>,  <code>age</code>  and  <code>sex</code>. In  <em>structure</em>  there'll be memory allocation for all three members, but in case, you don't need all three members simultaneously, you can save some memory by using the same memory location for all three members. Size of  <em>union</em>  is decided by the size of largest member of union.</p>
+<h3 id="creating-a-union"><a class="header" href="#creating-a-union">📌Creating a union:</a></h3>
+<b>
+<pre><code class="language-c++">union person{
+    string name;
+    float age;
+    string sex;
+}
+</code></pre>
+</b>
+<h2 id="3-enumenumerations"><a class="header" href="#3-enumenumerations">3️⃣ Enum(Enumerations)</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>✍An enumeration is a user-defined type that consists of a set of named integral constants that are known as enumerators.</p>
+<h3 id="creating-enum"><a class="header" href="#creating-enum">Creating enum:</a></h3>
+<p>Syntax:
+<b></p>
+<pre><code class="language-c++">enum season{
+    winter,
+    spring,
+    summer,
+    fall
+}
+</code></pre>
+</b>
+<p>Here, the name of the enumeration is <code>season</code> and <code>winter</code>, <code>spring</code>, <code>summer</code> and <code>fall</code> are values of type <code>season</code>. By default, <code>winter</code> is <code>0</code>, <code>spring</code> is <code>1</code> and so on. But, these default values can be changed:
+<b></p>
+<pre><code class="language-c++">enum season{
+    winter = 101,
+    spring = 102,
+    summer = 103,
+    fall = 104
+}
+</code></pre>
+</b>
+<p>📌Example:</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+//Creating enum
+enum season{
+    winter,
+    spring,
+    summer,
+    fall
+};
+int main() {
+    season s;
+    s = summer;
+    cout&lt;&lt;s;
+    return 0;
+}
+</code></pre>
+</b>
+<p>💻Output: 3</p>
+<h3 id="why-use-enum-"><a class="header" href="#why-use-enum-">🤔Why use enum ?</a></h3>
+<p>Enums put constraints to the values of a variable. In the above example, the variable of type  <code>season</code>(user-defined of course!) expects 4 possible values each for a particular season. if we try to assign a another random value to this variable, it will throw a compilation error. This increases compile-time checking and avoid errors that occurs by passing in invalid constants.</p>
+<p><em>Ref</em>  :  <a href="https://beginnersbook.com/2017/09/cpp-enumeration/">https://beginnersbook.com/2017/09/cpp-enumeration/</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="oops"><a class="header" href="#oops">OOPs</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="syntactic-sugar-in-c"><a class="header" href="#syntactic-sugar-in-c">SYNTACTIC SUGAR IN C++</a></h1>
+<hr style="height: 5px; border: none; background: rgb(0,53,255); background: linear-gradient(90deg, rgba(0,53,255,1) 0%, rgba(255,255,255,1) 100%);">
+<blockquote>
+<p>🚧Advanced stuff!! You can ignore it!</p>
+</blockquote>
+<p>Syntactic sugar makes you code 'sweeter'!</p>
+<h2 id="printing-all-array-elements"><a class="header" href="#printing-all-array-elements">📌Printing all array elements:</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<br>
+👉Previously, we've printed array using its indices. These are some alternative approaches:
+<h3 id="1-using-range-based-for-loop"><a class="header" href="#1-using-range-based-for-loop">1️⃣ Using range-based for-loop</a></h3>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    
+    string name[5] = {&quot;Inuyasha&quot;, &quot;Ichigo&quot;, &quot;Elrick&quot;, &quot;Shibazaki&quot;, &quot;Natsu&quot;};
+    
+    for(const auto &amp;value: name){
+        cout&lt;&lt;value&lt;&lt;&quot;\n&quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+</b>
+<h3 id="2-using-iterators-with-cbegin-and-cend"><a class="header" href="#2-using-iterators-with-cbegin-and-cend">2️⃣ Using iterators with <code>cbegin()</code> and <code>cend()</code></a></h3>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    
+    string name[5] = {&quot;Inuyasha&quot;, &quot;Ichigo&quot;, &quot;Elrick&quot;, &quot;Shibazaki&quot;, &quot;Natsu&quot;};
+    
+    for(auto i = cbegin(name); i != cend(name);  i++){
+        std::cout &lt;&lt; *i &lt;&lt; '\n';
+    }
+
+    return 0;
+}
+</code></pre>
+</b>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="c-code-on-practical-classes"><a class="header" href="#c-code-on-practical-classes">C++ code on practical classes</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sortingbubble-sort"><a class="header" href="#sortingbubble-sort">Sorting(Bubble sort)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="matrix-addition"><a class="header" href="#matrix-addition">Matrix addition</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Array - C++ Ninja Notes</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">⚡Introduction</li><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> An Awkward Introduction</a></li><li class="chapter-item expanded "><a href="basics_of_any_language.html"><strong aria-hidden="true">2.</strong> Programming 101 - The basics of any language</a></li><li class="chapter-item expanded affix "><li class="part-title">📚Learning C++</li><li class="chapter-item expanded "><a href="c++_getting_started.html"><strong aria-hidden="true">3.</strong> C++ - Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hello_world.html"><strong aria-hidden="true">3.1.</strong> Hello world</a></li><li class="chapter-item expanded "><a href="user_input_data_types.html"><strong aria-hidden="true">3.2.</strong> User input, data types</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">3.3.</strong> Conditional statements: If-else & switch-case</a></li><li class="chapter-item expanded "><a href="loops.html"><strong aria-hidden="true">3.4.</strong> Loops</a></li><li class="chapter-item expanded "><a href="array.html" class="active"><strong aria-hidden="true">3.5.</strong> Array</a></li><li class="chapter-item expanded "><a href="function.html"><strong aria-hidden="true">3.6.</strong> Function</a></li></ol></li><li class="chapter-item expanded "><a href="c++_advanced_stuff.html"><strong aria-hidden="true">4.</strong> Advanced stuff</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="pointer.html"><strong aria-hidden="true">4.1.</strong> Pointer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference_memoryAddress.html"><strong aria-hidden="true">4.1.1.</strong> Reference & memory address</a></li><li class="chapter-item expanded "><a href="pointer_working.html"><strong aria-hidden="true">4.1.2.</strong> Pointer: Working with pointer</a></li><li class="chapter-item expanded "><a href="pointer_with_array.html"><strong aria-hidden="true">4.1.3.</strong> Pointer with array</a></li></ol></li><li class="chapter-item expanded "><a href="file_handling.html"><strong aria-hidden="true">4.2.</strong> File handling</a></li><li class="chapter-item expanded "><a href="vector.html"><strong aria-hidden="true">4.3.</strong> Vector</a></li><li class="chapter-item expanded "><a href="structure_union_enum.html"><strong aria-hidden="true">4.4.</strong> Structure, union & enum</a></li><li class="chapter-item expanded "><a href="oops.html"><strong aria-hidden="true">4.5.</strong> OOPs</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">💖Syntactic sugar</li><li class="chapter-item expanded "><a href="syntactic_sugar.html"><strong aria-hidden="true">5.</strong> Syntactic sugar in C++</a></li><li class="chapter-item expanded affix "><li class="part-title">🐱‍🏍Examples</li><li class="chapter-item expanded "><a href="practical_class.html"><strong aria-hidden="true">6.</strong> C++ code on practical classes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sorting.html"><strong aria-hidden="true">6.1.</strong> Sorting(Bubble sort)</a></li><li class="chapter-item expanded "><a href="mat_add.html"><strong aria-hidden="true">6.2.</strong> Matrix addition</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">C++ Ninja Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="array"><a class="header" href="#array">ARRAY</a></h1>
+<hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
+<p>Arrays are fixed-size sequence containers: they hold a specific number of elements ordered in a strict linear sequence. Arrays are used for storing multiple values in a single object(kinda like variable). Each value is called an element of the array and the total number of elements in the array is called array length. Each element has an index. In C++ all the elements in an array have to be of the same type and indexing starts from zero.</p>
+<p>For example <code>[1, 2, 3, 4, 5]</code> is an array of integers or <code>[1.0, 2.0, 3.0]</code> is an array of floating numbers.</p>
+<h2 id="creating-an-array-in-c"><a class="header" href="#creating-an-array-in-c">Creating an array in C++</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>To declare an array, define the variable type, specify the name of the array followed by  <strong>square brackets</strong>  and specify the number of elements it should store:</p>
+<p>👉 Declare an array to store any of 5 anime characters' name:</p>
+<b>
+<pre><code class="language-c++">string name[5] = {&quot;Inuyasha&quot;, &quot;Ichigo&quot;, &quot;Elrick&quot;, &quot;Shibazaki&quot;, &quot;Natsu&quot;}
+</code></pre>
+</b>
+<p><strong>👌Accessing array element: Now write a code to print &quot;Elrick&quot;</strong></p>
+<p>The index of Inuyasha is 0, Ichigo is 1, Elrick is 2 and so on. We need this indices to access the array elements.</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+
+using namespace std;
+
+int main() {
+    
+   string name[5] = {&quot;Inuyasha&quot;, &quot;Ichigo&quot;, &quot;Elrick&quot;, &quot;Shibazaki&quot;, &quot;Natsu&quot;};
+   cout &lt;&lt; name[2];
+   
+   return 0;
+}
+</code></pre>
+</b>
+<p><strong>✌C'mon! Lets print other characters too.</strong></p>
+<p>Again you can do this manually by writing <code>cout&lt;&lt;</code> for each element. This method is not pragmatic when you have an array of larger size. So we will be using for loop to print each element of <code>name</code>.
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+
+using namespace std;
+
+int main() {
+    
+   string name[5] = {&quot;Inuyasha&quot;, &quot;Ichigo&quot;, &quot;Elrick&quot;, &quot;Shibazaki&quot;, &quot;Natsu&quot;};
+   
+   for(int i=0; i&lt;=4; i++){
+   
+       cout &lt;&lt; name[i]+&quot;\n&quot;;
+       
+   }
+   
+   return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+</blockquote>
+<p>⚡Here we are running the loop from <code>i=0</code> to <code>i=4</code> i.e. total 5 values of <code>i</code> since we know that the array length is 5. <strong>But what if we had an array and we didn't know its length?!</strong></p>
+<h2 id="populating-an-array-with-user-inputs"><a class="header" href="#populating-an-array-with-user-inputs">Populating an array with user inputs</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>⚡ Here we'll populate an array with some user-inputs.</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+
+int main() {
+    //Declare an array
+    string name[5];
+    cout&lt;&lt;&quot;Enter your all time fovorite 5 anime:\n&quot;;
+    
+    //Storing user inputs in the array cells
+    for(int i = 0; i&lt;4; i++){
+        cout&lt;&lt;&quot;No #&quot;&lt;&lt;(i+1)&lt;&lt;&quot;: &quot;;
+        cin&gt;&gt;name[i];
+    }
+    
+    //Printing stored values 
+    for(int i = 0; i&lt;4; i++){
+        cout&lt;&lt;&quot;Anime no.&quot;&lt;&lt;(i+1)&lt;&lt;&quot; &quot;&lt;&lt;name[i]&lt;&lt;&quot;\n&quot;;
+    }
+    
+    return 0;
+}
+</code></pre>
+</b>
+<h2 id="finding-length-of-an-array"><a class="header" href="#finding-length-of-an-array">🚧Finding length of an array:</a></h2>
+<hr style="height:1px; background: black; border: none;">
+<p>Finding array length is bit tricky in C++. Here we'll use  <code>sizeof()</code>  function to  <em>calculate</em>  an array length:  <code>sizeof()</code>  returns the total size of an array(or any data type). Now, dividing the total size by the size of any array-element's data-type, we'll get the length of the array.</p>
+<p>👍For example,  <code>integer_array = [10 ,25, 37, 56,63, 100]</code>  So here length of the array is  <code>(Total size of the array/Size of an integer)</code>.</p>
+<p>🤔Now you may ask,  <em>how do I know the size of an integer?!</em>  Well you can remember it!! But that will be so painstaking task to remember size of every data-type. So again we can use  <code>sizeof()</code>  function to get the size of an integer(or any other data type).</p>
+<b>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // declaring the array of integer type
+    int integer_array[]= {10 ,25, 37, 56,63, 100};
+    
+    //calculating length. You can divide by size of any array element since all elements are of integer type
+    int length = sizeof(integer_array)/sizeof integer_array[0];
+    
+    cout &lt;&lt; length;
+
+    return 0;
+}
+</code></pre>
+</b>
+<br><br>
+<p><strong>🦥 Now programmers are lazy creatures! So there should be a better way of finding array length. Because in real world software development, you don't want to write that much just to get an array length.</strong></p>
+<p>👌Well there is a dedicated <em>class</em>(we'll discuss about class later) called <code>array</code> which does all array-related stuff for you. The following code, find the array in more delicate way:
+<b></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include&lt;array&gt;
+using namespace std;
+
+int main() {
+    
+    // Declaring an array by uing 'array' keyword followed by type and length inside angular brackets
+    array&lt;int, 6&gt; integer_array{10, 25, 37, 56,63, 100};
+    
+    //arrayname.size() returns the length of the array
+    cout &lt;&lt; integer_array.size();
+
+    return 0;
+}
+</code></pre>
+</b>
+<blockquote>
+<p>😅<strong>Note</strong>: In the above code you probably have noticed that we're declaring array in different way: first we use <code>array</code> keyword followd by array elements' data-type, length of the arrray inside <code>&lt;&gt;</code>. <code>arrayname.size()</code> returns the 'size' (here size refers to length) of an array. Now its a bit stupid for find an array length which we have already specified in <code>array&lt;int, 6&gt;</code>!!</p>
+</blockquote>
+<p>🚀 <em>Related topic:</em>  <a href="vector.html">Vector</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="loops.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="function.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="loops.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="function.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
