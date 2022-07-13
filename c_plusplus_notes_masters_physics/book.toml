@@ -1,0 +1,6 @@
+[book]
+authors = ["ARIJIT DAS"]
+language = "en"
+multilingual = false
+src = "src"
+title = "C++ Ninja Notes"
