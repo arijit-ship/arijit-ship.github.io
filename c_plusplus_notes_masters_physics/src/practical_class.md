@@ -1,2 +1,2 @@
 # C++ : WHAT WE HAVE DONE IN CLASSES
-<hr style="height: 5px; border: none; background-image: linear-gradient(to right, #0081f2, #00acff, #00ccdc, #00e286, #a8eb12);">
+<hr style="height: 5px; border: none;background-image: linear-gradient(to right, #a282c6, #f378af, #ff8470, #ffb51a, #a8eb12);">
