@@ -1,0 +1,11 @@
+body {
+    background-image: url(demon-slayer-bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: scroll;
+    background-size: 100%;
+    background-position-x: inherit;
+    background-position-y: bottom;
+    background-color: rgba(255,255,255,0.9);
+    background-blend-mode: lighten;
+}

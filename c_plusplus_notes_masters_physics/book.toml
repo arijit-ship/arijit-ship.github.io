@@ -4,3 +4,13 @@ language = "en"
 multilingual = false
 src = "src"
 title = "C++ Ninja Notes"
+
+[output.html]
+default-theme = "light"
+mathjax-support = true
+additional-css = ["custom.css"]
+additional-js = ["custom.js"]
+
+[output.html.fold]
+enable = true
+
