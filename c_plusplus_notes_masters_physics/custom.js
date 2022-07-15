@@ -6,10 +6,11 @@ function getRandomInt(min, max) {
 }
 
 var img = [
-"https://github.com/arijit-ship/arijit-ship.github.io/blob/master/c_plusplus_notes_masters_physics/bg/demon-slayer-bg.jpg?raw=true", 
-"https://arijit-ship.github.io/Haskell-notes-webpage-assets/samuraichampllo_png.png", 
-"https://github.com/arijit-ship/arijit-ship.github.io/blob/master/c_plusplus_notes_masters_physics/bg/62d1938d4052a.jpg?raw=true", 
-"https://github.com/arijit-ship/arijit-ship.github.io/blob/master/c_plusplus_notes_masters_physics/bg/kekkaishi-43_le-retour-de-la-tempeteavi_000361027.jpg?raw=true"
+"https://github.com/arijit-ship/arijit-ship.github.io/blob/master/c_plusplus_notes_masters_physics/bg/36626.jpg?raw=true",
+"https://github.com/arijit-ship/arijit-ship.github.io/blob/master/c_plusplus_notes_masters_physics/bg/5-centimeters-per-second-2007-ending-1024x576.jpg?raw=true",
+"https://github.com/arijit-ship/arijit-ship.github.io/blob/master/c_plusplus_notes_masters_physics/bg/HD-wallpaper-the-garden-of-words-male-movie-kotoha-winter-makoto-snow-anime-love-garden-shinkai.jpg?raw=true",
+"https://github.com/arijit-ship/arijit-ship.github.io/blob/master/c_plusplus_notes_masters_physics/bg/demon-slayer-bg.jpg?raw=true",
+
 ]
 
 bg = img[getRandomInt(0, img.length - 1)];
