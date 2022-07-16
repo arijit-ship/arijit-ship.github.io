@@ -5,7 +5,6 @@ body {
     overflow: scroll;
     background-size: 100%;
     background-position-x: inherit;
-    background-position-y: bottom;
     background-color: rgba(255,255,255,0.86);
     background-blend-mode: lighten;
 }
