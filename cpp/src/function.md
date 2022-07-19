@@ -1,7 +1,7 @@
-# FUNCTION
+# FUNCTION(aka SUBROUTINE/MATHOD)
 <hr style="height: 5px; border: none; background: rgb(71,55,255); background: linear-gradient(90deg, rgba(71,55,255,1) 0%, rgba(29,195,162,1) 48%, rgba(251,251,251,1) 100%);">
 
-👍A function takes one or many input(s) and spits out some output. The input(s) you pass to a function is/are called _parameter(s)_. Functions are reusable, you write once and call them many times whever you need them. To create (often referred to as _declare_) a function, specify the name of the function, followed by parentheses `( )`
+👍A function(aka a subroutine/method) takes one or many input(s) and spits out some output. The input(s) you pass to a function is/are called _parameter(s)_. Functions are reusable, you write once and call them many times whever you need them. To create (often referred to as _declare_) a function, specify the name of the function, followed by parentheses `( )`
 
 ✍Boilerplate:
 

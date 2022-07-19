@@ -36,3 +36,9 @@
 
 - [Sorting(Bubble sort)](./sorting.md)
 - [Matrix addition](./mat_add.md)
+- [Complex Number]()
+- [LSF]()
+- [Integration]()
+- [Interpolation]()
+	- [Newton's Interpolation]()
+	- [Lagrange Interpolation]()
