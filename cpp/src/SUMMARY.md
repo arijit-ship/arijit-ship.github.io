@@ -29,9 +29,10 @@
 
 - [Syntactic sugar in C++](./syntactic_sugar.md)
 
-# 🐱‍🏍Examples
+-----------
 
-- [C++ code on practical classes](./practical_class.md)
-	- [Sorting(Bubble sort)](./sorting.md)
-	- [Matrix addition](./mat_add.md)
-	
+# 🔥Examples
+
+
+- [Sorting(Bubble sort)](./sorting.md)
+- [Matrix addition](./mat_add.md)
