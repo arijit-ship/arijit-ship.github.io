@@ -42,3 +42,7 @@
 - [Interpolation]()
 	- [Newton's Interpolation]()
 	- [Lagrange Interpolation]()
+	
+- [Monte Carlo Simularion]()
+	- [Estimating PI]()
+	- [Integration]()
