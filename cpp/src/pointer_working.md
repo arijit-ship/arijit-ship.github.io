@@ -12,7 +12,7 @@ I already mentioned, a point is a special kind of variable that stores memory ad
 
 To create a pointer specify the `data type` followed by dereference operator (`*`) and an identifier or name of your pointer variable:  
   
-👉A pointer variable with the name 'foo' point to another string variable.
+👉A pointer variable with the name 'foo' points to another string variable.
 
 <b>
 
