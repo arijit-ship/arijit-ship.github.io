@@ -1,4 +1,4 @@
-# Introduction(...kinda awkward!!)
+# Introduction(... kinda awkward!!)
 Before getting started, I must tell you guys that, this is not any kind of C++ tutorial, per se; neither I'm any expert C++ programmer. This is a well-arranged notes(C++ Ninja Notes) that I'm making while teaching myself C++. Any kind of correction is welcomed😄
 
 Also, I'm assuming you have some basic knowledge on computer programming like what is a text editor, what is a compiler and interpreter, how to get one installed on your machine and now you're ready to write some high quality code😎  

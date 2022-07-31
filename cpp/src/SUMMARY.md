@@ -24,7 +24,7 @@
 	- [Vector](./vector.md)
 	- [Structure, union & enum](./structure_union_enum.md)
 	- [Random number](./random-number.md)
-	- [OOPs](./oops.md)
+	- [OOPs]()
 	
 # 💖Syntactic sugar
 
