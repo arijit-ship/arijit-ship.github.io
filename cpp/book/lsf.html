@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Pointer with array - C++ Ninja Notes</title>
+        <title>LSF - C++ Ninja Notes</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><li class="part-title">⚡Introduction</li><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> An Awkward Introduction</a></li><li class="chapter-item "><a href="basics_of_any_language.html"><strong aria-hidden="true">2.</strong> Programming 101 - The basics of any language</a></li><li class="chapter-item affix "><li class="part-title">📚Learning C++</li><li class="chapter-item "><a href="c++_getting_started.html"><strong aria-hidden="true">3.</strong> C++ - Getting started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello_world.html"><strong aria-hidden="true">3.1.</strong> Hello world</a></li><li class="chapter-item "><a href="user_input_data_types.html"><strong aria-hidden="true">3.2.</strong> User input, data types</a></li><li class="chapter-item "><a href="conditional_statements.html"><strong aria-hidden="true">3.3.</strong> Conditional statements: If-else & switch-case</a></li><li class="chapter-item "><a href="loops.html"><strong aria-hidden="true">3.4.</strong> Loops</a></li><li class="chapter-item "><a href="array.html"><strong aria-hidden="true">3.5.</strong> Array</a></li><li class="chapter-item "><a href="function.html"><strong aria-hidden="true">3.6.</strong> Function</a></li></ol></li><li class="chapter-item expanded "><a href="c++_advanced_stuff.html"><strong aria-hidden="true">4.</strong> Advanced stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="pointer.html"><strong aria-hidden="true">4.1.</strong> Pointer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference_memoryAddress.html"><strong aria-hidden="true">4.1.1.</strong> Reference & memory address</a></li><li class="chapter-item "><a href="pointer_working.html"><strong aria-hidden="true">4.1.2.</strong> Pointer: Working with pointer</a></li><li class="chapter-item expanded "><a href="pointer_with_array.html" class="active"><strong aria-hidden="true">4.1.3.</strong> Pointer with array</a></li></ol></li><li class="chapter-item "><a href="file_handling.html"><strong aria-hidden="true">4.2.</strong> File handling</a></li><li class="chapter-item "><a href="vector.html"><strong aria-hidden="true">4.3.</strong> Vector</a></li><li class="chapter-item "><a href="structure_union_enum.html"><strong aria-hidden="true">4.4.</strong> Structure, union & enum</a></li><li class="chapter-item "><a href="random-number.html"><strong aria-hidden="true">4.5.</strong> Random number</a></li><li class="chapter-item "><a href="oops.html"><strong aria-hidden="true">4.6.</strong> OOPs</a></li></ol></li><li class="chapter-item "><li class="part-title">💖Syntactic sugar</li><li class="chapter-item "><a href="syntactic_sugar.html"><strong aria-hidden="true">5.</strong> Syntactic sugar in C++</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">🔥Examples</li><li class="chapter-item "><a href="sorting.html"><strong aria-hidden="true">6.</strong> Sorting(Bubble sort)</a></li><li class="chapter-item "><a href="mat_add.html"><strong aria-hidden="true">7.</strong> Matrix addition</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.</strong> Complex Number</div></li><li class="chapter-item "><a href="lsf.html"><strong aria-hidden="true">9.</strong> LSF</a></li><li class="chapter-item "><a href="monte-carlo.html"><strong aria-hidden="true">10.</strong> Monte Carlo Simulation</a></li><li class="chapter-item "><div><strong aria-hidden="true">11.</strong> Integration</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">11.1.</strong> Simpsons 1/3-rd rule</div></li><li class="chapter-item "><div><strong aria-hidden="true">11.2.</strong> Trapizoidal method</div></li><li class="chapter-item "><div><strong aria-hidden="true">11.3.</strong> Monte Carlo</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.</strong> Differential equation</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">12.1.</strong> Runge-Kutta</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.</strong> Interpolation</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.</strong> Newton's Interpolation</div></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.</strong> Lagrange Interpolation</div></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><li class="part-title">⚡Introduction</li><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> An Awkward Introduction</a></li><li class="chapter-item "><a href="basics_of_any_language.html"><strong aria-hidden="true">2.</strong> Programming 101 - The basics of any language</a></li><li class="chapter-item affix "><li class="part-title">📚Learning C++</li><li class="chapter-item "><a href="c++_getting_started.html"><strong aria-hidden="true">3.</strong> C++ - Getting started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello_world.html"><strong aria-hidden="true">3.1.</strong> Hello world</a></li><li class="chapter-item "><a href="user_input_data_types.html"><strong aria-hidden="true">3.2.</strong> User input, data types</a></li><li class="chapter-item "><a href="conditional_statements.html"><strong aria-hidden="true">3.3.</strong> Conditional statements: If-else & switch-case</a></li><li class="chapter-item "><a href="loops.html"><strong aria-hidden="true">3.4.</strong> Loops</a></li><li class="chapter-item "><a href="array.html"><strong aria-hidden="true">3.5.</strong> Array</a></li><li class="chapter-item "><a href="function.html"><strong aria-hidden="true">3.6.</strong> Function</a></li></ol></li><li class="chapter-item "><a href="c++_advanced_stuff.html"><strong aria-hidden="true">4.</strong> Advanced stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pointer.html"><strong aria-hidden="true">4.1.</strong> Pointer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference_memoryAddress.html"><strong aria-hidden="true">4.1.1.</strong> Reference & memory address</a></li><li class="chapter-item "><a href="pointer_working.html"><strong aria-hidden="true">4.1.2.</strong> Pointer: Working with pointer</a></li><li class="chapter-item "><a href="pointer_with_array.html"><strong aria-hidden="true">4.1.3.</strong> Pointer with array</a></li></ol></li><li class="chapter-item "><a href="file_handling.html"><strong aria-hidden="true">4.2.</strong> File handling</a></li><li class="chapter-item "><a href="vector.html"><strong aria-hidden="true">4.3.</strong> Vector</a></li><li class="chapter-item "><a href="structure_union_enum.html"><strong aria-hidden="true">4.4.</strong> Structure, union & enum</a></li><li class="chapter-item "><a href="random-number.html"><strong aria-hidden="true">4.5.</strong> Random number</a></li><li class="chapter-item "><a href="oops.html"><strong aria-hidden="true">4.6.</strong> OOPs</a></li></ol></li><li class="chapter-item "><li class="part-title">💖Syntactic sugar</li><li class="chapter-item "><a href="syntactic_sugar.html"><strong aria-hidden="true">5.</strong> Syntactic sugar in C++</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">🔥Examples</li><li class="chapter-item "><a href="sorting.html"><strong aria-hidden="true">6.</strong> Sorting(Bubble sort)</a></li><li class="chapter-item "><a href="mat_add.html"><strong aria-hidden="true">7.</strong> Matrix addition</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.</strong> Complex Number</div></li><li class="chapter-item expanded "><a href="lsf.html" class="active"><strong aria-hidden="true">9.</strong> LSF</a></li><li class="chapter-item "><a href="monte-carlo.html"><strong aria-hidden="true">10.</strong> Monte Carlo Simulation</a></li><li class="chapter-item "><div><strong aria-hidden="true">11.</strong> Integration</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">11.1.</strong> Simpsons 1/3-rd rule</div></li><li class="chapter-item "><div><strong aria-hidden="true">11.2.</strong> Trapizoidal method</div></li><li class="chapter-item "><div><strong aria-hidden="true">11.3.</strong> Monte Carlo</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.</strong> Differential equation</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">12.1.</strong> Runge-Kutta</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.</strong> Interpolation</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.</strong> Newton's Interpolation</div></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.</strong> Lagrange Interpolation</div></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -137,93 +137,86 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="pointer-with-array"><a class="header" href="#pointer-with-array">POINTER WITH ARRAY</a></h1>
-<hr style="height: 5px; border: none; background: rgb(255,55,55);background: linear-gradient(90deg, rgba(255,55,55,1) 0%, rgba(152,27,228,1) 48%, rgba(251,251,251,1) 100%);">
-<p>🚧As discussed earlier, pointer is a special kind of variable that stores memory address of another variable which it is pointing to. In addition to this, pointer can also store the address of array cells and thus array cells(thereby elements) can be accessed.</p>
-<p><em>Reference</em>: <a href="https://www.programiz.com/cpp-programming/pointers-arrays">Programiz</a></p>
-<h2 id="pointer-with-array-thru-some-examples"><a class="header" href="#pointer-with-array-thru-some-examples">👌Pointer with array thru some examples:</a></h2>
-<hr style="height:1px; background: black; border: none;">
-<p><br><br></p>
-<p><strong>1️⃣ Storing the address of the first element of an array</strong>
-<b></p>
-<pre><code class="language-c++">#include &lt;iostream&gt;
-using namespace std;
-int main() {
-
-    //Array of type integer
-    int bar[5];
-    
-    //Pointer to store memory address of first element of bar
-    int* foo = bar;
-    int* spam = &amp;bar[0];
-    
-    cout&lt;&lt;&quot;foo = &quot;&lt;&lt;foo&lt;&lt;&quot;\n&quot;;
-    cout&lt;&lt;&quot;spam = &quot;&lt;&lt;spam;
-    return 0;
-}
-</code></pre>
-</b>
-<p>👉 In the output, both <code>foo</code> and <code>bar</code> have the same value(a memory address). <code>int* foo = bar</code> and <code>int* spam = &amp;bar[0]</code> both the equivalent code.</p>
-<p><br><br></p>
-<p><strong>2️⃣ Pointing to every array element</strong></p>
-<p>In the above code  <code>int* foo = bar</code>.</p>
-<p><code>foo</code>  is the memory address of  <code>bar[0]</code><br />
-<code>foo + 1</code>  is the memory address of  <code>bar[1]</code>  (i.e.  <code>&amp;bar[1]</code>)<br />
-<code>foo + 2</code>  is the memory address of  <code>bar[2]</code>  (i.e.  <code>&amp;bar[2]</code>)<br />
-<code>foo + 3</code>  is the memory address of  <code>bar[3]</code>  (i.e.  <code>&amp;bar[3]</code>)<br />
-<code>foo + 4</code>  is the memory address of  <code>bar[4]</code>  (i.e.  <code>&amp;bar[4]</code>)</p>
-<p><br><br></p>
-<p><strong>3️⃣ Printing memory address with and without pointers</strong></p>
+                        <h1 id="linear-regression-using-least-square-fitlsf"><a class="header" href="#linear-regression-using-least-square-fitlsf">LINEAR REGRESSION USING LEAST SQUARE FIT(LSF)</a></h1>
+<hr style="height: 5px; border: none;background-image: linear-gradient(to right, #a282c6, #f378af, #ff8470, #ffb51a, #a8eb12);">
+<p>Here we will be estimiting the best slope and y-intercept of a straight line, from a given set of data.</p>
+<p><strong>👉Formule</strong></p>
+<p>$$  \texttt{Solope  }m = \frac{\overline{xy}-\overline{x}\cdot \overline{y}}{\overline{x^{2}}-(\overline{x})^2} $$
+$$ \texttt{intercept  }c = \overline{y}-m\overline{x} $$</p>
+<p>$$ \texttt{where,  } \overline{xy}=\frac{1}{n}\sum x\textrm{  ;  } \overline{x^{2}}=\frac{1}{n}\sum x^{2}\textrm{  ;  }\overline{x}=\frac{1}{n}\sum x\textrm{  ;  }\overline{y}=\frac{1}{n}\sum y $$</p>
+<h2 id="derivation"><a class="header" href="#derivation">Derivation</a></h2>
+<hr style="height: 2px; border: none; background: black">
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/DSQ2plMtbLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2 id="read-data-from-a-file-and-estimate-best-slope-and-intercept"><a class="header" href="#read-data-from-a-file-and-estimate-best-slope-and-intercept">Read data from a file and estimate best slope and intercept</a></h2>
+<hr style="height: 2px; border: none; background: black">
+<p>🚧I've used <code>vector</code> in this code; if case you don't know about this container, check out <a href="./vector.html">Vector</a></p>
 <b>
-<pre><code class="language-c++">#include &lt;iostream&gt;
+<pre><code class="language-c++">/*
+*Linear regression code. Reading data from file and estimating slope and intercept
+*/
+
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;fstream&gt;
+
 using namespace std;
 
 int main()
 {
-    int foo[5] = {11, 23, 31, 42, 51};
-    int* pointer_foo = foo;
-    
-    //Printing address using array
-    cout&lt;&lt;&quot;Printing array memory addresses without pointer \n\n&quot;;
-    for(int i=0; i&lt;5; i++){
-        cout&lt;&lt;&quot;Address of foo[&quot;&lt;&lt;i&lt;&lt;&quot;] is: &quot;&lt;&lt; &amp;foo[i]&lt;&lt;&quot;\n&quot;;
-    }
-    
-    //Printing address with array
-    cout&lt;&lt;&quot;\nPrinting array memory addresses with pointer\n\n&quot;;
-    for(int i=0; i&lt;5; i++){
-        cout&lt;&lt;&quot;Pointer 'pointer_foo&quot;&lt;&lt;i&lt;&lt;&quot;' is: &quot;&lt;&lt;pointer_foo+i&lt;&lt;&quot;\n&quot;;
-    }
-    return 0;
-}
-</code></pre>
-</b>
-<p><br><br></p>
-<p><strong>4️⃣ Populating an array with user inputs using pointer</strong>
-<b></p>
-<pre><code class="language-c++">#include &lt;iostream&gt;
-using namespace std;
 
-int main() {
-    float arr[5];
-    
-   // Insert data using pointer notation
-    cout &lt;&lt; &quot;Enter 5 numbers: &quot;;
-    for (int i = 0; i &lt; 5; ++i) {
+    vector&lt;float&gt; x_data;
+    vector&lt;float&gt; y_data;
 
-        // store input number in arr[i]
-        cin &gt;&gt; *(arr + i) ;
+    float sum_x = 0, sum_y = 0, x_bar = 0, y_bar = 0, x2 = 0, y2 = 0, x2_bar = 0, y2_bar = 0, xy = 0, xy_bar = 0, slope = 0, y_intercept = 0;
 
+    //Data is store in 'data.dat' file. You can use some fake data to test the code.
+    ifstream dataPt(&quot;data.dat&quot;);
+    float n = 0;
+    int i = 0;
+    while (dataPt &gt;&gt; n)
+    {
+        //This is bit naive, storing x, y data based on their 'position' i.e. odd/even!! 
+        if (i % 2 == 0)
+        {
+            x_data.push_back(n);
+        }
+        else
+        {
+            y_data.push_back(n);
+        }
+        i += 1;
+        n += 1;
     }
 
-    // Display data using pointer notation
-    cout &lt;&lt; &quot;Displaying data: &quot; &lt;&lt; endl;
-    for (int i = 0; i &lt; 5; ++i) {
+    int size = x_data.size();
+    for (int i = 0; i &lt; size; i++)
+    {
+        sum_x = sum_x + x_data[i];
+        sum_y = sum_y + y_data[i];
 
-        // display value of arr[i]
-        cout &lt;&lt; *(arr + i) &lt;&lt; endl ;
+        x2 = x2 + (x_data[i] * x_data[i]);
+        y2 = y2 + (y_data[i] * y_data[i]);
 
+        xy = xy + (x_data[i] * y_data[i]);
     }
+
+    x_bar = sum_x / size;
+    y_bar = sum_y / size;
+
+    x2_bar = x2 / size;
+    y2_bar = y2 / size;
+
+    xy_bar = xy / size;
+
+    slope = (xy_bar - (x_bar * y_bar)) / (x2_bar - (x_bar * x_bar));
+    y_intercept = y_bar - (slope * x_bar);
+
+    cout &lt;&lt; &quot;Slope: &quot; &lt;&lt; slope &lt;&lt; &quot;\n&quot;;
+    cout &lt;&lt; &quot;Y intercept: &quot; &lt;&lt; y_intercept &lt;&lt; &quot;\n&quot;;
+
+    // cout&lt;&lt;&quot;X sum&quot;&lt;&lt;sum_x&lt;&lt;&quot;\n&quot;;
+    // cout&lt;&lt;&quot;Y sum&quot;&lt;&lt;sum_y&lt;&lt;&quot;\n&quot;;
 
     return 0;
 }
@@ -233,10 +226,10 @@ int main() {
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="pointer_working.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="mat_add.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="file_handling.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="monte-carlo.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -245,10 +238,10 @@ int main() {
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="pointer_working.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="mat_add.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="file_handling.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="monte-carlo.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

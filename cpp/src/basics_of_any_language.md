@@ -4,7 +4,9 @@
 
 ## 🤔What is computer programming?
 
-Computer programming(aka coding) means writing a set of instructions on your computer for solving any computation. We provide these instructions through some human readable language known as _programming languages_. A programming must be **Turing Complete**, meaning you can solve any mathematical problem with it(no matter how much time it takes!!).
+Computer programming(aka coding) means writing a set of instructions on your computer for solving any computation. We provide these instructions through some human readable language known as _programming languages_. A programming language must be **Turing Complete**, meaning you can solve any mathematical problem with it(no matter how much time it takes!!).
+
+
 
 
 

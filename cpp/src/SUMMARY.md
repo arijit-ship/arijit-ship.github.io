@@ -23,6 +23,7 @@
 	- [File handling](./file_handling.md)
 	- [Vector](./vector.md)
 	- [Structure, union & enum](./structure_union_enum.md)
+	- [Random number](./random-number.md)
 	- [OOPs](./oops.md)
 	
 # 💖Syntactic sugar
@@ -37,12 +38,20 @@
 - [Sorting(Bubble sort)](./sorting.md)
 - [Matrix addition](./mat_add.md)
 - [Complex Number]()
-- [LSF]()
+- [LSF](./lsf.md)
+
+- [Monte Carlo Simulation](./monte-carlo.md)
+
 - [Integration]()
+	- [Simpsons 1/3-rd rule]()
+	- [Trapizoidal method]()
+	- [Monte Carlo]()
+
+- [Differential equation]()
+	- [Runge-Kutta]()
+
 - [Interpolation]()
 	- [Newton's Interpolation]()
 	- [Lagrange Interpolation]()
 	
-- [Monte Carlo Simularion]()
-	- [Estimating PI]()
-	- [Integration]()
+
