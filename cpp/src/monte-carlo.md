@@ -13,7 +13,7 @@ Monte Carlo Simulation, aka the Monte Carlo Method or a multiple probability sim
 ### 📌Formulae
 
 $$\frac{\textrm{Area of the circle}}{Area of the square}=\frac{\pi r^{2}}{4r^{2}}=\frac{\pi}{4}$$
-$$\texttt{For a verylarge number of random points,} $$
+$$\texttt{For a very large number of random points,} $$
 $$ \frac{\pi}{4}=\frac{\textrm{no. of points generated inside the circle}}{\textrm{total no. of points generated or total no of points generated inside the square}} $$
 
 

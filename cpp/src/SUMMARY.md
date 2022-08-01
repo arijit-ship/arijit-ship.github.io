@@ -36,7 +36,8 @@
 
 
 - [Sorting(Bubble sort)](./sorting.md)
-- [Matrix addition](./mat_add.md)
+- [Fibonacci series]()
+- [Matrix algebra](./matrix.md)
 - [Complex Number]()
 - [LSF](./lsf.md)
 
