@@ -1,11 +1,11 @@
 # Summary
 
-# ⚡Introduction
+# ⚡INTRODUCTION
 
-- [An Awkward Introduction](./README.md)
+- [An awkward introduction](./README.md)
 - [Programming 101 - The basics of any language](./basics_of_any_language.md)
 
-# 📚Learning C++
+# 📚LEARNING C++
 
 - [C++ - Getting started](./c++_getting_started.md)
 	- [Hello world](./hello_world.md)
@@ -26,13 +26,13 @@
 	- [Random number](./random-number.md)
 	- [OOPs]()
 	
-# 💖Syntactic sugar
+# 💖SYNTACTIC SUGAR
 
 - [Syntactic sugar in C++](./syntactic_sugar.md)
 
 -----------
 
-# 🔥Examples
+# 🔥EXAMPLES
 
 
 - [Sorting(Bubble sort)](./sorting.md)
@@ -40,7 +40,7 @@
 - [Complex Number]()
 - [LSF](./lsf.md)
 
-- [Monte Carlo Simulation](./monte-carlo.md)
+- [Monte-Carlo simulation](./monte-carlo.md)
 
 - [Integration]()
 	- [Simpsons 1/3-rd rule]()
@@ -51,7 +51,7 @@
 	- [Runge-Kutta]()
 
 - [Interpolation]()
-	- [Newton's Interpolation]()
-	- [Lagrange Interpolation]()
+	- [Newton's interpolation]()
+	- [Lagrange interpolation]()
 	
 

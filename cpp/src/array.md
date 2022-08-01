@@ -24,7 +24,7 @@ string name[5] = {"Inuyasha", "Ichigo", "Elrick", "Shibazaki", "Natsu"}
 
 **👌Accessing array element: Now write a code to print "Elrick"**
 
-The index of Inuyasha is 0, Ichigo is 1, Elrick is 2 and so on. We need this indices to access the array elements.
+The index of Inuyasha is 0, Ichigo is 1, Elrick is 2 and so on. We need these indices to access the array elements.
 
 <b>
 
