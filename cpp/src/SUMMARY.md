@@ -43,9 +43,9 @@
 
 - [Monte-Carlo simulation](./monte-carlo.md)
 
-- [Integration]()
+- [Integration](./integration.md)
+	- [Trapizoidal method](./trapizoidal.md)
 	- [Simpsons 1/3-rd rule]()
-	- [Trapizoidal method]()
 	- [Monte Carlo]()
 
 - [Differential equation]()

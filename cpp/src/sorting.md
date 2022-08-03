@@ -128,5 +128,5 @@ int main() {
 ```
 </b>
 
-## 2. Make a subroutine to bubble sort.
-<hr style="height: 2px; border: none; background: black">
+<br><br>
+**📢Try it yourself: Make a subroutine(a function/method) to sort numbers.**
