@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Monte-Carlo simulation - C++ Ninja Notes</title>
+        <title>Estimating Pi - C++ Ninja Notes</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><li class="part-title">⚡INTRODUCTION</li><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> An awkward introduction</a></li><li class="chapter-item "><a href="basics_of_any_language.html"><strong aria-hidden="true">2.</strong> Programming 101 - The basics of any language</a></li><li class="chapter-item affix "><li class="part-title">📚LEARNING C++</li><li class="chapter-item "><a href="c++_getting_started.html"><strong aria-hidden="true">3.</strong> C++ - Getting started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello_world.html"><strong aria-hidden="true">3.1.</strong> Hello world</a></li><li class="chapter-item "><a href="user_input_data_types.html"><strong aria-hidden="true">3.2.</strong> User input, data types</a></li><li class="chapter-item "><a href="conditional_statements.html"><strong aria-hidden="true">3.3.</strong> Conditional statements: If-else & switch-case</a></li><li class="chapter-item "><a href="loops.html"><strong aria-hidden="true">3.4.</strong> Loops</a></li><li class="chapter-item "><a href="array.html"><strong aria-hidden="true">3.5.</strong> Array</a></li><li class="chapter-item "><a href="function.html"><strong aria-hidden="true">3.6.</strong> Function</a></li></ol></li><li class="chapter-item "><a href="c++_advanced_stuff.html"><strong aria-hidden="true">4.</strong> Advanced stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pointer.html"><strong aria-hidden="true">4.1.</strong> Pointer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference_memoryAddress.html"><strong aria-hidden="true">4.1.1.</strong> Reference & memory address</a></li><li class="chapter-item "><a href="pointer_working.html"><strong aria-hidden="true">4.1.2.</strong> Pointer: Working with pointer</a></li><li class="chapter-item "><a href="pointer_with_array.html"><strong aria-hidden="true">4.1.3.</strong> Pointer with array</a></li></ol></li><li class="chapter-item "><a href="file_handling.html"><strong aria-hidden="true">4.2.</strong> File handling</a></li><li class="chapter-item "><a href="vector.html"><strong aria-hidden="true">4.3.</strong> Vector</a></li><li class="chapter-item "><a href="structure_union_enum.html"><strong aria-hidden="true">4.4.</strong> Structure, union & enum</a></li><li class="chapter-item "><a href="random-number.html"><strong aria-hidden="true">4.5.</strong> Random number</a></li><li class="chapter-item "><div><strong aria-hidden="true">4.6.</strong> OOPs</div></li></ol></li><li class="chapter-item "><li class="part-title">💖SYNTACTIC SUGAR</li><li class="chapter-item "><a href="syntactic_sugar.html"><strong aria-hidden="true">5.</strong> Syntactic sugar in C++</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">🔥EXAMPLES</li><li class="chapter-item "><a href="sorting.html"><strong aria-hidden="true">6.</strong> Sorting(Bubble sort)</a></li><li class="chapter-item "><div><strong aria-hidden="true">7.</strong> Fibonacci series</div></li><li class="chapter-item "><a href="matrix.html"><strong aria-hidden="true">8.</strong> Matrix algebra</a></li><li class="chapter-item "><a href="complex_number.html"><strong aria-hidden="true">9.</strong> Complex Number</a></li><li class="chapter-item "><a href="lsf.html"><strong aria-hidden="true">10.</strong> LSF</a></li><li class="chapter-item "><a href="integration.html"><strong aria-hidden="true">11.</strong> Integration</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="trapizoidal.html"><strong aria-hidden="true">11.1.</strong> Trapizoidal method</a></li><li class="chapter-item "><a href="simpson.html"><strong aria-hidden="true">11.2.</strong> Simpsons 1/3-rd rule</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.</strong> Differential equation</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">12.1.</strong> Runge-Kutta</div></li></ol></li><li class="chapter-item expanded "><a href="monte-carlo.html" class="active"><strong aria-hidden="true">13.</strong> Monte-Carlo simulation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="monte-carlo-estimating-pi.html"><strong aria-hidden="true">13.1.</strong> Estimating Pi</a></li><li class="chapter-item "><a href="monte-carlo-integration.html"><strong aria-hidden="true">13.2.</strong> Monte Carlo integration</a></li></ol></li><li class="chapter-item "><a href="newton_raphson.html"><strong aria-hidden="true">14.</strong> Newton–Raphson</a></li><li class="chapter-item "><div><strong aria-hidden="true">15.</strong> Interpolation</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">15.1.</strong> Newton's interpolation</div></li><li class="chapter-item "><div><strong aria-hidden="true">15.2.</strong> Lagrange interpolation</div></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><li class="part-title">⚡INTRODUCTION</li><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> An awkward introduction</a></li><li class="chapter-item "><a href="basics_of_any_language.html"><strong aria-hidden="true">2.</strong> Programming 101 - The basics of any language</a></li><li class="chapter-item affix "><li class="part-title">📚LEARNING C++</li><li class="chapter-item "><a href="c++_getting_started.html"><strong aria-hidden="true">3.</strong> C++ - Getting started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello_world.html"><strong aria-hidden="true">3.1.</strong> Hello world</a></li><li class="chapter-item "><a href="user_input_data_types.html"><strong aria-hidden="true">3.2.</strong> User input, data types</a></li><li class="chapter-item "><a href="conditional_statements.html"><strong aria-hidden="true">3.3.</strong> Conditional statements: If-else & switch-case</a></li><li class="chapter-item "><a href="loops.html"><strong aria-hidden="true">3.4.</strong> Loops</a></li><li class="chapter-item "><a href="array.html"><strong aria-hidden="true">3.5.</strong> Array</a></li><li class="chapter-item "><a href="function.html"><strong aria-hidden="true">3.6.</strong> Function</a></li></ol></li><li class="chapter-item "><a href="c++_advanced_stuff.html"><strong aria-hidden="true">4.</strong> Advanced stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="pointer.html"><strong aria-hidden="true">4.1.</strong> Pointer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="reference_memoryAddress.html"><strong aria-hidden="true">4.1.1.</strong> Reference & memory address</a></li><li class="chapter-item "><a href="pointer_working.html"><strong aria-hidden="true">4.1.2.</strong> Pointer: Working with pointer</a></li><li class="chapter-item "><a href="pointer_with_array.html"><strong aria-hidden="true">4.1.3.</strong> Pointer with array</a></li></ol></li><li class="chapter-item "><a href="file_handling.html"><strong aria-hidden="true">4.2.</strong> File handling</a></li><li class="chapter-item "><a href="vector.html"><strong aria-hidden="true">4.3.</strong> Vector</a></li><li class="chapter-item "><a href="structure_union_enum.html"><strong aria-hidden="true">4.4.</strong> Structure, union & enum</a></li><li class="chapter-item "><a href="random-number.html"><strong aria-hidden="true">4.5.</strong> Random number</a></li><li class="chapter-item "><div><strong aria-hidden="true">4.6.</strong> OOPs</div></li></ol></li><li class="chapter-item "><li class="part-title">💖SYNTACTIC SUGAR</li><li class="chapter-item "><a href="syntactic_sugar.html"><strong aria-hidden="true">5.</strong> Syntactic sugar in C++</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">🔥EXAMPLES</li><li class="chapter-item "><a href="sorting.html"><strong aria-hidden="true">6.</strong> Sorting(Bubble sort)</a></li><li class="chapter-item "><div><strong aria-hidden="true">7.</strong> Fibonacci series</div></li><li class="chapter-item "><a href="matrix.html"><strong aria-hidden="true">8.</strong> Matrix algebra</a></li><li class="chapter-item "><a href="complex_number.html"><strong aria-hidden="true">9.</strong> Complex Number</a></li><li class="chapter-item "><a href="lsf.html"><strong aria-hidden="true">10.</strong> LSF</a></li><li class="chapter-item "><a href="integration.html"><strong aria-hidden="true">11.</strong> Integration</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="trapizoidal.html"><strong aria-hidden="true">11.1.</strong> Trapizoidal method</a></li><li class="chapter-item "><a href="simpson.html"><strong aria-hidden="true">11.2.</strong> Simpsons 1/3-rd rule</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.</strong> Differential equation</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">12.1.</strong> Runge-Kutta</div></li></ol></li><li class="chapter-item expanded "><a href="monte-carlo.html"><strong aria-hidden="true">13.</strong> Monte-Carlo simulation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="monte-carlo-estimating-pi.html" class="active"><strong aria-hidden="true">13.1.</strong> Estimating Pi</a></li><li class="chapter-item "><a href="monte-carlo-integration.html"><strong aria-hidden="true">13.2.</strong> Monte Carlo integration</a></li></ol></li><li class="chapter-item "><a href="newton_raphson.html"><strong aria-hidden="true">14.</strong> Newton–Raphson</a></li><li class="chapter-item "><div><strong aria-hidden="true">15.</strong> Interpolation</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">15.1.</strong> Newton's interpolation</div></li><li class="chapter-item "><div><strong aria-hidden="true">15.2.</strong> Lagrange interpolation</div></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -137,26 +137,64 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="monte-carlo-simulation"><a class="header" href="#monte-carlo-simulation">MONTE CARLO SIMULATION</a></h1>
+                        <h1 id="estimating-the-value-of-pi-using-monte-carlo-simulation"><a class="header" href="#estimating-the-value-of-pi-using-monte-carlo-simulation">Estimating the value of Pi using Monte Carlo simulation</a></h1>
 <hr style="height: 5px; border: none;background-image: linear-gradient(to right, #a282c6, #f378af, #ff8470, #ffb51a, #a8eb12);">
-<p>Monte Carlo Simulation, aka the Monte Carlo Method or a multiple probability simulation, is a mathematical technique, which is used to estimate the possible outcomes of an uncertain event. It relys on repeated random sampling to obtain numerical results. </p>
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/CmpWM2HMhxw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p><br><br><br>
-⚡Outline:</p>
-<ul>
-<li><a href="./monte-carlo-estimating-pi.html">Estimating the value of PI</a></li>
-<li><a href="./monte-carlo-integration.html">Integration</a></li>
-</ul>
-<p><br><br><br><br><br><br></p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/MonteCarlo.png" alt="Monte-Carlo" /></p>
+<h3 id="formulae"><a class="header" href="#formulae">📌Formulae</a></h3>
+<p>$$\frac{\textrm{Area of the circle}}{Area of the square}=\frac{\pi r^{2}}{4r^{2}}=\frac{\pi}{4}$$
+$$\texttt{For a very large number of random points,} $$
+$$ \frac{\pi}{4}=\frac{\textrm{no. of points generated inside the circle}}{\textrm{total no. of points generated or total no of points generated inside the square}} $$</p>
+<h3 id="code"><a class="header" href="#code">🔥Code</a></h3>
+<b>
+<pre><code class="language-c++">/*Estimating PI using Monte Carlo simulation
+*Needs random numbers
+*/
+#include&lt;iostream&gt;
+#include&lt;cstdlib&gt;
+#include&lt;time.h&gt;
+using namespace std;
 
+float getRandom(float a, float b){
+
+    //A random no between 0 to 1
+    float random_no = rand()/float(RAND_MAX);
+
+    //A random no between a to b
+    random_no= a + (b-a)*random_no;
+    return random_no;
+}
+
+int main(){
+    int total, flag=0;
+    srand(time(NULL));
+    cout&lt;&lt;&quot;Random no counts: \n&quot;;
+    cin &gt;&gt; total;
+    for(int i=0; i&lt;total; i++){
+        float randX = getRandom(-1, +1);
+        float randY = getRandom(-1, 1);        
+
+        //cout&lt;&lt;randX&lt;&lt;endl;
+
+        if( (randX*randX) + (randY*randY)&lt;=1){
+            flag += 1;
+        }
+
+    }
+
+    float pi = (4*flag)/(1.0*total);
+    cout &lt;&lt; &quot;Estimated Pi: &quot; &lt;&lt;pi&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+</b>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="simpson.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="monte-carlo.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="monte-carlo-estimating-pi.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="monte-carlo-integration.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -165,10 +203,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="simpson.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="monte-carlo.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="monte-carlo-estimating-pi.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="monte-carlo-integration.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

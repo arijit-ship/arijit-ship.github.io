@@ -6,7 +6,7 @@ Here we'll be using different numerical method for solving integration.
 ⚡Outline:
 
 - [Trapizoidal](./trapizoidal.md)
-- [Simpson's 1/3 rd rule]()
+- [Simpson's 1/3 rd rule](./simpson.md)
 - [Runge-Kutta]()
 
 <br><br><br><br><br><br>

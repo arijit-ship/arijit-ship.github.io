@@ -38,18 +38,22 @@
 - [Sorting(Bubble sort)](./sorting.md)
 - [Fibonacci series]()
 - [Matrix algebra](./matrix.md)
-- [Complex Number]()
+- [Complex Number](./complex_number.md)
 - [LSF](./lsf.md)
-
-- [Monte-Carlo simulation](./monte-carlo.md)
 
 - [Integration](./integration.md)
 	- [Trapizoidal method](./trapizoidal.md)
 	- [Simpsons 1/3-rd rule](./simpson.md)
-	- [Monte Carlo]()
+	
 
 - [Differential equation]()
 	- [Runge-Kutta]()
+
+- [Monte-Carlo simulation](./monte-carlo.md)
+	- [Estimating Pi](./monte-carlo-estimating-pi.md)
+	- [Monte Carlo integration](./monte-carlo-integration.md)
+
+- [Newton–Raphson](./newton_raphson.md)
 
 - [Interpolation]()
 	- [Newton's interpolation]()
