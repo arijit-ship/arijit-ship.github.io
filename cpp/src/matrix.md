@@ -86,3 +86,79 @@ int main() {
 
 ## 2. Write a program for matrix-multiplication:
 <hr style="height: 2px; border: none; background: black">
+
+<b>
+
+```c++
+
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    int r1=0, c1=0, r2=0, c2=0;
+
+    cout<<"Marrix A: Enter ROW and COL: \n";
+    cin >> r1 >> c1;
+    cout <<"Matrix B: Enter ROW and COL: \n";
+    cin >> r2 >> c2;
+
+    while(c1!=r2){
+        cout << "Invalid matrix-dimension\n";
+
+        cout<<"Marrix A: Enter ROW and COL: \n";
+        cin >> r1 >> c1;
+        cout <<"Matrix B: Enter ROW and COL: \n";
+        cin >> r2 >> c2;
+
+    }
+
+    int matA[r1][c1]={0}, matB[r2][c2]={0}, mul[r1][c2] = {0};
+   
+    //Matrix A
+    cout<<"Mat A: \n";
+    for(int i=0; i<r1; i++){
+        for(int j=0; j<c1; j++){
+            cout<<"Mat A "<<i+1<<" "<<j+1<<endl;
+            cin >> matA[i][j];
+        }
+    }
+    
+    //Matrix B
+    cout<<"Mat B: \n";
+    for(int i=0; i<r2; i++){
+        for(int j=0; j<c2; j++){
+            cout<<"Mat B "<<i+1<<" "<<j+1<<endl;
+            cin >> matB[i][j];
+        }
+    }
+
+    //Matrix multiplication
+    for(int i=0; i<r1; i++){
+        for(int j=0; j<c2; j++){
+            for(int k=0; k<c1; k++){
+
+                mul[i][j] += matA[i][k]*matB[k][j];
+
+            }
+            
+        }
+    }
+
+    //Printing the result
+    cout<<"Multiplication is: \n";
+    for(int i=0; i<r1; i++){
+        for(int j=0; j<c2; j++){
+            cout<<mul[i][j]<< " ";
+            if(j == c2-1){
+                cout << endl;
+            }
+        }
+    }
+
+    return 0;
+
+
+}
+```
+</b>

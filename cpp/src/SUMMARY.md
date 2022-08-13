@@ -38,6 +38,8 @@
 - [Sorting(Bubble sort)](./sorting.md)
 - [Fibonacci series]()
 - [Matrix algebra](./matrix.md)
+	- [Complex Matrix](./complex_matrix.md)
+	- [Pauli's spin matrices](./spin_matrices.md)
 - [Complex Number](./complex_number.md)
 - [LSF](./lsf.md)
 
