@@ -43,7 +43,7 @@ int main() {
 |Data type|Description|
 |--|--|
 |`int`|Stores integer|
-|`float`|Srotes decimal number|
+|`float`|Srores decimal number|
 |`char`|Stores a single character|
 |`string`|Stores sequence of characters|
 |`bool`|Stores true or false type|
