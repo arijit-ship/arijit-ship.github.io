@@ -6,4 +6,124 @@ We will be usig `structure` for implementing complex number. A complex number ha
 ## 1. Complex number using `structure`
 <hr style="height: 2px; border: none; background: black">
 
+<br>
+
+<b>
+
+```c++
+/*Complex number using structure*/
+
+#include<iostream>
+using namespace std;
+
+struct complex
+{
+    float real, imag;
+};
+
+int main(){
+    complex z;
+    cout<<"Enter the real and the imaginary part of the complex number\n";
+    cin >> z.real >> z.imag;
+    cout <<"Z = "<<z.real<<" + "<<z.imag<<"i"<<endl;
+
+    return 0;
+}
+
+```
+</b>
+
+## 2. Complex algebra
+<hr style="height: 2px; border: none; background: black">
+
+<b>
+
+```c++
+/*Complex number using structure*/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Difining custom data-type 'complex'
+struct complex
+{
+    float real, imag;
+};
+
+// Subroutine for complex numbers addition
+complex complex_add(complex z1, complex z2)
+{
+    complex z;
+    z.real = z1.real + z2.real;
+    z.imag = z1.imag + z2.imag;
+
+    return z;
+}
+
+// Subroutine for complex multiplication
+complex complex_mul(complex z1, complex z2)
+{
+    complex z;
+
+    z.real = (z1.real * z1.real) - (z1.imag * z2.imag);
+    z.imag = (z1.real * z2.imag) + (z1.imag * z2.real);
+    return z;
+}
+
+// Subroutine for calculating the mod
+float complex_mod(complex z)
+{
+    return sqrt(z.real * z.real + z.imag * z.imag);
+}
+
+// Subroutine for calculating phase
+float getPhase(complex z)
+{
+    float phase;
+
+    if (z.imag > 0)
+    {
+        phase = 90 - (180 * atan(z.real / z.imag)) / M_PI;
+    }
+    else
+    {
+        phase = -90 - (180 * atan(z.real / z.imag)) / M_PI;
+    }
+    return phase;
+}
+
+int main()
+{
+    complex z1, z2;
+    cout << "Real and imaginary parts of Z1: \n";
+    cin >> z1.real >> z1.imag;
+    cout << "Real and imaginary parts of Z2: \n";
+    cin >> z2.real >> z2.imag;
+
+    complex add, mul;
+    float mod1, mod2, phase1, phase2;
+
+    add = complex_add(z1, z2);
+    mul = complex_mul(z1, z2);
+    mod1 = complex_mod(z1);
+    mod2 = complex_mod(z2);
+    phase1 = complex_mod(z1);
+    phase2 = complex_mod(z2);
+
+    cout << "Z1 = " << z1.real << " + " << z1.imag << "i\n Z2 = " << z2.real << " + " << z2.imag << "i" << endl;
+
+    cout << "Add: " << add.real << " + " << add.imag << "i" << endl;
+    cout << "Mul: " << mul.real << "+" << mul.imag << "i" << endl;
+    cout << "Amp(Z1): " << mod1 << endl;
+    cout << "Phase(Z1)" << phase1 << endl;
+    cout << "Amp(Z2)" << mod2 << endl;
+    cout << "Phase(Z2) " << phase2 << endl;
+
+    return 0;
+}
+```
+</b>
+
+
 
