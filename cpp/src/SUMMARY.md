@@ -43,9 +43,9 @@
 	- [Pauli's spin matrices](./spin_matrices.md)
 - [LSF](./lsf.md)
 
-- [Integration](./integration.md)
-	- [Trapizoidal method](./trapizoidal.md)
-	- [Simpsons 1/3-rd rule](./simpson.md)
+- [Trapizoidal method](./trapizoidal.md)
+- [Simpsons 1/3-rd rule](./simpson.md)
+	- [Simpson upper limit convergence](./simpson_upper_convergence.md)
 	
 - [Runge-Kutta](./runge_kutta_index.md)
 	- [Modified Euler(RK 2nd order)]()
