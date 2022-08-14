@@ -47,9 +47,10 @@
 	- [Trapizoidal method](./trapizoidal.md)
 	- [Simpsons 1/3-rd rule](./simpson.md)
 	
-
-- [Differential equation]()
-	- [Runge-Kutta]()
+- [Runge-Kutta](./runge_kutta_index.md)
+	- [Modified Euler(RK 2nd order)]()
+	- [Runge Kutta 4th Order(RK 4)](./rk4_simple.md)
+	- [RK 4 for coupled DE](./rk4_coupled.md)
 
 - [Monte-Carlo simulation](./monte-carlo.md)
 	- [Estimating Pi](./monte-carlo-estimating-pi.md)
