@@ -80,17 +80,24 @@ float complex_mod(complex z)
 // Subroutine for calculating phase
 float getPhase(complex z)
 {
-    float phase;
+    float phase=0;
+    if(z.real == 0){
 
-    if (z.imag > 0)
-    {
-        phase = 90 - (180 * atan(z.real / z.imag)) / M_PI;
+        if (z.imag > 0){
+            phase = M_PI/2;
+        }
+        else{
+            phase = M_PI + M_PI/2;
+        }
     }
-    else
-    {
-        phase = -90 - (180 * atan(z.real / z.imag)) / M_PI;
+    if(z.real > 0){
+        phase = atan(z.imag/z.real);
     }
-    return phase;
+    if(z.real<0){
+        phase = M_PI + atan(z.imag/z.real);
+    }
+    
+    return phase; //in rad
 }
 
 int main()
@@ -108,8 +115,8 @@ int main()
     mul = complex_mul(z1, z2);
     mod1 = complex_mod(z1);
     mod2 = complex_mod(z2);
-    phase1 = complex_mod(z1);
-    phase2 = complex_mod(z2);
+    phase1 = getPhase(z1);
+    phase2 = getPhase(z2);
 
     cout << "Z1 = " << z1.real << " + " << z1.imag << "i\n Z2 = " << z2.real << " + " << z2.imag << "i" << endl;
 
@@ -122,6 +129,7 @@ int main()
 
     return 0;
 }
+
 ```
 </b>
 
