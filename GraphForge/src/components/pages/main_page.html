@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><i>⚡Creating your project...</i></title>
+    <link rel="shortcut icon" href="../../icons/data-plot-graph_24px.png">
+
+    <!-- Base Modules -->
+    <link rel="stylesheet" href="../../style/component.css">
+    <link rel="stylesheet" href="../../lib/7css/7.css">
+
+    <!-- Unique id generator -->
+    <script type="text/javascript" src="../js/generateUniqueId.js"></script>
+
+    <!-- jQuery Easy UI -->
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery_easy_ui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery_easy_ui/themes/icon.css">
+    <script type="text/javascript" src="../../lib/jquery_easy_ui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery_easy_ui/jquery.easyui.min.js"></script>
+
+    <!-- Jspreadsheet -->
+    <link rel="stylesheet" href="../../lib/Jspreadsheet/jexcel.css" type="text/css" />
+    <link rel="stylesheet" href="../../lib/Jspreadsheet/jsuites.css" type="text/css" />
+    <script src="../../lib/Jspreadsheet/jexcel.js"></script>
+    <script src="../../lib/Jspreadsheet/jsuites.js"></script>
+
+    <!-- TabulatorJS -->
+    <link rel="stylesheet" type="text/CSS" href="../../lib/TabulatorJS/dist/css/tabulator.min.css">
+    <script type="text/javascript" src="../../lib/TabulatorJS/dist/js/tabulator.min.js"></script>
+
+    <!-- JSX Graph -->
+    <link rel="stylesheet" type="text/css" href="../../lib/JSX_graph/jsxgraph.css">
+    <script type="text/javascript" src="../../lib/JSX_graph/jsxgraphcore.js"></script>
+
+
+    <!-- Extensions -->
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery-easyui-texteditor-1.0.2/texteditor.css">
+    <script type="text/javascript" src="../../lib/jquery-easyui-texteditor-1.0.2/jquery.texteditor.js"></script>
+    <script type="text/javascript" src="../js/datagrid-cellediting.js"></script>
+    <script type="text/javascript" src="../js/datagrid-dnd.js"></script>
+
+</head>
+
+<!-- Styting begins here -->
+<style>
+    .icon-button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+        /* remove the default outline */
+    }
+
+    .icon-button i {
+        font-size: 1.5rem;
+        color: #000;
+    }
+
+    /* add the pressed effect */
+    .icon-button:active,
+    .icon-button:focus {
+        transform: scale(0.9);
+        /* scale down the button */
+        box-shadow: none;
+        /* remove the default box-shadow */
+    }
+
+    /* add the disabled state styles */
+    .icon-button:disabled {
+        cursor: not-allowed;
+        /* change the cursor to not-allowed */
+        opacity: 0.5;
+        /* reduce the opacity */
+        pointer-events: none;
+        /* disable pointer events */
+    }
+
+    .icon-button:disabled img {
+        color: #ccc;
+        /* change the icon color */
+    }
+
+    .icon-button:disabled:active,
+    .icon-button:disabled:focus {
+        transform: none;
+        /* remove the pressed effect */
+        box-shadow: none;
+    }
+
+    .vl-space {
+        border-left: 1px solid rgb(160, 160, 160);
+        height: 30px;
+        position: absolute;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+</style>
+
+<body class="easyui-layout">
+
+    <!-- NORTH: TOOLBAR -->
+    <div data-options="region:'north'" style="height:41px">
+
+        <div style="margin-top: 5px; margin-left: 10px;">
+
+            <button class="icon-button" onclick="addNewPage()" title="Create new page"><img
+                    src="../../icons/icon_newpage_48x48.png" height="30px" width="30px"></button>
+            <button class="icon-button" title="Plot" onclick="initPlot()"><img src="../../icons/icon_run_48x48.png"
+                    height="30px" width="30px"></button>
+            <button class="icon-button" title="Replot"><img src="../../icons/icon_replot_48x48.png" height="30px"
+                    width="30px"></button>
+            <button class="icon-button" title="Clear plot"><img src="../../icons/icon_clear_48x48.png" height="30px"
+                    width="30px"></button>
+            <button class="icon-button" onclick="deletePage()" title="Delete page"><img
+                    src="../../icons/icon_deletepage_40x40.png" height="30px" width="30px"></button>
+
+            <span class="vl-space"></span>
+
+            <span id="row-management-container-span" style="margin-left: 25px;">
+                <button class="icon-button" id="new-row-button" onclick="addNewRow()" title="Add a new row"
+                    disabled><img src="../../icons/icon_addsinglerow_48x48.png" height="30px" width="30px"></button>
+                <button class="icon-button" id="new-rows-button" onclick="addNewRows()" title="Add rows" disabled><img
+                        src="../../icons/icon_addrow_50x50.png" height="30px" width="30px"></button>
+                <button class="icon-button" id="delete-rows-button" onclick="deleteRows()" title="Delete rows"
+                    disabled><img src="../../icons/icon_deleterow_50x50.png" height="30px" width="30px"></button>
+                <button class="icon-button" id="delete-rows-button" onclick="addColumn()" title="Add a data column"
+                    disabled><img src="../../icons/icon_addcolumn_50x50.png" height="30px" width="30px"></button>
+
+            </span>
+
+            <span class="vl-space"></span>
+
+            <span id="row-management-container-span" style="margin-left: 25px;">
+                <button class="icon-button" id="delete-rows-button" onclick="editTableWindow()" title="Edit table"
+                    disabled><img src="../../icons/icon_edittable_30x30.png" height="30px" width="30px"></button>
+                <button class="icon-button" id="delete-rows-button" onclick="colFuncDefWindow()"
+                    title="Define column formula" disabled><img src="../../icons/icon_mathfx_50x50.png" height="30px"
+                        width="30px"></button>
+            </span>
+
+
+        </div>
+
+    </div>
+
+    <!-- EAST: PLOTING AREA -->
+    <div id="graph-div-panel" data-options="region:'east',split:true" title="Plot Panel" style="width:30%;">
+        
+    </div>
+
+
+    <!-- WEST PANEL -->
+    <div data-options="region:'west',split:true" title="Project Panel" style="width:25%; background:#f1f3f4">
+
+        <div id="project-page-dtls-grid" style="height: 100%;">
+            <table id="project-table" style="height: 100%; display: none;"></table>
+        </div>
+
+    </div>
+
+    <!-- EDIT PANEL -->
+    <div id="editor-panel-div" data-options="region:'center'" title="Edit"
+        style="width: 30%; background: rgb(241, 243, 244);">
+
+        <!-- EDITING UI GOES HERE -->
+
+    </div>
+
+
+    <!-- SOUTH -->
+    <div data-options="region:'south',split:true" style="height:200px; width: auto;">
+        <div class="easyui-tabs">
+            <div id="plot-setup-container-div" title="Plotting Setup" style="padding: 10px;">
+
+                <!-- Page specific Plot Setup -->
+                <!-- TEMPLATE -->
+
+                <!-- <div class="win7" style="display:flex; flex-direction: row;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div>
+                            <fieldset style="display: flex; flex-direction: column;">
+                                <legend>PLOT TYPE</legend>
+                                <div>
+                                    <label for="plot-type">Type: </label>
+                                    <select id="plot-type" style="margin-left: 43px;">
+                                        <option value="Data Plot">Scatter</option>
+                                        <option value="Equation Plot">Linear Regression</option>
+                                        <option value="Notepad">Polynomial Regression</option>
+                                    </select>
+                                </div>
+                                <hr style="width:100%; margin-top: 10px;">
+                                <div style="margin: 3px 0 0 0">
+                                    <button id="content-menu-button"
+                                    style="display: flex; align-items: center;justify-content: center; width: 230px;"
+                                    title="More appearance settings"><img src="../../icons/icon_menu_30x30.png"><b>Context Menu</b></button>
+                                </div>
+                                <br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    &nbsp;
+                    <div>
+                        <fieldset style="display: flex; flex-direction: column; height: 127px;">
+                            <legend>APPEARANCE</legend>
+                            <div style="display: flex; flex-direction: row;">
+                                <button id="add-graph-axes-label"
+                                    style="display: flex; align-items: center;justify-content: center; min-width: 0; width: 34px;"
+                                    title="Add axes label"><img src="../../icons/icon_addlabel_30x30.png"></button>
+                                    &nbsp;
+                                <button id="more-graph-appearance-setting"
+                                    style="display: flex; align-items: center;justify-content: center; min-width: 0; width: 34px;"
+                                    title="More appearance settings"><img src="../../icons/icon_settings_30x30.png"></button>
+                            </div>
+                            <br>
+                            <div style="margin-left: -4px">
+                                <input type="checkbox" id="example1">
+                                <label for="example1">Show Point Names</label>
+                            </div>
+                            <div style="margin-left: -4px">
+                                <input type="checkbox" id="example1">
+                                <label for="example1">Show Grid</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    &nbsp;
+                    <div>
+                        <fieldset style="display: flex; flex-direction: column; height: 127px;">
+                            <legend>DATA SOURCES</legend>
+                            <div>
+                                <label for="h-axis-data-source">Horizontal axis: </label>
+                                <select id="h-axis-data-source" style="margin-left: 43px; width: 100px;">
+                                    <option value="x_data">X Data</option>
+                                    <option value="y_data">Y Data</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="v-axis-data-source">Vertical axis: </label>
+                                <select id="v-axis-data-source" style="margin-left: 61px; width: 100px;">
+                                    <option value="x_data">X Data</option>
+                                    <option value="y_data">Y Data</option>
+                                </select>
+                            </div>
+                            
+                        </fieldset>
+                    </div>
+
+                </div> -->
+
+            </div>
+            <div title="Output" style="padding:10px">
+
+            </div>
+            <div title="Error Log" style="padding:10px">
+                <ul class="easyui-tree" data-options="method:'get',animate:true"></ul>
+            </div>
+            <div title="Help" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+                This is the help content.
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ###########################################*******MODAL WINDOWS GO HERE*******########################################### -->
+
+
+    <!-- MODAL FORM FOR ADDING NEW PAGE -->
+    <div id="dd" style="display: none;">
+        <div class="win7"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px;">
+            <br>
+            <form id="new-page-form">
+                <div class="field-row">
+                    <label for="page-name">Page Name: </label>
+                    <input id="page-name" type="text" />
+                </div>
+                <br>
+                <div>
+                    <label for="page-type">Type: </label>
+                    <select id="page-type" style="margin-left: 43px;">
+                        <option value="Data Plot">Data Plot</option>
+                        <option value="Equation Plot">Equation Plot</option>
+                        <option value="Notepad">Notepad</option>
+                    </select>
+                </div>
+                <br>
+                <div class="field-row-stacked" style="width: 230px; display: flex; flex-direction: row;">
+                    <label for="page-des">Description: </label>
+                    <textarea id="page-des" rows="3" style="margin-left: 5px;width: 230px"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal form for adding new rows -->
+    <div id="dd-add-rows" style="display: none;">
+        <form id="add-rows-form" method="post" style=" margin-left: 25%; margin-right:25%;width: auto;">
+            <div style="margin-top: 20px; margin-bottom: 20px;">
+                <input id="no-of-rows" class="easyui-numberspinner" data-options="label:'Rows:', required:true">
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal form for adding a new data column -->
+    <div id="dd-add-column" style="display: none;">
+
+        <!-- Windows 7 style component -->
+        <div class="win7" style="display: flex; margin: 25px 0 30px 80px;">
+            <form action="" id="add-column-form">
+
+                <div class="field-row">
+                    <label for="new-column-title">Column Title: </label>
+                    <input id="new-column-title" type="text" />
+                </div>
+                <br>
+                <div>
+                    <label for="">Type: </label>
+                    <select id="col-type" style="margin-left: 50px;">
+                        <option value="text">Numerical Data</option>
+                        <option value="text">Text</option>
+                        <option value="html">Rich Text Format</option>
+                        <option value="calendar">Calender</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Table editing window -->
+    <div id="dd-table-editing" style="display: none;">
+        <div class="win7"></div>
+        <div id="table-edit"></div>
+    </div>
+
+    <!-- Column function window -->
+    <div id="dd-col-fun-window" style="display: none;">
+        <div class="win7">
+            <div class="tool-container" style="padding: 10px; background: #efefef; display: flex; flex-direction: row;">
+                <button style="display: flex; align-items: center;justify-content: center;"><img
+                        src="../../icons/icon_check_30x30.png"><b>Evaluate</b></button>
+                <button style="display: flex; align-items: center;justify-content: center;"><img
+                        src="../../icons/icon_reset_30x30.png"><b>Reset</b></button>
+            </div>
+            <div id="table-col-fun-def"></div>
+        </div>
+    </div>
+
+
+</body>
+
+<!-- SCRIPT STARTS HERE -->
+
+<script>
+    //updating the tab-title
+    window.onload = function () {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const projectName = urlParams.get("project_name");
+        document.title = projectName;
+    }
+</script>
+<script src="../js/mainApp.js"></script>
+</html>

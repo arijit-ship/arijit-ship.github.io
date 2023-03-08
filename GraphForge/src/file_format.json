@@ -1,0 +1,39 @@
+[
+    {
+        "ProjectName": "Sample Project",
+        "Date Created": "Jan 1, 2023",
+        "Pages": [
+            {
+                "PageName": "A scatter plot example",
+                "PageType": "scatterPlot",
+                "Description": "lorem ipsum sdl ss nsid dnks fns fnkelf fsdfdkn fdsnf fsdmn nxknds fnkndf  cm",
+                "content": [
+                    {
+                        "ptName": "P1",
+                        "ptXValue": 1,
+                        "ptYValue": 1,
+                        "ptZvalue": null,
+                        "ptMarker": "*",
+                        "ptColor": " Red",
+                        "ptIsPloted": true
+                    },
+                    {
+                        "ptName": "P2",
+                        "ptXValue": 2,
+                        "ptYValue": 4,
+                        "ptZvalue": null,
+                        "ptMarker": "*",
+                        "ptColor": "blue",
+                        "ptIsPloted": true
+                    }
+                ]
+            },
+            {
+                "PageName": "Siple note page",
+                "PageType": "Notes",
+                "Description": "lorem ipsum sdl ss nsid dnks fns fnkelf fsdfdkn fdsnf fsdmn nxknds fnkndf  cm",
+                "content": []
+            }
+        ]
+    }
+]

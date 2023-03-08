@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New</title>
+    <link rel="stylesheet" href="../../lib/TabulatorJS/dist/css/tabulator_materialize.min.css" />
+    <script src="../../lib/TabulatorJS/dist/js/tabulator.min.js"></script>
+    <link rel="stylesheet" href="../../style/pages_default.css" />
+</head>
+
+<body>
+    <div class="new-page-container">
+        <div class="left">
+            <h1>Grafing</h1>
+            <h3>The ultimate graph plotting tool</h3>
+        </div>
+        <div class="right">
+            <h4>Start with</h4>
+            <div id="table"></div>
+            <script>
+                //Build Tabulator
+                var table = new Tabulator("#table", {
+                    ajaxURL:"../../components/components_content.json",
+                    height: "311px",
+                    width: "50px",
+                    columns: [
+                        {title: "#", field: "serial", sorter:"number"},
+                        { title: "Operation", field: "operation", width: "auto", formatter:"html" },
+                        { title: "Description", field: "description", width: 250, formatter:"textarea"},
+                    ],
+                });
+            </script>
+        </div>
+
+    </div>
+
+
+</body>
+
+
+</html>

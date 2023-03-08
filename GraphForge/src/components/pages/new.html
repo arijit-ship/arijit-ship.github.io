@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Project*</title>
+    <link rel="shortcut icon" href="../../icons/scatter-graph_24px.png">
+    <link rel="stylesheet" href="../../style/component.css">
+
+
+    <link rel="stylesheet" type="text/CSS" href="../../lib/TabulatorJS/dist/css/tabulator.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/JSX_graph/jsxgraph.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery_easy_ui/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery_easy_ui/themes/icon.css">
+
+    <script type="text/javascript" src="../../lib/jquery_easy_ui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery_easy_ui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../lib/TabulatorJS/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript" src="../../lib/JSX_graph/jsxgraphcore.js"></script>
+    <link rel="stylesheet" href="../../style/pages_default.css" />
+
+</head>
+
+<body>
+    <div class="new-page-container">
+        <div class="left">
+            <h1>Create a new project</h1>
+        </div>
+        <div class="right">
+            <div class="easyui-panel" title="Project details" style="width:100%;max-width:400px;padding:30px 60px;">
+
+                <form id="new-project-form" method="post">
+
+                    <div style="margin-bottom:20px">
+                        <input class="easyui-textbox" name="project-name" id="project-name" style="width:100%"
+                            data-options="label:'Project Name:', required:true">
+                    </div>
+
+                    <div style="margin-bottom:20px">
+                        <input class="easyui-textbox" name="book-name" style="width:100%"
+                            data-options="label:'Book Name:', required:true">
+                    </div>
+
+                    <div style="margin-bottom:20px">
+
+                        <select class="easyui-combobox" name="type" label="Type:" style="width:100%"
+                            data-options="limitToList: true, required: true">
+
+                            <option value="scatter">Scatter Plot</option>
+                            <option value="linear-regression">Linear Regression</option>
+                            <option value="polynomial-regression">Polynomial Regression</option>
+                            <option value="eqn-plot">Equation Plot</option>
+                            <option value="note">Notes & Equation</option>
+
+                        </select>
+
+                    </div>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()"
+                        style="width:80px">Submit</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- SCRIPT FOR THIS PAGE STARTS HERE -->
+<script>
+
+    function submitForm() {
+        const projectName = document.getElementById("project-name").value;
+        const mainPageUrl = `main_page.html?project_name=${encodeURIComponent(projectName)}`;
+        window.open(mainPageUrl, '_self');
+
+    }
+
+</script>
+
+</html>

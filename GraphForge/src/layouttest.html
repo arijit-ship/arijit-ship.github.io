@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><i>⚡Creating your project...</i></title>
+    <link rel="shortcut icon" href="../../icons/scatter-graph_24px.png">
+    <link rel="stylesheet" href="../../style/component.css">
+
+
+    <link rel="stylesheet" type="text/CSS" href="../../lib/TabulatorJS/dist/css/tabulator.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/JSX_graph/jsxgraph.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery_easy_ui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery_easy_ui/themes/icon.css">
+
+
+
+    <script type="text/javascript" src="../../lib/jquery_easy_ui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery_easy_ui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../lib/TabulatorJS/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript" src="../../lib/JSX_graph/jsxgraphcore.js"></script>
+
+    <script type="text/javascript" src="../js/datagrid-cellediting.js"></script>
+
+</head>
+
+<!-- Styting begins here -->
+<style>
+    .vl-space {
+        border-left: 1px solid rgb(160, 160, 160);
+        height: 30px;
+        position: absolute;
+        margin-left: 10px;
+    }
+</style>
+
+<body class="easyui-layout">
+
+    <div data-options="region:'north'" style="height:40px">
+
+        <div style="margin-top: 5px; margin-left: 10px;">
+            <a href="#" onclick="addNewPage()"><img src="../../icons/icon_newpage_48x48.png" height="30px"
+                    width="30px"></a>
+            <a href="#"><img src="../../icons/icon_run_48x48.png" height="30px" width="30px"></a>
+            <a href="#"><img src="../../icons/icon_replot_48x48.png" height="30px" width="30px"></a>
+            <a href="#"><img src="../../icons/icon_clear_48x48.png" height="30px" width="30px"></a>
+
+            <span class="vl-space"></span>
+
+        </div>
+
+    </div>
+
+    <div data-options="region:'east',split:true" title="East" style="width:40%;">
+
+
+    </div>
+
+
+    <div data-options="region:'west',split:true" title="West" style="width:30%">
+        <span id="empty-project-messase-span"
+            style="display: flex;justify-content: center;align-items: center;height: 100%;">
+        </span>
+    </div>
+
+
+    <div data-options="region:'center',iconCls:'icon-ok'" title="Edit" style="width: 30%; background: white;">
+
+    </div>
+
+    <div data-options="region:'south',split:true" style="height:auto;">
+        <div class="easyui-tabs">
+            <div title="Option" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+                Click on a page in Project Panel a page to see the options available for it.
+            </div>
+            <div title="Output" style="padding:10px">
+                <p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>
+                <ul>
+                    <li>easyui is a collection of user-interface plugin based on jQuery.</li>
+                    <li>easyui provides essential functionality for building modem, interactive, javascript
+                        applications.</li>
+                    <li>using easyui you don't need to write many javascript code, you usually defines user-interface by
+                        writing some HTML markup.</li>
+                    <li>complete framework for HTML5 web page.</li>
+                    <li>easyui save your time and scales while developing your products.</li>
+                    <li>easyui is very easy but powerful.</li>
+                </ul>
+            </div>
+            <div title="Error Log" style="padding:10px">
+                <ul class="easyui-tree" data-options="method:'get',animate:true"></ul>
+            </div>
+            <div title="Help" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+                This is the help content.
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL FORM FOR ADDING NEW PAGE -->
+    <div id="dd">
+        <form id="new-page-form" method="post" style=" margin-left: 25%; margin-right:25%;width: 50%;">
+            <div style="margin-top: 20px;">
+                <input class="easyui-textbox" id="page-name" name="page-name" style="width:100%"
+                    data-options="label:'Page Name:', required:true">
+            </div>
+
+            <div style="margin-top:20px">
+                <select class="easyui-combobox" id="page-type" name="page-type" label="Type:" style="width:100%"
+                    data-options="limitToList: true, required: true">
+
+                    <option value="scatter">Scatter Plot</option>
+                    <option value="linear-regression">Linear Regression</option>
+                    <option value="polynomial-regression">Polynomial Regression</option>
+                    <option value="eqn-plot">Equation Plot</option>
+                    <option value="note">Notes & Equation</option>
+                </select>
+            </div>
+            <div style="margin-top:20px;">
+                <input class="easyui-textbox" id="page-des" name="page-description" style="width:100%;height:60px"
+                    data-options="label:'Description: ',multiline:true">
+            </div>
+            <div style="text-align:center;padding:5px 0; margin-top: 5px;">
+                <a href="javascript:void(0)" class="easyui-linkbutton" onclick="createPage()"
+                    style="width:80px">Create</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()"
+                    style="width:80px">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+<!-- SCRIPT STARTS HERE -->
+
+<script>
+
+    //updating the tab-title
+    window.onload = function () {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const projectName = urlParams.get("project_name");
+        document.title = projectName;
+    }
+
+    const date = new Date();
+    const dateCreated = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+
+    var slno = 1;   //Page serial number
+
+    //File Format
+    var projFileData = [
+        {
+            "projectName": "Untitled Project",
+            "dateCreated": dateCreated,
+            "pages": [ /* {data dictionary}*/]
+        }
+    ]
+
+    var pageData = projFileData[0].pages;
+
+    if (pageData.length == 0) {
+        $('#empty-project-messase-span').text("Empty Project! Please create a page to get started.")
+    }
+    else {
+        //Opened an exisisting project case
+    }
+
+    //Defining addNewPage(). It creates a modal form for book name, type and, description.
+    function addNewPage() {
+        $('#dd').dialog({
+            title: 'New Page',
+            width: '500px',
+            height: 'auto',
+            closed: false,
+            cache: false,
+            modal: true
+        });
+    }
+
+    function createPage() {
+
+        $('#dd').dialog({
+            closed: true,
+            cache: false,
+        });
+
+        pageData.push(
+            { 'slNo': slno, 'pageName': $("#page-name").val(), 'pageType': $("#page-type").val(), 'pageDes': $("#page-des").val() }
+        )
+
+        //Redrawing the project table
+        $("#project-page-dtls-grid").datagrid({
+            columns: [[
+                { field: 'slNo', title: '<b>#<b>', width: 'auto', editor: 'text' },
+                { field: 'pageName', title: '<b>Page Name<b>', width: 100, editor: 'text' },
+                { field: 'pageType', title: '<b>Type<b>', width: 100, align: 'left' },
+                { field: 'pageDes', title: '<b>Description<b>', width: 500, align: 'left', editor: 'textarea' }
+            ]],
+            data: pageData
+        });
+
+        //Clearing the form values
+        $('#new-page-form :input').val('');
+        slno += 1;
+
+    }
+
+</script>
+
+</html>

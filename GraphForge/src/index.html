@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Grafing</title>
+  <link rel="stylesheet" href="../node_modules/electron-tabs/src/style.css">
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <tab-group new-tab-button="true" sortable="true" preload="preload.js">
+    <style>
+      .nav {
+        overflow-y: overlay;
+      }
+    </style>
+  </tab-group>
+
+  <script src="../node_modules/electron-tabs/dist/electron-tabs.js"></script>
+
+  <script>
+
+
+    // Select tab-group
+    const tabGroup = document.querySelector("tab-group");
+
+    // Setup the default tab which is created when the "New Tab" button is clicked
+    tabGroup.setDefaultTab({
+      title: "New Project*",
+      src: "components/pages/new.html",
+      active: true
+    });
+
+    //The welcome page
+    const welcomeTab = tabGroup.addTab({
+      title: "<i>Welcome<i>",
+      src: "components/pages/welcome.html",
+      active: true,
+      closable: true,
+    });
+
+    tabGroup.on('tab-added', (tab) => {
+      // Ignore the "welcome" tab
+      if (tab !== welcomeTab) {
+        // Update the title of the tab based on the page title
+        tab.webview.addEventListener('page-title-updated', (event) => {
+          const title = event.title;
+          tab.setTitle(title);
+        });
+      }
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>

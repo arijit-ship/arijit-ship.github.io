@@ -1,0 +1,17 @@
+[
+    {   
+        "serial": 1,
+        "operation": "<a href='../components/main_page.html'>Scatter Plot</a>",
+        "description": "Use for plotting point and predict its nature."
+    },
+    {
+        "serial": 2,
+        "operation": "<a href='../components/main_page.html'>Linear Regression</a>",
+        "description": "Straight line fit using least square fit method."
+    },
+    {
+        "serial": 3,
+        "operation": "<a href='../components/main_page.html'>Polynomial Regression</a>",
+        "description": "Fitting a polynomial curve and predicting the coefficients."
+    }
+]

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><i>⚡Creating your project...</i></title>
+    <link rel="shortcut icon" href="../../icons/scatter-graph_24px.png">
+    <link rel="stylesheet" href="../../style/component.css">
+    <!-- <link rel="stylesheet" href="lib/7css/7.css"> -->
+
+
+    <link rel="stylesheet" type="text/CSS" href="../../lib/TabulatorJS/dist/css/tabulator.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/JSX_graph/jsxgraph.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery_easy_ui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery_easy_ui/themes/icon.css">
+
+
+
+    <script type="text/javascript" src="../../lib/jquery_easy_ui/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery_easy_ui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../lib/TabulatorJS/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript" src="../../lib/JSX_graph/jsxgraphcore.js"></script>
+
+
+    <script type="text/javascript" src="components/js/datagrid-dnd.js"></script>
+
+
+</head>
+
+<body class="easyui-layout">
+    
+    <div id="example-table"></div>
+
+    </div>
+
+</body>
+<script>
+// define a custom editor for column A
+var customListEditor = function(cell, onRendered, success, cancel) {
+    var values = {"true": "true", "false": "false"};
+    var select = document.createElement("select");
+
+    for (var key in values) {
+        var option = document.createElement("option");
+        option.value = key;
+        option.text = values[key];
+        select.appendChild(option);
+    }
+
+    select.style.width = "100%";
+    select.value = cell.getValue();
+
+    select.addEventListener("change", function() {
+        success(select.value);
+    });
+
+    return select;
+};
+
+// initialize the table
+var table = new Tabulator("#example-table", {
+    columns: [
+        {title: "A", field: "a", editor: customListEditor},
+        {title: "B", field: "b", editor: "input"}
+    ],
+    data: [
+        {a: "true", b: "edit enabled"},
+        {a: "false", b: "edit disabled"}
+    ],
+    cellEdited: function(cell) {
+        // get the cell component for column A
+        var cellA = cell.getRow().getCell("a");
+
+        // get the cell component for column B
+        var cellB = cell.getRow().getCell("b");
+
+        // enable editing for column B if the value of column A is "true"
+        if (cellA.getValue() === "true") {
+            cellB.getColumn().modules.edit.editing = true;
+        } else {
+            cellB.getColumn().modules.edit.editing = false;
+            cellB.setValue("");
+        }
+    }
+});
+
+
+
+</script>
+
+</html>
