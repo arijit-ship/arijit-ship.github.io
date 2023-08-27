@@ -38,14 +38,14 @@
 <script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
 
 
+<script id="dsq-count-scr" src="//https-arijit-ship-github-io-study-in-japan.disqus.com.disqus.com/count.js" async></script>
 
-<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
 
 <script src="/study-in-japan/js/iconfont.js?v=1.1." ></script>
 
 <meta name="generator" content="Hexo 6.3.0"></head>
 <div style="display: none">
-  <input class="theme_disqus_on" value="false">
+  <input class="theme_disqus_on" value="true">
   <input class="theme_preload_comment" value="">
   <input class="theme_blog_path" value="/study-in-japan">
   <input id="theme_shortcut" value="true" />
@@ -465,6 +465,17 @@
         </span>
         
         
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                Comment:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
     </div>
     
     <div class="toc-ref">
@@ -499,6 +510,57 @@
 
 
 
+
+    <section id="comments" class="disqus">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://arijit-ship.github.io/study-in-japan/study-in-japan/posts/7896/';
+            this.page.identifier = 'posts/7896/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//https-arijit-ship-github-io-study-in-japan.disqus.com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a>
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var isLoadComments = false;
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            if(isLoadComments){
+                return;
+            }
+            isLoadComments = true;
+            if(isLoadComments )
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").mouseenter(function(){
+            load$hide();
+        })
+    </script>
+
+
+</section>
+
+<!-- Add comment count-->
+<span class="disqus-comment-count" style="display: none" data-disqus-identifier="posts/7896/"></span>
+<span class="disqus-comment-count" style="display: none" data-disqus-url="https://arijit-ship.github.io/study-in-japan/posts/7896/"></span>
 
 
 
